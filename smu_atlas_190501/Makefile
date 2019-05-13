@@ -3,7 +3,7 @@ target = $(base).pdf
 source = *.tex
 compile = latexmk -halt-on-error -pdf
 
-target: $(source) 
+$(target): $(source) 
 	$(compile) $(base).tex
 
 clean:
