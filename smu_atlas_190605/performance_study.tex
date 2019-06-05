@@ -3,15 +3,19 @@
 \frame{
     \frametitle{ Tagger Performance After Retuning }
     \begin{itemize}
+        \item $T \bar T$ MC-Production Used: 
+        \begin{tiny} 
+            mc16\_13TeV.410470.PhPy8EG\_A14\_ttbar\_hdamp258p75\_nonallhad.
+            digit.AOD.e6337\_e5984\_s3126\_r11392\_d1512\_r11391
+        \end{tiny}
+        \item 4M events total, divided three ways:
+        \begin{itemize}
+            \item Step 1: 1.5M events
+            \item Step 2-3: 1.5M events
+            \item Step 4: 1M events
+        \end{itemize}
+        \item Samples are not cross validated yet (coming soon)
     \end{itemize}
-
-    { \small valid1.410000.PowhegPythiaEvtGen\_P2012\_ttbar\_hdamp172p5
-    \_nonallhad.digit.AOD.e4993
-    \_s3214\_r11234\_d1505\_r11280\_tid17270662\_00 }
-
-    \tiny (Based on JIRA Ticket: https://its.cern.ch/jira/browse/ATR-19472)
-
-    \vfill
 
     \begin{table}
     \resizebox{\textwidth}{!}{%
@@ -20,21 +24,14 @@
         Trigger Title & Input Chain & Track Key & Prm Vtx Key \\
         \hline \hline
         HLT & HLT\_j35\_boffperf\_split & InDetTrigTrackingxAODCnv\_Bjet\_IDTrig & xPrimVx\\
-        FTK IDTrig & HLT\_j35\_boffperf\_split\_FTK\_L1J15\_FTK & InDetTrigTrackingxAODCnv\_Bjet\_FTK\_IDTrig & PrimVertexFTK\\
-        FTK Refit & HLT\_j35\_boffperf\_split\_FTKRefit\_L1J15\_FTK & InDetTrigTrackingxAODCnv\_Bjet\_FTKRefit & PrimVertexFTK\\
-        FTK-HLT & HLT\_j35\_boffperf\_split\_FTKVtx\_L1J15\_FTK & InDetTrigTrackingxAODCnv\_Bjet\_IDTrig & PrimVertexFTK\\
+        %FTKVtx & HLT\_j35\_boffperf\_split\_FTKVtx\_L1J15 & InDetTrigTrackingxAODCnv\_Bjet\_IDTrig & PrimVertexFTK\\
+        FTK IDTrig & HLT\_j35\_boffperf\_split\_FTK\_L1J15 & InDetTrigTrackingxAODCnv\_Bjet\_FTK\_IDTrig & PrimVertexFTK\\
+        %FTK Refit & HLT\_j35\_boffperf\_split\_FTKRefit\_L1J15 & InDetTrigTrackingxAODCnv\_Bjet\_FTKRefit & PrimVertexFTK\\
         \hline
     \end{tabular}}
     \end{table}
+}
 
-}
-\frame{
-    \frametitle{ MV2c10 Performance } 
-    \begin{figure}
-        \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{btag_c10_score_comparison/performance_roc_ttbar}
-    \end{figure}
-    \statwarn
-}
 \frame{
     \frametitle{ IP2D and IP3D Performance } 
     \begin{columns}
@@ -49,7 +46,11 @@
             \end{figure}
         \end{column}
     \end{columns}
-    \statwarn
 }
 
-
+\frame{
+    \frametitle{ MV2c10 Performance } 
+    \begin{figure}
+        \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{btag_c10_score_comparison/performance_roc_ttbar}
+    \end{figure}
+}
