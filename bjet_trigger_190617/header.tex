@@ -1,0 +1,84 @@
+%Imports and customization
+\usepackage{tikz}
+\usepackage{graphicx}
+\graphicspath{ 
+    {./images/}
+    {/home/cmilke/Downloads/maneframe_local/analysis/}
+}
+
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{sidebar right}{}
+\setbeamertemplate{footline}{
+    \hfill\usebeamertemplate***{navigation symbols}
+    \hspace{1cm}\insertframenumber{}/\inserttotalframenumber
+}
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+\setbeamersize{text margin left=10mm,text margin right=10mm} 
+
+
+%Custom Macros
+\newcommand{\statwarn}{
+    \tiny \color{red} Absolute numbers here mean NOTHING. Plots are based on small (100k events) samples, and are highly biased. All that matters is relative position!
+}
+
+\newcommand{\inputvardisplaytwo}[2]{
+    \frame{
+        \foreach \inputvar in {#1, #2} {
+            \begin{columns}
+                \foreach \jettype in {0, 1, 2} {
+                    \begin{column}{0.33\textwidth}
+                        \begin{figure}
+                            \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{training_input_study/plot_\inputvar_\jettype}
+                        \end{figure}
+                    \end{column}
+                }
+            \end{columns}
+        }
+    }
+}
+
+\newcommand{\inputvardisplay}[3]{
+    \frame{
+        \foreach \inputvar in {#1, #2, #3} {
+            \begin{columns}
+                \foreach \jettype in {0, 1, 2} {
+                    \begin{column}{0.33\textwidth}
+                        \begin{figure}
+                            \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{training_input_study/image_\inputvar_\jettype}
+                        \end{figure}
+                    \end{column}
+                }
+            \end{columns}
+        }
+    }
+}
+
+
+\newcommand{\vardisplay}[2]{
+    \frame{
+        \frametitle{ #2 }
+        \begin{columns}
+            \begin{column}{0.5\textwidth}
+            \end{column}
+            \begin{column}{0.5\textwidth}
+                \begin{figure}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#1_0}
+                \end{figure}
+            \end{column}
+        \end{columns}
+        \begin{columns}
+            \begin{column}{0.5\textwidth}
+                \begin{figure}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#1_1}
+                \end{figure}
+            \end{column}
+            \begin{column}{0.5\textwidth}
+                \begin{figure}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#1_2}
+                \end{figure}
+            \end{column}
+        \end{columns}
+    }
+}
+
+

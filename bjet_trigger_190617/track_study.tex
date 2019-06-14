@@ -1,0 +1,31 @@
+\section{Underlying Variables} 
+
+\subsection{Background}
+\frame{
+    \frametitle{ Helix Parameters (and $p_t$)}
+    \begin{columns}
+        \begin{column}{0.3\textwidth}
+            \begin{itemize}
+                \item $d0$
+                \item $z0$
+                \item $\phi 0$
+                \item $\theta$
+                \item $\frac{q}{p_t}j$
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.7\textwidth}
+            \begin{figure}
+                \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{helix_params}
+                \caption{\tiny Source: http://inspirehep.net/record/1196309/}
+            \end{figure}
+        \end{column}
+    \end{columns}
+}
+
+\subsection{Plots}
+\vardisplay{track_study/plot_pt}{$p_t$}
+\foreach \vartype/\vartitle in { d0/$d_0$, z0/$z_0$, phi0/$\phi_0$, theta/$\theta$, qOverP/$\frac{q}{p_t}$ } { 
+    \foreach \varform/\formtitle in {_sig/Significance, / , _err/Error} {
+        \vardisplay{track_study/plot_\vartype\varform}{\vartitle \formtitle}
+    }
+}
