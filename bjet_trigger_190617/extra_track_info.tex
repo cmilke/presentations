@@ -1,0 +1,7 @@
+\section{Additional Track Information}
+
+\foreach \vartype/\vartitle in { d0/$d_0$, z0/$z_0$, phi0/$\phi_0$, theta/$\theta$, qOverP/$\frac{q}{p_t}$ } {
+    \foreach \varform/\formtitle in {_sig/Significance, / , _err/Error} {
+        \vardisplay{track_study/plot_\vartype\varform}{\vartitle \formtitle}
+    }
+}
