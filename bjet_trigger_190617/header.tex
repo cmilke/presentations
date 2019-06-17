@@ -56,9 +56,11 @@
 
 \newcommand{\vardisplay}[2]{
     \frame{
-        \frametitle{ #2 }
         \begin{columns}
             \begin{column}{0.5\textwidth}
+                \begin{center}
+                    {\huge #2}
+                \end{center}
             \end{column}
             \begin{column}{0.5\textwidth}
                 \begin{figure}
@@ -82,3 +84,20 @@
 }
 
 
+\newcommand{\fullscreenimage}[1]{
+    \frame{
+        \begin{figure}
+        \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#1}
+        \end{figure}
+    }
+}
+
+
+\newcommand{\announcesection}[1]{
+    \section{#1}
+    \frame{
+        \begin{center}
+            {\huge #1} 
+        \end{center}
+    }
+}
