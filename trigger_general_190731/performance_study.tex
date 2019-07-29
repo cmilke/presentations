@@ -1,24 +1,20 @@
 \announcesection{Tagger Performance} 
-\frame{
-    \frametitle{ MV2c10 Performance } 
-    \begin{figure}
-        \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{btag_c10_score_comparison/mv2c10_roc_ttbar}
-    \end{figure}
-}
-\frame{
-    \frametitle{ IP2D and IP3D Performance } 
-    \begin{columns}
-        \begin{column}{0.5\textwidth}
-            \begin{figure}
-                \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{ipxd_performance/performance_roc_ttbar_ip2d}
-            \end{figure}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-            \begin{figure}
-                \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{ipxd_performance/performance_roc_ttbar_ip3d}
-            \end{figure}
-        \end{column}
-    \end{columns}
-}
+\displayone{ MV2c10 Performance }
+    { \begin{itemize}
+        \item Black curve is official calibration used in 2018 data taking
+        \item Blue curve retuned using 4 Million ttbar monte carlo (production 410470)
+        \item Blue and black tuned on different ttbar samples, so consistent performance is reassuring
+        \item Primary objective is raise FTK performance closer to HLT levels
+        \item FTKRefit-IDTrig shows little difference compared to FTK-IDTrig
+    \end{itemize} }
+    {btag_c10_score_comparison/mv2c10_roc_ttbar}
 
-
+\displaytwo{ IP2D and IP3D Performance }
+    { \begin{itemize}
+        \item MV2c10 is a product of these two (among other variables)
+        \item Both Taggers show performance issues for FTK
+        \item As FTKRefit-IDTrig is not distinct from FTK-IDTrig,
+            it will be omitted from further plots
+    \end{itemize} }
+    {ipxd_performance/performance_roc_ttbar_ip2d}
+    {ipxd_performance/performance_roc_ttbar_ip3d}

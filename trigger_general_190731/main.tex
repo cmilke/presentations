@@ -4,20 +4,45 @@
 %Begin Presentation
 \begin{document}
 \title{Incorporating the FTK into the B-Jet Trigger}   
-\author{Chris Milke} 
+\author{
+    Chris Milke,\\
+    Student at SMU,\\
+    on Behalf of the B-Jet Trigger Group
+} 
 \date{31 July, 2019} 
 
 \frame{\titlepage} 
+\frame{\frametitle{Overview} \tableofcontents}
 
 %intro
 \input{background.tex}
 \input{performance_study.tex}
 \input{track_intro.tex}
+\frame{
+    \frametitle{Performance Summary}
+    \begin{itemize} {\normalsize 
+        \item MV2c10 FTK-IDTrig performance is significantly lower than HLT performance
+        \item MV2c10 performance primarily dependends on IP2D and IP3D performance,
+            which also suffer from performance issues
+        \item IP2D and IP3D taggers depend on track Impact Parameter values d0 and z0
+    } \end{itemize}
+}
 \input{correlation_study.tex}
+\input{correlation_study.tex}
+\input{extra_correlations.tex}
+\frame{
+    \frametitle{Conclusions}
+    \begin{itemize} {\normalsize 
+        \item FTK-IDTrig performance is significantly lower than HLT performance
+        \item Comparing track parameters jet-by-jet,
+            primary cause appears to be FTK-IDTrig's lower tolerance to small values of d0
+        \item This may be related to the apparent "shift" in d0-error. More studies needed
+        \item Track quality values seem to be irrelevant to B-Tagging performance
+    } \end{itemize}
+}
 
 \announcesection{Backup} 
 \input{input_and_chains.tex}
-\input{extra_correlations.tex}
 \input{correlation_info.tex}
 \end{document}
 

@@ -1,13 +1,44 @@
 \frame{
-    \begin{figure}
-    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{quality_cut_retrieval}
-    \caption{
-        \url{https://gitlab.cern.ch/atlas-trigger/b-jet/TrigBtagAnalysis/blob/master/src/BTriggerTuning.cxx\#L1160}
-    }
-    \end{figure}
+    \frametitle{Track Quality Values}
+
+    Track quality values appear to have no effect on performance at all
+
+    \begin{columns}[T]
+        \begin{column}{0.33\textwidth}
+            \begin{figure}
+                \includegraphics
+                [width=\linewidth,height=\textheight,keepaspectratio]
+                {correlation_numPixelHits_0}
+            \end{figure}
+            \begin{figure}
+                \includegraphics
+                [width=\linewidth,height=\textheight,keepaspectratio]
+                {correlation_numSCTHoles_0}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.33\textwidth}
+            \begin{figure}
+                \includegraphics
+                [width=\linewidth,height=\textheight,keepaspectratio]
+                {correlation_numPixelDeadSensors_0}
+            \end{figure}
+            \begin{figure}
+                \includegraphics
+                [width=\linewidth,height=\textheight,keepaspectratio]
+                {correlation_numSCTHits_0}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.33\textwidth}
+            \begin{figure}
+                \includegraphics
+                [width=\linewidth,height=\textheight,keepaspectratio]
+                {correlation_numPixelHoles_0}
+            \end{figure}
+            \begin{figure}
+                \includegraphics
+                [width=\linewidth,height=\textheight,keepaspectratio]
+                {correlation_numSCTDeadSensors_0}
+            \end{figure}
+        \end{column}
+    \end{columns}
 }
-\fullscreenimage{correlation_numPixelDeadSensors_0}
-\fullscreenimage{correlation_numPixelHoles_0}
-\fullscreenimage{correlation_numSCTDeadSensors_0}
-\fullscreenimage{correlation_numSCTHits_0}
-\fullscreenimage{correlation_numSCTHoles_0}

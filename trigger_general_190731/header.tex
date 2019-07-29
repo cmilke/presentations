@@ -13,7 +13,11 @@
     \hspace{1cm}\insertframenumber{}/\inserttotalframenumber
 }
 \setbeamertemplate{caption}{\raggedright\insertcaption\par}
-\setbeamersize{text margin left=10mm,text margin right=10mm} 
+\setbeamersize{text margin left=5mm,text margin right=5mm} 
+
+\setbeamerfont{itemize/enumerate body}{size=\scriptsize}
+\setbeamerfont{itemize/enumerate subbody}{size=\scriptsize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\scriptsize}
 
 
 %Custom Macros
@@ -54,59 +58,37 @@
 }
 
 
-\newcommand{\vardisplay}[2]{
+\newcommand{\fullscreenimage}[2]{
     \frame{
-        \begin{columns}
-            \begin{column}{0.5\textwidth}
-                \begin{center}
-                    {\huge #2}
-                \end{center}
-            \end{column}
-            \begin{column}{0.5\textwidth}
-                \begin{figure}
-                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#1_0}
-                \end{figure}
-            \end{column}
-        \end{columns}
-        \begin{columns}
-            \begin{column}{0.5\textwidth}
-                \begin{figure}
-                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#1_1}
-                \end{figure}
-            \end{column}
-            \begin{column}{0.5\textwidth}
-                \begin{figure}
-                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#1_2}
-                \end{figure}
-            \end{column}
-        \end{columns}
-    }
-}
-
-
-\newcommand{\fullscreenimage}[1]{
-    \frame{
+        \frametitle{#1} 
         \begin{figure}
-        \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#1}
+        \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#2}
         \end{figure}
     }
 }
 
 
-\newcommand{\displaythree}[4]{
+\newcommand{\displayone}[3]{
     \frame{
+        \frametitle{#1} 
         \begin{columns}
             \begin{column}{0.5\textwidth}
-                \begin{center}
-                    {\huge #1}
-                \end{center}
+                #2
             \end{column}
             \begin{column}{0.5\textwidth}
                 \begin{figure}
-                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#2}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#3}
                 \end{figure}
             \end{column}
         \end{columns}
+    }
+}
+
+
+\newcommand{\displaytwo}[4]{
+    \frame{
+        \frametitle{#1} 
+        #2
         \begin{columns}
             \begin{column}{0.5\textwidth}
                 \begin{figure}
@@ -123,14 +105,12 @@
 }
 
 
-\newcommand{\displaytwo}[3]{
+\newcommand{\displaythree}[5]{
     \frame{
-        \frametitle{#1} 
-        \begin{columns}
+        \begin{columns}[T]
             \begin{column}{0.5\textwidth}
-                \begin{figure}
-                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#2}
-                \end{figure}
+                \insertframetitle{#1}\\
+                #2
             \end{column}
             \begin{column}{0.5\textwidth}
                 \begin{figure}
@@ -138,8 +118,23 @@
                 \end{figure}
             \end{column}
         \end{columns}
+        \begin{columns}[T]
+            \begin{column}{0.5\textwidth}
+                \begin{figure}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#4}
+                \end{figure}
+            \end{column}
+            \begin{column}{0.5\textwidth}
+                \begin{figure}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#5}
+                \end{figure}
+            \end{column}
+        \end{columns}
     }
 }
+
+
+\newcommand{\vardisplay}[2]{ \displaythree{#2}{}{#1_0}{#1_1}{#1_2} }
 
 
 \newcommand{\announcesection}[1]{
