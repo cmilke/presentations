@@ -13,7 +13,7 @@ $(target): $(source)
 $(studies):
 	rsync $(rsyncopts) $(analysis)/$@ ./images	
 
-sync: $(studies)
+fullsync: $(studies)
 
 desync:
 	@cd images && rm -r $(studies) 2> /dev/null || true
