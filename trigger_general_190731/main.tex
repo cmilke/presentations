@@ -5,9 +5,8 @@
 \begin{document}
 \title{Incorporating the FTK into the B-Jet Trigger}   
 \author{
-    Chris Milke,\\
-    Student at SMU,\\
-    on Behalf of the B-Jet Trigger Group
+    Chris Milke (SMU),\\
+    on behalf of the B-Jet Trigger Group
 } 
 \date{31 July, 2019} 
 
@@ -22,10 +21,10 @@
     \frametitle{Performance Summary}
     \begin{itemize} {\normalsize 
         \item MV2c10 FTK-IDTrig performance is significantly lower than HLT performance
-        \item MV2c10 performance primarily dependends on IP2D and IP3D performance,
-            which also suffer from performance issues
+        \item Low-level taggers (IPxD) use fewer variables,
+            making them a useful probe into underlying issues
         \item IP2D and IP3D taggers depend on track
-            Impact Parameter values d0 and z0$\sin\theta$ respectively
+            Impact Parameter values $d_0$ and $z_0\sin\theta$ respectively
     } \end{itemize}
 }
 \input{correlation_study.tex}
@@ -33,11 +32,15 @@
 \frame{
     \frametitle{Conclusions}
     \begin{itemize} {\normalsize 
-        \item FTK-IDTrig performance is significantly lower than HLT performance
+        \item FTK tracks, even with retuning,
+            lead to less light-jet rejection in flavour tagging
+            compared to the HLT-only counterpart
+        \item We want to understand the exact reasons for the observed gap in performance
         \item Comparing track parameters jet-by-jet,
             primary cause appears to be FTK-IDTrig's lower tolerance to small values of d0
         \item This may be related to the apparent "shift" in d0-error. More studies needed
         \item Track quality values seem to be irrelevant to B-Tagging performance
+        \item Additional studies are ongoing. Comments and ideas are welcome
     } \end{itemize}
 }
 

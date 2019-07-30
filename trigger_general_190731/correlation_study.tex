@@ -1,7 +1,8 @@
-\announcesection{Jet Correlation Study}
+\announcesection{Jet by Jet Performance Study}
 \displaytwo{ Comparing Track Parameters Jet by Jet }
     { \begin{itemize}
-        \item Hold rejection level at 500
+        \item Choose to fix rejection level at 500,
+            in order to compare HLT and FTK-IDTrig fairly (as they are tuned seperately)
         \item Look only at B-Jets
         \item Compare FTK-IDTrig and HLT performance jet-by-jet
         \item Categorize each B-Jet by whether it was correctly tagged as a B-Jet (pass) by IP2D
@@ -10,14 +11,14 @@
     {rejection_efficiency_lock}
     {correlation_rubric}
 
-\displaythree{ d0 Correlation, FTK Distributions }
+\displaythree{ d0 Jet by Jet Performance, FTK Distributions }
     { \begin{itemize}
         \item $p_t > 55$ GeV and $|\eta| < 2.5$
         \item HLT and FTK-IDTrig have higher failure rates at lower values of d0
         \item Class B is clearly distinguished in d0
         \item Suggests FTK-IDTrig performance falls off faster than HLT as d0 gets smaller
         \item Issues at low d0 may be explained by shift in error,
-            but this is not visible from d0 error correlation plot.
+            but this is not visible from d0 error performance plot.
             Further studies into this underway
     \end{itemize} }
     {track_study/plot_ftk_correlation_d0_0}
