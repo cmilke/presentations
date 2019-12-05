@@ -1,0 +1,30 @@
+\announcesection{Algorithm Performance} 
+%List the different selections and taggers I have used. Define/explain them with a diagram
+%Show a table of the various combinations of selectors/taggers to be shown in the coming ROC curves…
+%Show ROC curve
+
+
+
+
+\displayone{ MV2c10 Performance }
+    { \begin{itemize}
+        \item Black curve is official calibration used in 2018 data taking
+        \item Blue curve retuned using 4 Million ttbar Monte Carlo (channel ID 410470)
+        \item Blue and black tuned on different ttbar samples,
+            so consistent performance confirms the re-tuning works as expected
+        \item Primary objective is to see how close to 
+            HLT-only performance we can come with FTK tracks
+        \item In the present simulation, FTKRefit-IDTrig and FTK-IDTrig perform similarly
+    \end{itemize} }
+    {btag_c10_score_comparison/mv2c10_roc_ttbar}
+
+\displaytwo{ IP2D and IP3D Performance }
+    { \begin{itemize}
+        \item MV2c10 uses these two low-level taggers as inputs to the final tagging decision
+        \item Both Taggers show performance issues for FTK
+        \item As FTKRefit-IDTrig is not distinct from FTK-IDTrig,
+            it will be omitted from further plots
+        \item IP2/3D taggers are based on lower level track variables 
+    \end{itemize} }
+    {ipxd_performance/performance_roc_ttbar_ip2d}
+    {ipxd_performance/performance_roc_ttbar_ip3d}
