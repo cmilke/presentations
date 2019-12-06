@@ -7,7 +7,7 @@
         \begin{column}{0.5\textwidth}
             \feynmandiagram[horizontal=a to b] {
                 q1i [particle=q] -- vb1 -- q1f [particle=q],
-                q2i  [particle=q]-- vb2 -- q2f [particle=q],
+                q2i [particle=q] -- vb2 -- q2f [particle=q],
                 vb1 -- [boson] a -- [boson] vb2,
                 a -- [scalar] b [particle=H],
                 q1f -- [draw=none] 01 -- [draw=none]  b -- [draw=none] 02 -- [draw=none] q2f,
@@ -26,34 +26,67 @@
 }
 
 
-%\frame {
-%    \begin{tikzpicture}
-%      \begin{feynman}
-%        \vertex (a);
-%        \vertex [right=of a] (b);
-%        \vertex [above=of a] (vb1);
-%        \vertex [below=of a] (vb2);
-%        \vertex [above left=of vb1] (q1i);
-%        \vertex [below left=of vb2] (q2i);
-%        \vertex [above right=of vb1] (q1f);
-%        \vertex [below right=of vb2] (q2f);
-%
-%        \diagram* {
-%            (q1i) -- (vb1) -- (q1f),
-%            (q2i) -- (vb2) -- (q2f),
-%            (vb1) -- [boson] (a) -- [boson] (vb2),
-%            (a) -- [scalar] (b),
-%        };
-%      \end{feynman}
-%    \end{tikzpicture}
-%}
+\frame {
+    \frametitle{The Complication of Many Jets}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \underline{\large Initial State Radiation (ISR)} \\ \vspace{5mm}
+            \begin{tikzpicture} \begin{feynman}
+                \vertex (a);
+                \vertex [right=of a] (b) {H};
+                \vertex [above left=of a] (vb1);
+                \vertex [below left=of a] (vb2);
+                \vertex [above left=of vb1] (q1i) {q};
+                \vertex [below left=of vb2] (q2k);
+                \vertex [left=of q2k] (q2i) {q};
+                \vertex [above =of b] (q1f) {q};
+                \vertex [below =of b] (q2f) {q};
+                \vertex [below =of q2f] (g) {g (ISR)};
 
+                \diagram* {
+                    (q1i) -- (vb1) -- (q1f),
+                    (q2i) -- (q2k) -- (vb2) -- (q2f),
+                    (q2k) --[gluon] (g),
+                    (vb1) -- [boson] (a) -- [boson] (vb2),
+                    (a) -- [scalar] (b),
+                };
+              \end{feynman} \end{tikzpicture}
+        \end{column}
+        \begin{column}{0.1\textwidth} \end{column}
+        \begin{column}{0.4\textwidth}
+            \underline{\large Final State Radiation (FSR)} \\ \vspace{5mm}
+            \begin{tikzpicture} \begin{feynman}
+                \vertex (a);
+                \vertex [right=of a] (b) {H};
+                \vertex [above left=of a] (vb1);
+                \vertex [below left=of a] (vb2);
+                \vertex [above left=of vb1] (q1i) {q};
+                \vertex [below left=of vb2] (q2i) {q};
+                \vertex [below right=of vb2] (q2k);
+                \vertex [above =of b] (q1f) {q};
+                \vertex [below =of b] (q2f) {q};
+                \vertex [below =of q2f] (g) {g (FSR)};
 
+                \diagram* {
+                    (q1i) -- (vb1) -- (q1f),
+                    (q2i) -- (vb2) -- (q2k) -- (q2f), 
+                    (q2k) --[gluon] (g),
+                    (vb1) -- [boson] (a) -- [boson] (vb2),
+                    (a) -- [scalar] (b),
+                };
+              \end{feynman} \end{tikzpicture}
+        \begin{column}{0.1\textwidth} \end{column}
+        \end{column}
+    \end{columns}
+}
 
+            % Show your table of how common this is (~20%)
 
 
 \frame {
-    \frametitle{The Complication of Many Jets}
-    %Show Ariel’s 3-jet scenario to illustrate logistical issues
-    % Show your table of how common this is (~20%)
+    \frametitle{How is VBF Currently Handled?}
+    % Show the different event selection rules for VBF->H->[bb,gamgam,invis]
 }
+
+
+
