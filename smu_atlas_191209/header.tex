@@ -52,6 +52,22 @@
     }
 }
 
+\newcommand{\displayonelarge}[3]{
+    \frame{
+        \frametitle{#1} 
+        \begin{columns}
+            \begin{column}{0.3\textwidth}
+                #2
+            \end{column}
+            \begin{column}{0.7\textwidth}
+                \begin{figure}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#3}
+                \end{figure}
+            \end{column}
+        \end{columns}
+    }
+}
+
 
 \newcommand{\displaytwo}[4]{
     \frame{
