@@ -1,17 +1,26 @@
 \section{Background}
-%I’m working on a VBF tagger
 \frame {
     \frametitle{Vector Boson Fusion (VBF)}
 
     \begin{columns}
         \begin{column}{0.5\textwidth}
-            \feynmandiagram[horizontal=a to b] {
-                q1i [particle=q] -- vb1 -- q1f [particle=q],
-                q2i [particle=q] -- vb2 -- q2f [particle=q],
-                vb1 -- [boson] a -- [boson] vb2,
-                a -- [scalar] b [particle=H],
-                q1f -- [draw=none] 01 -- [draw=none]  b -- [draw=none] 02 -- [draw=none] q2f,
-            };
+            \begin{tikzpicture} \begin{feynman}
+                \vertex (a);
+                \vertex [right=of a] (b) {H};
+                \vertex [above left=of a] (vb1);
+                \vertex [below left=of a] (vb2);
+                \vertex [left=of vb1] (q1i) {q};
+                \vertex [left=of vb2] (q2i) {q};
+                \vertex [above =of b] (q1f) {q};
+                \vertex [below =of b] (q2f) {q};
+
+                \diagram* {
+                    (q1i) -- (vb1) -- (q1f),
+                    (q2i) -- (vb2) -- (q2f), 
+                    (vb1) -- [boson] (a) -- [boson] (vb2),
+                    (a) -- [scalar] (b),
+                };
+            \end{feynman} \end{tikzpicture}
         \end{column}
         \begin{column}{0.5\textwidth}
             VBF is the second highest Higgs production mechanism, but with a much cleaner signal than ggF
@@ -27,16 +36,30 @@
 
 
 \frame {
+    \frametitle{How is VBF Currently Handled?}
+
+    VBF->H->diphoton (source: DOI: 10.1103/PhysRevD.98.052005)
+    \begin{quote}
+        Events are required to contain at least two hadronic jets,
+        and the selections applied are based on the two leading jets $(j_1, j_2)$ in the event.
+    \end{quote}
+
+
+    % Show the different event selection rules for VBF->H->[bb,gamgam,invis]
+}
+
+
+\frame {
     \frametitle{The Complication of Many Jets}
     \begin{columns}
-        \begin{column}{0.4\textwidth}
+        \begin{column}{0.5\textwidth}
             \underline{\large Initial State Radiation (ISR)} \\ \vspace{5mm}
-            \begin{tikzpicture} \begin{feynman}
+            \resizebox{0.95\textwidth}{!}{\begin{tikzpicture} \begin{feynman}
                 \vertex (a);
                 \vertex [right=of a] (b) {H};
                 \vertex [above left=of a] (vb1);
                 \vertex [below left=of a] (vb2);
-                \vertex [above left=of vb1] (q1i) {q};
+                \vertex [left=of vb1] (q1i) {q};
                 \vertex [below left=of vb2] (q2k);
                 \vertex [left=of q2k] (q2i) {q};
                 \vertex [above =of b] (q1f) {q};
@@ -50,18 +73,17 @@
                     (vb1) -- [boson] (a) -- [boson] (vb2),
                     (a) -- [scalar] (b),
                 };
-              \end{feynman} \end{tikzpicture}
+            \end{feynman} \end{tikzpicture}}
         \end{column}
-        \begin{column}{0.1\textwidth} \end{column}
         \begin{column}{0.4\textwidth}
             \underline{\large Final State Radiation (FSR)} \\ \vspace{5mm}
-            \begin{tikzpicture} \begin{feynman}
+            \resizebox{0.95\textwidth}{!}{\begin{tikzpicture} \begin{feynman}
                 \vertex (a);
                 \vertex [right=of a] (b) {H};
                 \vertex [above left=of a] (vb1);
                 \vertex [below left=of a] (vb2);
-                \vertex [above left=of vb1] (q1i) {q};
-                \vertex [below left=of vb2] (q2i) {q};
+                \vertex [left=of vb1] (q1i) {q};
+                \vertex [left=of vb2] (q2i) {q};
                 \vertex [below right=of vb2] (q2k);
                 \vertex [above =of b] (q1f) {q};
                 \vertex [below =of b] (q2f) {q};
@@ -74,19 +96,12 @@
                     (vb1) -- [boson] (a) -- [boson] (vb2),
                     (a) -- [scalar] (b),
                 };
-              \end{feynman} \end{tikzpicture}
-        \begin{column}{0.1\textwidth} \end{column}
+            \end{feynman} \end{tikzpicture}}
         \end{column}
     \end{columns}
 }
 
             % Show your table of how common this is (~20%)
-
-
-\frame {
-    \frametitle{How is VBF Currently Handled?}
-    % Show the different event selection rules for VBF->H->[bb,gamgam,invis]
-}
 
 
 
