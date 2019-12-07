@@ -1,0 +1,51 @@
+\frame {
+    \frametitle{The Complication of Many Jets}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \underline{\large Initial State Radiation (ISR)} \\ \vspace{5mm}
+            \resizebox{0.95\textwidth}{!}{\begin{tikzpicture} \begin{feynman}
+                \vertex (a);
+                \vertex [right=of a] (b) {H};
+                \vertex [above left=of a] (vb1);
+                \vertex [below left=of a] (vb2);
+                \vertex [left=of vb1] (q1i) {q};
+                \vertex [below left=of vb2] (q2k);
+                \vertex [left=of q2k] (q2i) {q};
+                \vertex [above =of b] (q1f) {q};
+                \vertex [below =of b] (q2f) {q};
+                \vertex [below =of q2f] (g) {g (ISR)};
+
+                \diagram* {
+                    (q1i) -- (vb1) -- (q1f),
+                    (q2i) -- (q2k) -- (vb2) -- (q2f),
+                    (q2k) --[gluon] (g),
+                    (vb1) -- [boson] (a) -- [boson] (vb2),
+                    (a) -- [scalar] (b),
+                };
+            \end{feynman} \end{tikzpicture}}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \underline{\large Final State Radiation (FSR)} \\ \vspace{5mm}
+            \resizebox{0.95\textwidth}{!}{\begin{tikzpicture} \begin{feynman}
+                \vertex (a);
+                \vertex [right=of a] (b) {H};
+                \vertex [above left=of a] (vb1);
+                \vertex [below left=of a] (vb2);
+                \vertex [left=of vb1] (q1i) {q};
+                \vertex [left=of vb2] (q2i) {q};
+                \vertex [below right=of vb2] (q2k);
+                \vertex [above =of b] (q1f) {q};
+                \vertex [below =of b] (q2f) {q};
+                \vertex [below =of q2f] (g) {g (FSR)};
+
+                \diagram* {
+                    (q1i) -- (vb1) -- (q1f),
+                    (q2i) -- (vb2) -- (q2k) -- (q2f), 
+                    (q2k) --[gluon] (g),
+                    (vb1) -- [boson] (a) -- [boson] (vb2),
+                    (a) -- [scalar] (b),
+                };
+            \end{feynman} \end{tikzpicture}}
+        \end{column}
+    \end{columns}
+}
