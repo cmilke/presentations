@@ -1,0 +1,137 @@
+\announcesection{Algorithm Performance} 
+
+\displayonelarge{Invariant Mass as a Discriminating Variable}
+    { \footnotesize
+        Choose two ``VBF Jets",
+        then use their invariant mass
+        as a discriminant in tagging.
+    }
+    {remote/figures/fig_mjj_null_mjj_distribution.pdf}
+
+
+\displayonelarge{Performance Curves: Baseline}
+    {Performance of $M_{jj}$ discriminant for events with two jets is not unreasonable.}
+    {remote/performance/focused_perf_2only_roc_efficiency.pdf}
+
+\displayonelarge{Performance Curves: Dealing with Three Jets}
+    { \footnotesize
+        With three jets, we need to decide which two are the VBF signal jets, and use these to calculate the $M_{jj}$ discriminant.
+
+        \vspace{5mm}
+
+        Naively, we can try picking the two leading $p_t$ jets. This drastically reduces performance.
+    }
+    {remote/performance/focused_perf_2-pt_roc_efficiency.pdf}
+
+\displayonelarge{\small Two Measures of Performance: Tagging Efficiency VS Selection Efficiency}
+    { \footnotesize
+        Why do the leading $p_t$ jets perform so badly?
+
+        \vspace{5mm}
+
+        ...Well, how often are the leading $p_t$ jets actually the VBF jets?
+
+        \vspace{5mm}
+
+        \begin{tabular}{|c|c|}\hline
+        Algorithm & Efficiency \\
+        \hline
+        Leading $p_t$ & 53\% \\
+        \hline
+        \end{tabular}
+    }
+    {remote/performance/focused_perf_2-pt_roc_efficiency.pdf}
+
+\displayonelarge{Performance Curves: Worst Case Scenario}
+    { \footnotesize
+        How closely is selection efficiency related to tagging efficiency?
+
+        Let's look at a worst case situation:
+        What if the "VBF Jets" were chosen at random?
+
+        \vspace{5mm}
+
+        \begin{tabular}{|c|c|}\hline
+        Algorithm & Efficiency \\ \hline
+        Leading $p_t$ & 53\% \\ \hline
+        Random & 33\% \\ \hline
+        \end{tabular}
+    }
+    {remote/performance/focused_perf_2-pt-R_roc_efficiency.pdf}
+
+\displayonelarge{Performance Curves: Best Case Scenario}
+    { \footnotesize
+        What about perfect selection efficiency?
+
+        {\tiny CAUTION: Truth selection treats signal and background events \textit{differently};
+        it is biasing the tagging performance and should be viewed only as an estimate}
+
+        \vspace{5mm}
+
+        \begin{tabular}{|c|c|}\hline
+        Algorithm & Efficiency \\ \hline
+        Leading $p_t$ & 53\% \\ \hline
+        Random & 33\% \\ \hline
+        Truth & 100\% \\ \hline
+        \end{tabular}
+    }
+    {remote/performance/focused_perf_2-pt-R-T_roc_efficiency.pdf}
+
+\displayonelarge{Performance Curves: A Better Approach}
+    { \footnotesize
+        A smarter approach is to use the jet pair which maximizes $M_{jj}$
+
+        \vspace{5mm}
+
+        \begin{tabular}{|c|c|}\hline
+        Algorithm & Efficiency \\ \hline
+        Leading $p_t$ & 53\% \\ \hline
+        Random & 33\% \\ \hline
+        Truth & 100\% \\ \hline
+        Max $M_{jj}$& 66\% \\ \hline
+        \end{tabular}
+    }
+    {remote/performance/focused_perf_2-pt-R-T-mjj_roc_efficiency.pdf}
+
+\displayonelarge{Performance Curves: Introduce Machine Learning}
+    { \footnotesize
+        Enter Machine Learning... which seems to just be replicating $M_{jj}$ right now.
+        I'm investigating ways to improve it.
+
+        \vspace{5mm}
+
+        \begin{tabular}{|c|c|}\hline
+        Algorithm & Efficiency \\ \hline
+        Leading $p_t$ & 53\% \\ \hline
+        Random & 33\% \\ \hline
+        Truth & 100\% \\ \hline
+        Max $M_{jj}$ & 66\% \\ \hline
+        MLP & 66\% \\ \hline
+        \end{tabular}
+    }
+    {remote/performance/focused_perf_2-pt-R-T-mjj-mlp_roc_efficiency.pdf}
+
+\displayonelarge{Performance Curves: What About a Better Tagger?}
+    { \footnotesize
+        A machine-learning-based tagger easily outperforms the $M_{jj}$-based tagger.
+
+        \vspace{5mm}
+
+        \begin{tabular}{|c|c|}\hline
+        Algorithm & Efficiency \\ \hline
+        Leading $p_t$ & 53\% \\ \hline
+        Random & 33\% \\ \hline
+        Truth & 100\% \\ \hline
+        Max $M_{jj}$ & 66\% \\ \hline
+        MLP & 66\% \\ \hline
+        \end{tabular}
+    }
+    {remote/performance/focused_perf_2-mjj-mlp_NN_roc_efficiency.pdf}
+
+\displayonelarge{Performance Curves: Overall Performance}
+    {
+        If we look at the combined performance of 2 and 3 jet events,
+        the difference is not dramatic, but there is still room for improvement.
+
+    }
+    {remote/performance/focused_perf_2-3-summary_roc_efficiency.pdf}

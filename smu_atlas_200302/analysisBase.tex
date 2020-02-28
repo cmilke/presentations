@@ -1,0 +1,58 @@
+\announcesection{Analysis}
+
+\frame{
+    \frametitle{What Am Basing My Results On?}
+
+    \underline{Monte-Carlo Samples:}
+    \vspace{3mm}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            {\small Signal: VBF$\rightarrow$H$\rightarrow \gamma \gamma $} \\
+            \vspace{2mm}
+            {\tiny
+                mc15\_13TeV.345041.
+                PowhegPythia8EvtGen\_NNPDF30\_
+                AZNLOCTEQ6L1\_VBFH125\_gamgam.
+                merge.DAOD\_HIGG1D1.
+                e5720\_s2726\_r7772\_r7676\_p3015
+            }
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            {\small Background: ggF$\rightarrow$H$\rightarrow \gamma \gamma $} \\
+            \vspace{2mm}
+            {\tiny
+                mc15\_13TeV.343981.
+                PowhegPythia8EvtGen\_NNLOPS\_
+                nnlo\_30\_ggH125\_gamgam.
+                merge.DAOD\_HIGG1D1.
+                e5607\_s2726\_r7772\_r7676\_p3015 
+            }
+        \end{column}
+    \end{columns}
+
+    \vspace{3mm}
+    \hrulefill
+    \vspace{3mm}
+
+    \underline{Event Selection Criteria:}
+    {\footnotesize \begin{itemize}
+        \item All jets above 30 GeV
+        \item All jets with $|\eta|$ less than 4
+        \item All jets pass JVT and fJVT algorithms
+        \item Jets truth-matched to photons are excluded\dagger
+        \item Must contain at least 2 jets
+        \item Leading jet $p_T$ greater than 50 GeV
+        \item (Signal Only!) At least two jets must be truth matched to the VBF quarks
+    \end{itemize}}
+}
+
+\displayonelarge{\dagger Missing Photon Handling...}
+    {
+        Due to issues with support material being in the way,
+        the "tightPhoton" and "loosePhoton" photon selection algorithms
+        have significant gaps in $\eta$.
+    }
+    {gamma_eta_gap}
+
+
+%Show eta distributions, then show that gamma plot that shows the gap in photon coverage from tight/loose photon (as explanation for why I filter on truth photons)

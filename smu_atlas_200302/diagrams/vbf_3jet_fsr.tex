@@ -1,0 +1,20 @@
+\begin{tikzpicture} \begin{feynman}
+    \vertex (a);
+    \vertex [right=of a] (b) {H};
+    \vertex [above left=of a] (vb1);
+    \vertex [below left=of a] (vb2);
+    \vertex [left=of vb1] (q1i) {q};
+    \vertex [left=of vb2] (q2i) {q};
+    \vertex [below right=of vb2] (q2k);
+    \vertex [above =of b] (q1f) {q};
+    \vertex [below =of b] (q2f) {q};
+    \vertex [below =of q2f] (g) {g (FSR)};
+
+    \diagram* {
+        (q1i) -- (vb1) -- (q1f),
+        (q2i) -- (vb2) -- (q2k) -- (q2f), 
+        (q2k) --[gluon] (g),
+        (vb1) -- [boson] (a) -- [boson] (vb2),
+        (a) -- [scalar] (b),
+    };
+\end{feynman} \end{tikzpicture}
