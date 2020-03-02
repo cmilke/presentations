@@ -3,55 +3,71 @@
     \frametitle{Vector Boson Fusion (VBF)}
 
     \begin{columns}
-        \begin{column}{0.5\textwidth}
-            { \small VBF is the second highest Higgs production mechanism, but with a much cleaner signal than ggF }
+        \begin{column}{0.4\textwidth}
+            %{ \scriptsize VBF is the second highest Higgs production mechanism, but possesses a much better handle to identify the jets with than the leading mechanism, gluon-gluon fusion. }
 
             \begin{figure}
                 \includegraphics[width=\linewidth,height=0.5\textheight,keepaspectratio]{higgs_production_modes.png}
                 \caption{\scriptsize source - arXiv:1909.02845 [hep-ex] }
             \end{figure}
         \end{column}
-        \begin{column}{0.5\textwidth}
+        \begin{column}{0.6\textwidth}
             {\scriptsize
-                VBF jets have a recognizable signal as two hight-$p_T$ jets, with a large invariant mass and wide seperation in $\eta$.
+                VBF events can be identified based on the two hight-$p_T$, large $\Delta \eta$ jets (called  {\it signature jets})
             }
-            %\resizebox{0.50\textheight}{!}{
-                \input{diagrams/vbf_2jet}
-                \input{diagrams/vbf_2jet} % replace with ggf...
-            %}
+            \begin{center}\resizebox{0.40\textheight}{!}{ \input{diagrams/vbf_2jet} }\end{center}
+
+            {\scriptsize
+                At leading order, ggF results in only the decay products of the Higgs itself
+            }
+            \begin{center}\resizebox{0.40\textheight}{!}{ \input{diagrams/ggF_leading} }\end{center}
         \end{column}
     \end{columns}
 }
 
 \frame {
-    \frametitle{Two Jets are Simple}
+    \frametitle{ My Goal: Increase Discrimination Between VBF and ggF }
+
     \begin{columns}
-        \begin{column}{0.5\textwidth}
-            \input{diagrams/vbf_2jet}
+        \begin{column}{0.4\textwidth}
+            ggF events can produce radiation than makes them look like vbf events.
+            Events must be properly tagged to avoid polluting statistics.
         \end{column}
-        \begin{column}{0.5\textwidth}
+        \begin{column}{0.6\textwidth}
+            \begin{center}\resizebox{0.40\textheight}{!}{ \input{diagrams/vbf_2jet} }\end{center}
+            \begin{center}\resizebox{0.40\textheight}{!}{ \input{diagrams/ggF_2jet} }\end{center}
         \end{column}
     \end{columns}
-
-
-
-
 }
 
-\frame {
-    \frametitle{Three Jets Less So...}
+
+\frame{
+    \frametitle{Can We Get a Bit More Statistics?}
+
+    Events with only the two VBF signature jets (and the Higgs' decay products) comprise 80-85\% of VBF events. The remainder involve additional radiative jets.
+
     \begin{columns}
         \begin{column}{0.5\textwidth}
             \underline{\tiny Initial State Radiation (ISR)} \\
             \resizebox{0.50\textheight}{!}{
                 \input{diagrams/vbf_3jet_isr}
             }
+        \end{column}
+        \begin{column}{0.5\textwidth}
             \underline{\tiny Final State Radiation (FSR)} \\ 
             \resizebox{0.50\textheight}{!}{
                 \input{diagrams/vbf_3jet_fsr}
             }
         \end{column}
-        \begin{column}{0.5\textwidth}
-        \end{column}
     \end{columns}
+
+
 }
+
+\displaytwo{Two Jets are Simple}{
+    As a simple test case, we use the invariant mass ($M_{jj}$) of the two jets as a discriminant 
+}
+{remote/figures/mjj_2jet_bgd}{remote/figures/mjj_2jet_sig}
+\displaytwo{Three Jets Less So...}{
+    For three-jet events, picking two jets becomes non-trivial
+}{remote/figures/mjj_bgd}{remote/figures/mjj_sig}

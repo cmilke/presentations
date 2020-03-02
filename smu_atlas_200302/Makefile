@@ -9,8 +9,11 @@ result_subfolders = acorn_framework/plots/figures\
 	acorn_framework/plots/performance\
 	uproot_analysis/jet_counts
 
-$(target): $(sources)
+$(target): $(sources) out
 	$(compile) main.tex 
+
+out:
+	mkdir out
 
 $(result_subfolders):
 	rsync $(rsyncopts) $(results)/$@ ./images/remote
