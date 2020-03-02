@@ -10,22 +10,19 @@
     \frame{\titlepage}
     \frame{\frametitle{Overview} \tableofcontents}
 
-    % show roc curves up front to show how I'm doing
-    % discuss centrality
-    % discuss jet pull
-    % discuss online monitoring
-
-
-
     \input{vbf_background.tex}
     \input{three_jet_complications.tex}
     \input{centrality.tex}
+    \input{online_monitoring.tex}
 
     \section{Conclusion}
     \frame{
         \frametitle{Conclusions}
         \begin{itemize} {
-            \item bla bla
+            \item VBF events are a rich production mechanism for Higgs, which can be utilized more fully
+            \item Three-jet VBF events are largely unexplored by current analyses, but can noticeably increase available statistics
+            \item These events have a complex topology which presents many interesting handles for signal/background discrimination (e.g. Centrality, which has already been shown to improve performance)
+            \item I have just started migrating the B-Jet Trigger Online Monitoring code to AthenaMT, and am getting a jump-start to this process at the AthenaMT workshop at CERN
         } \end{itemize}
     }
 
