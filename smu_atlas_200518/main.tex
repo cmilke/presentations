@@ -3,7 +3,7 @@
 
 %Begin Presentation
 \begin{document}
-    \title{ Status Report: Online Monitoring and Di-Higgs Analysis }
+    \title{ Status Report: Online Monitoring and VBF/ggF Discrimination in Di-Higgs }
     \author{Chris Milke}
     \date{18 May, 2020}
 
@@ -11,27 +11,22 @@
     \frame{\frametitle{Overview} \tableofcontents}
 
     \input{online_monitoring.tex}
-    % reiterate basic background and goal
-    % show cutflow chart (VBF=1 vs ggF) and explain what's happening. point out where I care
-    % note the huge number of ggF events getting through. My goal is to reduce this
-    % Show the varied c2v value chart, if only because I made it. Through the kinematics in backup
+    \input{dihiggs.tex}
     % Roc curve time! Use mjj distro and cumalitive distro to explain how I made roc curves
     % Now show the unweighted roc curves to show the different performances
     % Show my BDT
     % Now dissapoint everyone with the weighted version... hey steve, how do I weight stuff in SKlearn BDTs?
-    \input{dihiggs.tex}
-    % uhhh... I'm doing work for them? it's all pretty technical so I'm not really sure what to do here
+
     % Oh, I should probably mention how my DOE contract is ending so I'm wrapping things up and will soon be back in Dallas
 
     \section{Conclusion}
     \frame{
         \frametitle{Conclusions}
         \begin{itemize} {
-            \item The migration of B-Jet Trigger Monitoring Variables is moving along well
-            \item My first merge request has been submitted
-            \item New variables are already programmed in
+            \item The migration of B-Jet Trigger Monitoring Variables is still moving along well
             \item I've joined the 4b di-Higgs group to assist with VBF jet selection
-            \item Will likely base my thesis on the \cvv measurement and my contributions towards it
+            \item I have a functional BDT, but it needs lots of work
+            \item See y'all back in Dallas soon*
         } \end{itemize}
     }
 
