@@ -1,0 +1,18 @@
+\displayonelarge{An Initial Look at Different Discrimination Techniques}{
+    Simple tagging methods fail to perform at the level of the current technique, but a basic BDT* {\it appears} to do much better
+
+    \vspace{10mm}
+
+    {\tiny *BDT is trained using SKLearn, with inputs:}
+    \begin{itemize}
+        {\tiny \item $p_T$ of 2 leading-$p_T$ jets }
+        {\tiny \item $\eta$ of 2 leading-$p_T$ jets }
+        {\tiny \item $\phi$ of 2 leading-$p_T$ jets }
+        {\tiny \item $Energy$ of 2 leading-$p_T$ jets }
+        {\tiny \item $M_{jj}$ of leading $M_{jj}$ pair }
+    \end{itemize}
+}{rocs}
+
+\displayonelarge{Applying Event Weights Matters...}{
+    Evidently, I need to inform SKLearn that the events have weights during training. Of course, more sophisticated inputs will be implemented as well.
+}{rocs_weighted}
