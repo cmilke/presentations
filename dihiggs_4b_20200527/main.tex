@@ -1,0 +1,35 @@
+\documentclass{beamer}
+\input{header.tex}
+
+%Begin Presentation
+\begin{document}
+    \title{Status Report on VBF/ggF Discrimination BDT}
+    \author{Chris Milke}
+    \institute{Southern Methodist University}
+    \date{28 May, 2020}
+
+    \frame{\titlepage}
+    %{
+    %    \usebackgroundtemplate{\includegraphics[width=\paperwidth]{dallashall_atlas}}
+    %    \begin{frame} \titlepage \end{frame}
+    %}
+    %\frame{\frametitle{Overview} \tableofcontents}
+
+    \input{dihiggs_current_status.tex}
+    \input{dihiggs_new_studies.tex}
+
+    \section{Conclusion}
+    \frame{
+        \frametitle{Conclusions}
+        \begin{itemize} {
+            {\large \item Initial attempt at BDT with Fox-Wolfram moments is an improvement, but only barely}
+            {\large \item Current Fox-Wolfram moments may be bugged, investigation ongoing}
+            {\large \item More inputs and integration into main framework is coming soon!}
+        } \end{itemize}
+    }
+
+    \announcesection{Backup}
+    \fullscreenimage{BDT Input Ranking}{feature-importance_mjj_deta_FW_3}
+    \fullscreenimage{BDT Overtraining Check}{ot-check_mjj_deta_FW_3}
+    \input{fox_wolfram_dump.tex}
+\end{document}
