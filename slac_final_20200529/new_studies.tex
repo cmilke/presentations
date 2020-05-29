@@ -1,0 +1,72 @@
+\section{More Sophisticated Techniques}
+\frame{
+    \frametitle{Exploring Multi-Jet Discriminants: Centrality}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            {\small The VBF initial scatter quark jets are not always the only thing present in VBF events.
+            Radiated Jets (ISR \& FSR) are not uncommon, and provide additional handles for analysis.}
+            \begin{figure}
+                \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{ event_display}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{center}\resizebox{0.40\textheight}{!}{ \input{diagrams/vbf_3jet_isr} }\end{center}
+            \begin{center}\resizebox{0.40\textheight}{!}{ \input{diagrams/vbf_3jet_fsr} }\end{center}
+        \end{column}
+    \end{columns}
+}
+\displaythree{How Many Jets Am I Looking at Now?}
+{Before, events with three or more jets was not uncommon; now these are the norm.}
+{jet_counts_30GeV}
+{num_non_btagged}
+{truthMatched_num_non_btagged}
+
+\displayonelarge{Centrality in Single Higgs}{
+    In single Higgs case, centrality shows strong separation potential
+}{colinearity_cmilke_mjj_0}
+
+\displayonelarge{Centrality in Di-Higgs}{
+    In Di-Higgs, centrality {\it seems} much less effective...
+    but HH has far more jets, and the > 3 jet situation cannot be ignored.
+    How do we select which 3 to use?
+}{centrality3jet}
+
+\displayonelarge{Centrality in Di-Higgs, Many-Jet Situation}{
+    Naively, take leading three $p_T$ jets... This has very poor results.
+}{centralityPtGT3jet}
+
+\displaythree{Invariant-Mass Ranking}{
+    VBF jets and their radiation have distinctive signatures beyond only leading $M_{jj}$
+}{event_display}{mjj_signal_distribution}{mjj_subleading_distribution}
+
+\displayonelarge{Centrality in Di-Higgs using Invariant-Mass Ranking}{
+    Over 99\% of the time, one of the two jets of the Leading $M_{jj}$ pair is also
+    in the Sub-leading $M_{jj}$ pair, resulting in three jets.
+}{centralityGT3jet}
+
+\fullscreenimage{Centrality Overall}{centrality}
+
+\displaytwo{Centrality as a BDT Input}{
+    Improvement from Centrality is very small,
+    but there may be more to be gained with further study.
+}{rocs/rocs_centrality}{rocs/rocs_centrality_zoom0}
+
+
+
+%\fullscreenimage{Comparing Selection Performance}{roc_explanation}
+%\fullscreenimage{Current Selection Method Performance}{rocs/rocs_initial}
+%
+%\displayonelarge{Baseline BDT}{
+%    As a baseline, train BDT with same inputs as current algorithm. It should perform at least as well.
+%}{rocs/rocs_bdt1}
+%
+%\displayfour{Fox-Wolfram Distributions}
+%{fw_moments/fox-wolfram_1}
+%{fw_moments/fox-wolfram_2}
+%{fw_moments/fox-wolfram_3}
+%{fw_moments/fox-wolfram_4}
+%
+%
+%\displaytwo{BDT with Fox-Wolfram Moments}{
+%    Improvent from first seven FW Moments is minor, but noticeable.
+%}{rocs/rocs_bdt2}{rocs/rocs_bdt2_zoom}

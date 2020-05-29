@@ -1,0 +1,36 @@
+\section{Introduction to Di-Higgs VBF}
+\frame {
+    \frametitle{ My Goal: Increase Separation Between VBF and ggF }
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            I initially studied VBF/ggF Separation in single Higgs to invisible.
+            \begin{center}\resizebox{0.40\textheight}{!}{ \input{diagrams/vbf_2jet} }\end{center}
+            \begin{center}\resizebox{0.40\textheight}{!}{ \input{diagrams/ggF_2jet} }\end{center}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            Recently, I was asked to take a look at Di-Higgs to 4b.
+            \begin{center}\resizebox{0.40\textheight}{!}{ \input{diagrams/vbf_bbbb} }\end{center}
+        \end{column}
+    \end{columns}
+}
+
+\displayonelarge{Current Analysis Process}{
+    \begin{itemize} {
+        \item VBF selection occurs before Higgss are selected for
+        \item For now, my focus is entirely on the VBF selection stage
+        \item All the following studies conducted using MC16d Monte-Carlo
+    } \end{itemize}
+}{cutflows/cutflow_general_labelled}
+
+\displayonelarge{VBF-Specific Selections}{
+    {\tiny \begin{itemize}
+        \item VBF Pair: Remove events in which there are fewer than two jets that are {\bf not} btagged
+        \item VBF dEta: Select the jet pair with the highest invariant mass as the  "VBF Pair".\\Remove events where the $\Delta \eta$ of this pair is less than 3
+        \item VBF mjj: Remove events where the "VBF Pair's" invariant mass is less than 1000 GeV
+    \end{itemize} }
+}{cutflows/vbf_only}
+
+\displaytwo{ggF vs VBF for Various \cvv Values}{
+    Current selection process across ggF and varying values of \cvv
+}{cutflows/c2v_compare}{cutflows/c2v_compare_log}

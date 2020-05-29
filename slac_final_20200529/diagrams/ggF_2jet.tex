@@ -1,0 +1,21 @@
+\begin{tikzpicture} \begin{feynman}
+    \vertex (c);
+    \vertex [above left=of c] (a);
+    \vertex [below left=of c] (b);
+    \vertex [above left=of a] (gluon1b);
+    \vertex [below left=of b] (gluon2b);
+    \vertex [left=of gluon1b] (gluon1) {g};
+    \vertex [left=of gluon2b] (gluon2) {g};
+    \vertex [right=of c] (higgs) {H};
+    \vertex [above=of higgs] (rad1) {g};
+    \vertex [below=of higgs] (rad2) {g};
+
+    \diagram* {
+        (gluon1) -- [gluon] (gluon1b) --[gluon] (a),
+        (gluon2) -- [gluon] (gluon2b) --[gluon] (b),
+        (c) --[scalar] (higgs),
+        (gluon1b) -- [gluon] (rad1),
+        (gluon2b) -- [gluon] (rad2),
+        (a) -- (b) -- (c) -- (a)
+    };
+\end{feynman} \end{tikzpicture}

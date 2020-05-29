@@ -1,0 +1,44 @@
+\documentclass{beamer}
+\input{header.tex}
+
+%Begin Presentation
+\begin{document}
+    \title{VBF/ggF Discrimination in HH$\rightarrow$4b}
+    \author{Chris Milke}
+    \institute{Southern Methodist University}
+    \date{28 May, 2020}
+
+    \frame{\titlepage}
+    \input{introduction.tex}
+    \input{initial_studies.tex}
+    % 9 FW moment description (thanks Rachel!) *
+    \input{new_studies.tex}
+
+    % 17 Conclusion (find a nice picture)
+
+
+    \section{Conclusion}
+    \frame{
+        \frametitle{Conclusions}
+        \begin{itemize} {
+            {\large \item Initial attempt at BDT with Fox-Wolfram moments is an improvement, but only barely}
+        } \end{itemize}
+    }
+
+    \announcesection{Backup}
+
+    \displaytwo{Truth Jet Counting}{Other ways of counting jets:}
+    {truth_num_non_btagged_pt-gt30_zoom0}{truth_num_non_btagged_zoom0}
+
+    \displaytwo{More Truth Jet Counting}{Different Scale}
+    {truth_num_non_btagged_pt-gt30_zoom1}{truth_num_non_btagged_zoom1}
+
+    \fullscreenimage{BDT Input Ranking}{feature-importance_mjj_deta_FW_3}
+    \fullscreenimage{BDT Overtraining Check: $M_{jj}$ $\Delta\eta$ FW: Depth 3}
+        {ot-check_mjj_deta_FW_3}
+    \fullscreenimage{BDT Overtraining Check: $M_{jj}$ $\Delta\eta$ FW: Depth 3}
+        {ot-check_mjj_deta_FW_Cent3}
+    \fullscreenimage{BDT Overtraining Check: $M_{jj}$ $\Delta\eta$ FW Centrality: Depth 4}{ot-check_mjj_deta_FW_Cent4}
+    \fullscreenimage{BDT Overtraining Check: $M_{jj}$ $\Delta\eta$ FW Centrality: Depth 10}{ot-check_mjj_deta_FW_Cent10}
+    %\input{fox_wolfram_dump.tex}
+\end{document}
