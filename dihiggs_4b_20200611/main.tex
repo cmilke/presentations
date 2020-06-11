@@ -1,0 +1,30 @@
+\documentclass{beamer}
+\input{header.tex}
+
+%Begin Presentation
+\begin{document}
+    \title{Status Report on VBF/ggF Separation BDT}
+    \author{Chris Milke}
+    \institute{Southern Methodist University}
+    \date{ 11 June, 2020}
+
+    \frame{\titlepage}
+    \input{dihiggs_current_status.tex}
+    \input{dihiggs_new_studies.tex}
+
+    \section{Conclusion}
+    \frame{
+        \frametitle{Conclusions}
+        \begin{itemize} {
+            {\large \item Initial attempt at BDT with Fox-Wolfram moments is an improvement, though minor}
+            {\large \item Centrality shows some promise, but may lead to biasing. Investigation ongoing}
+            {\large \item More inputs and integration into main framework is coming soon!}
+        } \end{itemize}
+    }
+
+    \announcesection{Backup}
+    \fullscreenimage{BDT Input Ranking}{feature-importance_mjj_deta_FW_3}
+    \fullscreenimage{BDT Overtraining Check}{ot-check_mjj_deta_FW_3}
+    \input{fox_wolfram_dump.tex}
+    \input{centrality_extra.tex}
+\end{document}
