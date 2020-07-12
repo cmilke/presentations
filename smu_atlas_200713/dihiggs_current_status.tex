@@ -1,0 +1,17 @@
+\section{Analysis Baseline Status}
+
+\displayonelarge{VBF Selection Process Overview}{
+    Selection of VBF events from data is done through a series of selection "filters"
+}{cutflows/general}
+
+\displayonelarge{VBF-Specific Selections}{
+    {\tiny \begin{itemize}
+        \item VBF Pair: Remove events in which there are fewer than two jets that are {\bf not} btagged
+        \item VBF dEta: Select the jet pair with the highest invariant mass as the  "VBF Pair".\\Remove events where the $\Delta \eta$ of this pair is less than 3
+        \item VBF mjj: Remove events where the "VBF Pair's" invariant mass is less than 1000 GeV
+    \end{itemize} }
+}{cutflows/vbf_only}
+
+\displaytwo{ggF vs VBF for Various \cvv Values}{
+    Current selection process across ggF and varying values of \cvv
+}{cutflows/c2v_compare}{cutflows/c2v_compare_log}

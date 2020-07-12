@@ -1,0 +1,38 @@
+\section{BDT Improvements}
+
+\displayonelarge{From Last Time: My Initial Attempt at BDTs}{
+    {\small My first attempts at a BDT were very rudimentary, using improper weighting, basic kinematic variables as inputs and poor statistics.}
+
+    \vspace{10mm}
+
+    {\tiny *BDT is trained using SKLearn, with inputs:}
+    \begin{itemize}
+        {\tiny \item $p_T$ of 2 leading-$p_T$ jets }
+        {\tiny \item $\eta$ of 2 leading-$p_T$ jets }
+        {\tiny \item $\phi$ of 2 leading-$p_T$ jets }
+        {\tiny \item $Energy$ of 2 leading-$p_T$ jets }
+        {\tiny \item $M_{jj}$ of leading $M_{jj}$ pair }
+    \end{itemize}
+}{rocs/first_roc}
+
+\displayonelarge{Step 1: Actually Tell SK-Learn that Samples are Weighted}{
+    As a baseline, train BDT with same inputs as current algorithm. It should perform at least as well.
+}{rocs/baseline_roc}
+
+\displayfour{Step 2: Improve Inputs - Fox Wolfram Moments}
+{fw_moments/fox-wolfram_1}
+{fw_moments/fox-wolfram_2}
+{fw_moments/fox-wolfram_3}
+{fw_moments/fox-wolfram_4}
+
+\displaytwo{BDT with Fox-Wolfram Moments}{
+    Improvent from first seven FW Moments is minor, but noticeable.
+}{rocs/rocs_bdt2}{rocs/rocs_bdt2_zoom}
+
+
+\displayonelarge{Step 3: Increase Statistics Using Cross Validation}{
+    {\small Switching to TMVA and utilizing cross validation training improves performance with the same BDT inputs and architecture.
+    Opens the door for more complex BDT architectures.}
+}{rocs/rocs_cross_validation}
+
+
