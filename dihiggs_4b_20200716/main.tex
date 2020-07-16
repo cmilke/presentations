@@ -1,0 +1,33 @@
+\documentclass{beamer}
+\input{header.tex}
+
+%Begin Presentation
+\begin{document}
+    \title{Update on VBF/ggF Separation BDT}
+    \author{Chris Milke}
+    \date{17 July, 2020}
+
+    \frame{\titlepage}
+    \frame{\frametitle{Overview} \tableofcontents}
+
+    \input{dihiggs_current_status.tex}
+    \input{dihiggs_new_studies.tex}
+
+
+    \section{Conclusion}
+    \frame{
+        \frametitle{Conclusions}
+        \begin{itemize} {
+            \item Significant progress has been made in improving my VBF/ggF separation BDT
+            \item Large scale view of the selection process is encouraging, with BDT showing promise of noticeably reducing ggF contamination
+            \item Investigation into more complex inputs is ongoing, but requires tinkering with XhhCommon to incorporate new truth information
+        } \end{itemize}
+    }
+
+    \announcesection{Backup}
+    \fullscreenimage{ROC Curves!}{rocs/roc_explanation}
+    \fullscreenimage{}{Xwt_plots/final_weight_comparison_FourTagCutflow_with_cvv4}
+    \fullscreenimage{}{Xwt_plots/final_weight_comparison_TwoTagCutflow}
+    \fullscreenimage{}{Xwt_plots/final_roc_TwoTagCutflow}
+    \input{fox_wolfram_dump.tex}
+\end{document}

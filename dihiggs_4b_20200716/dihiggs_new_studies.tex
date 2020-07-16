@@ -1,0 +1,26 @@
+\section{BDT Evaluation}
+
+\displaytwo{Naive Cutflow Performance}{
+    Using same ggF rejection level (BDT cut=0.05) as the default selection method leads to unexpected boost in ggF acceptance downstream. 
+}
+{cutflows/general}
+{cutflows/new}
+
+
+\displayonelarge{Comparison of Final Throughput for Various \cvv Values }{
+    {\small Depending on the cut, the VBF BDT is able to drastically reduce ggF contamination
+    with a limited effect on the VBF samples.}
+}{Xwt_plots/final_weight_comparison_FourTagCutflow}
+
+\displayonelarge{Final Throughput ``ROC Curves''}{
+    {\small
+        The VBF BDT is able to at least match the current cut-based selection process for all studied values of \cvv.
+        ggF contamination can be reduced rapidly with tighter values of the BDT cut.
+    }
+}{Xwt_plots/final_roc_FourTagCutflow}
+
+\displaytwo{Cutflow Performance at Higher Rejection}{
+    Using a BDT cut at 10\% efficiency level (BDT cut=0.3) initially causes VBF efficiency to plummet, but later selection cuts make up for this, while ggF acceptance remains low.
+}
+{cutflows/general}
+{cutflows/better}
