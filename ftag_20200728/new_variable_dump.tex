@@ -1,0 +1,30 @@
+%fullscreenimage{MV2c10}{btag_MV2c10}
+
+\displayfour{$d_0$/$z_0$ With Respect to PV of Tracks Used in Tagging}
+{btag_valD0wrtPVofTracks}
+{btag_sigD0wrtPVofTracks}
+{btag_valZ0wrtPVofTracks}
+{btag_sigZ0wrtPVofTracks}
+
+\foreach \tagger in {IP2D, IP3D, SV1, DL1R, RNNIP}
+{
+    \displaythree{Tagger \tagger}{}
+    {btag_\tagger_pb}
+    {btag_\tagger_pc}
+    {btag_\tagger_pu}
+}
+
+\displaythree{General Counts}{}
+{track_count} {jet_count} {vertex_count}
+
+\displaythree{Track Values}{}
+{track_Et} {track_eta} {track_phi}
+
+\displaythree{Track $d_0$}{}
+{track_d0} {track_d0err} {track_d0sig}
+
+\displaythree{Track $z_0$}{}
+{track_z0} {track_z0err} {track_z0sig}
+
+\displaythree{Jet Values}{}
+{jet_pt} {jet_eta} {jet_phi}
