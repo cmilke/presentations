@@ -1,0 +1,51 @@
+\documentclass{beamer}
+\input{header.tex}
+
+%Begin Presentation
+\begin{document}
+    \title{Update on Status of Online Monitoring}
+    \author{Chris Milke}
+    \date{21 September, 2020}
+
+    \frame{\titlepage}
+    %\frame{\frametitle{Overview} \tableofcontents}
+
+    \displayone{Far More Plots Added}
+    {
+        Online Monitoring Plots now include:
+        \begin{itemize}
+            \item Basic Jet and track information
+            \item Flavor probabilities and log-likelihood ratios for IP2D, IP3D, DL1r, and RNNIP
+            \item The complete list of inputs to DL1r
+        \end{itemize}
+
+        \vspace{10mm}
+        {\tiny Courtesy of Suyog, test plots can now be found at \\ http://www.physics.smu.edu/cmilke/online\_monitoring/}
+    }{all_plots}
+
+    \displayfour{Log-likelihood Ratios}
+        {btag_IP2D_llr}
+        {btag_IP3D_llr}
+        {btag_DL1r_llr}
+        {btag_rnnip_llr}
+
+    \displayfour{Light-Jet Probabilities}
+        {btag_IP2D_pu}
+        {btag_IP3D_pu}
+        {btag_DL1r_pu}
+        {btag_rnnip_pu}
+
+    \displaythree{RNNIP Flavor Probabilities}
+        {}
+        {btag_rnnip_pb}
+        {btag_rnnip_pu}
+        {btag_rnnip_pc}
+
+    \displaythree{Miscellaneous Empty Plots}
+        {}
+        {JetFitter_mass}
+        {SV1_masssvx}
+        {SV1_NGTinSvx}
+   
+    %\announcesection{Backup}
+\end{document}

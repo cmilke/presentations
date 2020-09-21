@@ -1,0 +1,172 @@
+%Imports and customization
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{tikz-feynman}
+\usepackage{ulem}
+\graphicspath{ 
+    {./images/}
+}
+
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{sidebar right}{}
+\setbeamertemplate{footline}{
+    \hfill\usebeamertemplate***{navigation symbols}
+    \hspace{1cm}\insertframenumber{}/\inserttotalframenumber
+}
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+\setbeamersize{text margin left=5mm,text margin right=5mm} 
+
+\setbeamerfont{itemize/enumerate body}{size=\scriptsize}
+\setbeamerfont{itemize/enumerate subbody}{size=\scriptsize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\scriptsize}
+
+
+%Custom Macros
+\newcommand{\statwarn}{
+    \tiny \color{red} Absolute numbers here mean NOTHING. Plots are based on small (100k events) samples, and are highly biased. All that matters is relative position!
+}
+
+
+% WARNING: When using these commands, the image argument must
+% NOT have spaces between itself and the braces
+\newcommand{\fullscreenimage}[2]{
+    \frame{
+        \frametitle{#1} 
+        \begin{figure}
+        \includegraphics[height=0.9\textheight,width=\textwidth,keepaspectratio]{#2}
+        \end{figure}
+    }
+}
+
+
+\newcommand{\displayone}[3]{
+    \frame{
+        \frametitle{#1} 
+        \begin{columns}
+            \begin{column}{0.5\textwidth}
+                #2
+            \end{column}
+            \begin{column}{0.5\textwidth}
+                \begin{figure}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#3}
+                \end{figure}
+            \end{column}
+        \end{columns}
+    }
+}
+
+\newcommand{\displayonelarge}[3]{
+    \frame{
+        \frametitle{#1} 
+        \begin{columns}
+            \begin{column}{0.3\textwidth}
+                #2
+            \end{column}
+            \begin{column}{0.7\textwidth}
+                \begin{figure}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#3}
+                \end{figure}
+            \end{column}
+        \end{columns}
+    }
+}
+
+
+\newcommand{\displaytwo}[4]{
+    \frame{
+        \frametitle{#1} 
+        #2
+        \begin{columns}
+            \begin{column}{0.5\textwidth}
+                \begin{figure}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#3}
+                \end{figure}
+            \end{column}
+            \begin{column}{0.5\textwidth}
+                \begin{figure}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#4}
+                \end{figure}
+            \end{column}
+        \end{columns}
+    }
+}
+
+
+\newcommand{\displaythree}[5]{
+    \frame{
+        \begin{columns}[T]
+            \begin{column}{0.4\textwidth}
+                {\usebeamercolor[fg]{title} \insertframetitle{#1} }\\
+                \vspace{5mm}
+                #2
+            \end{column}
+            \begin{column}{0.4\textwidth}
+                \begin{figure}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#3}
+                \end{figure}
+            \end{column}
+        \end{columns}
+        \begin{columns}[T]
+            \begin{column}{0.4\textwidth}
+                \begin{figure}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#4}
+                \end{figure}
+            \end{column}
+            \begin{column}{0.4\textwidth}
+                \begin{figure}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#5}
+                \end{figure}
+            \end{column}
+        \end{columns}
+    }
+}
+
+
+\newcommand{\displayfour}[5]{
+    \frame{
+        \frametitle{#1} 
+        \begin{columns}[T]
+            \begin{column}{0.4\textwidth}
+                \begin{figure}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#2}
+                \end{figure}
+            \end{column}
+            \begin{column}{0.4\textwidth}
+                \begin{figure}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#3}
+                \end{figure}
+            \end{column}
+        \end{columns}
+        \begin{columns}[T]
+            \begin{column}{0.4\textwidth}
+                \begin{figure}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#4}
+                \end{figure}
+            \end{column}
+            \begin{column}{0.4\textwidth}
+                \begin{figure}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#5}
+                \end{figure}
+            \end{column}
+        \end{columns}
+    }
+}
+
+
+\newcommand{\pstrike}[2]{
+    \only<-\the\numexpr#1-1>{#2}
+    \only<#1->{\sout{#2}}
+}
+
+
+\newcommand{\announcesection}[1]{
+    \section{#1}
+    \frame{
+        \begin{center}
+            {\huge #1} 
+        \end{center}
+    }
+}
+
+\newcommand{\fourB}{$b \bar b b \bar b$}
+\newcommand{\cvv}{$C_{2V}$ }
