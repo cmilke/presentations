@@ -10,7 +10,7 @@
     \frame{\titlepage}
     %\frame{\frametitle{Overview} \tableofcontents}
 
-    \displayone{Far More Plots Added}
+    \displayone{Many More Plots Added}
     {
         Online Monitoring Plots now include:
         \begin{itemize}
@@ -23,20 +23,32 @@
         {\tiny Courtesy of Suyog, test plots can now be found at \\ http://www.physics.smu.edu/cmilke/online\_monitoring/}
     }{all_plots}
 
-    \displayfour{Log-likelihood Ratios}
+    \displayfour{Flavor Probability Distributions}
         {btag_IP2D_llr}
         {btag_IP3D_llr}
         {btag_DL1r_llr}
         {btag_rnnip_llr}
 
-    \displayfour{Light-Jet Probabilities}
+    \displayfour{IP2D Flavor Probabilities}
+        {btag_IP2D_llr}
+        {btag_IP2D_pb}
         {btag_IP2D_pu}
-        {btag_IP3D_pu}
-        {btag_DL1r_pu}
-        {btag_rnnip_pu}
+        {btag_IP2D_pc}
 
-    \displaythree{RNNIP Flavor Probabilities}
-        {}
+    \displayfour{IP3D Flavor Probabilities}
+        {btag_IP3D_llr}
+        {btag_IP3D_pb}
+        {btag_IP3D_pu}
+        {btag_IP3D_pc}
+
+    \displayfour{DL1r Flavor Probabilities}
+        {btag_DL1r_llr}
+        {btag_DL1r_pb}
+        {btag_DL1r_pu}
+        {btag_DL1r_pc}
+
+    \displayfour{RNNIP Flavor Probabilities}
+        {btag_rnnip_llr}
         {btag_rnnip_pb}
         {btag_rnnip_pu}
         {btag_rnnip_pc}
@@ -47,5 +59,7 @@
         {SV1_masssvx}
         {SV1_NGTinSvx}
    
-    %\announcesection{Backup}
+    \announcesection{Backup}
+    \fullscreenimage{DL1r With Tighter Range}{btag_DL1r_llr_zoom}
+    \fullscreenimage{Code to Calculate LLR}{llr_code}
 \end{document}

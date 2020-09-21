@@ -7,8 +7,13 @@ images_to_sync='
     btag_IP3D_pu
     btag_DL1r_pu
     btag_rnnip_pu
+    btag_IP2D_pb
+    btag_IP3D_pb
+    btag_DL1r_pb
     btag_rnnip_pb
-    btag_rnnip_pu
+    btag_IP2D_pc
+    btag_IP3D_pc
+    btag_DL1r_pc
     btag_rnnip_pc
     JetFitter_mass
     SV1_masssvx
