@@ -11,7 +11,7 @@
     \frame{\frametitle{Overview} \tableofcontents}
 
     \section{B-Jet Trigger Online Monitoring}
-        \displaytwo{Online Monitoring Plots are Now Extensive}{
+        \displaytwo{Online B-Jet Trigger Monitoring}{
             Online Monitoring Plots now include:
             \begin{itemize}
                 \item Basic Jet and track information
@@ -24,8 +24,36 @@
         \displayonelarge{Di-Higgs VBF to 4b MC Validation}{
             Tasked by HH VBF coordinator to perform validation on 4b final-state (across multiple coupling variations) for a new large-scale MC production.
         }{validation_process}
+
+        \displayonelarge{Validation Parameter Coverage}{
+            \begin{center} \resizebox{0.3\textheight}{!}{\begin{tabular}{ |l|l|l| }
+                \hline
+                \textbf {$\kappa_{2V}$} & \textbf {$\kappa_\lambda$} & \textbf {$\kappa_V$} \\
+                \hline
+                1    & 1   & 1   \\
+                0    & 1   & 1   \\
+                0.5  & 1   & 1   \\
+                1.5  & 1   & 1   \\
+                2    & 1   & 1   \\
+                3    & 1   & 1   \\
+                1    & 0   & 1   \\
+                1    & 2   & 1   \\
+                1    & 10  & 1   \\
+                1    & 1   & 0.5 \\
+                1    & 1   & 1.5 \\
+                0    & 0   & 1   \\
+                \hline
+            \end{tabular}} \end{center}
+
+            $\kappa_\lambda=0$ causes Pythia to crash...
+        }{vbf-hh_diagrams}
+
         \displayonelarge{Validation Output}{
-            There are upstream issues with job options, delaying proper validation plots
+            There \sout{are} were upstream issues with job options, delaying proper validation plots
+
+            \vspace{10mm}
+
+            {\footnotesize (The fix for this was provided just a couple hours ago, so validation will proceed shortly)}
         }{validation_final_file}
 
     \section{Research Status}
