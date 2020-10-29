@@ -1,0 +1,146 @@
+\section{NNT Linear Combinations}
+
+
+\frame{
+    \frametitle{Why Didn't I Reweight Directly With NNTs?}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            Production JIRA lists 13 variations for current MC
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{center} 
+            Current MC Samples 
+            \resizebox{0.5\textheight}{!}{\begin{tabular}{ |l|l|l|l| }
+                \hline
+                \textbf {DSID} & \textbf {$\kappa_{2V}$} & \textbf {$\kappa_\lambda$} & \textbf {$\kappa_V$} \\
+                \hline
+                    450044  &   1   & 1   & 1   \\ 
+                    450045  &   1   & 2   & 1   \\ 
+                    450046  &   2   & 1   & 1   \\ 
+                    450047  &   1.5 & 1   & 1   \\ 
+                    450048  &   1   & 1   & 0.5 \\ % !!
+                    450049  &   0.5 & 1   & 1   \\ 
+                    450050  &   0   & 1   & 1   \\ 
+                    450051  &   0   & 1   & 0.5 \\ % !!
+                    450052  &   1   & 0   & 1   \\ 
+                    450053  &   0   & 0   & 1   \\ % !!
+                    450054  &   4   & 1   & 1   \\ 
+                    450055  &   1   & 10  & 1   \\ 
+                    450056  &   1   & 1   & 1.5 \\ % !!
+                \hline
+            \end{tabular}} \end{center}
+        \end{column}
+    \end{columns}
+}
+
+\frame{
+    \frametitle{Why Didn't I Reweight Directly With NNTs?}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            Production JIRA lists 13 variations for current MC
+
+            \vspace{5mm}
+
+            Only 9 of these were put to use. The DAODs of the other 4 are outdated.
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{center} 
+            Current MC Samples 
+            \resizebox{0.5\textheight}{!}{\begin{tabular}{ |l|l|l|l| }
+                \hline
+                \textbf {DSID} & \textbf {$\kappa_{2V}$} & \textbf {$\kappa_\lambda$} & \textbf {$\kappa_V$} \\
+                \hline
+                    450044  &   1   & 1   & 1   \\ 
+                    450045  &   1   & 2   & 1   \\ 
+                    450046  &   2   & 1   & 1   \\ 
+                    450047  &   1.5 & 1   & 1   \\ 
+     \rowcolor{red} 450048  &   1   & 1   & 0.5 \\ % !!
+                    450049  &   0.5 & 1   & 1   \\ 
+                    450050  &   0   & 1   & 1   \\ 
+     \rowcolor{red} 450051  &   0   & 1   & 0.5 \\ % !!
+                    450052  &   1   & 0   & 1   \\ 
+     \rowcolor{red} 450053  &   0   & 0   & 1   \\ % !!
+                    450054  &   4   & 1   & 1   \\ 
+                    450055  &   1   & 10  & 1   \\ 
+     \rowcolor{red} 450056  &   1   & 1   & 1.5 \\ % !!
+                \hline
+            \end{tabular}} \end{center}
+        \end{column}
+    \end{columns}
+}
+
+\frame{
+    \frametitle{Why Didn't I Reweight Directly With NNTs?}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            Production JIRA lists 13 variations for current MC
+
+            \vspace{5mm}
+
+            Only 9 of these were put to use. The DAODs of the other 4 are outdated.
+
+            \vspace{5mm}
+
+            There are 84 possible ways of combining 6 of these 9 samples.
+
+            Not a single one of these combinations is valid
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{center} 
+            Current MC Samples 
+            \resizebox{0.5\textheight}{!}{\begin{tabular}{ |l|l|l|l| }
+                \hline
+                \textbf {DSID} & \textbf {$\kappa_{2V}$} & \textbf {$\kappa_\lambda$} & \textbf {$\kappa_V$} \\
+                \hline
+                    450044  &   1   & 1   & 1   \\ 
+                    450045  &   1   & 2   & 1   \\ 
+                    450046  &   2   & 1   & 1   \\ 
+                    450047  &   1.5 & 1   & 1   \\ 
+     \rowcolor{red} 450048  &   1   & 1   & 0.5 \\ % !!
+                    450049  &   0.5 & 1   & 1   \\ 
+                    450050  &   0   & 1   & 1   \\ 
+     \rowcolor{red} 450051  &   0   & 1   & 0.5 \\ % !!
+                    450052  &   1   & 0   & 1   \\ 
+     \rowcolor{red} 450053  &   0   & 0   & 1   \\ % !!
+                    450054  &   4   & 1   & 1   \\ 
+                    450055  &   1   & 10  & 1   \\ 
+     \rowcolor{red} 450056  &   1   & 1   & 1.5 \\ % !!
+                \hline
+            \end{tabular}} \end{center}
+        \end{column}
+    \end{columns}
+}
+
+\frame{
+    \frametitle{Thanks to Max, a New Variation Will Soon Be Available}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \begin{center} 
+            {\tiny NNT Basis Set}
+
+            \resizebox{0.2\textheight}{!}{ \begin{tabular}{ |l|l|l| }
+                \hline
+                \textbf {$\kappa_{2V}$} & \textbf {$\kappa_\lambda$} & \textbf {$\kappa_V$} \\
+                \hline
+                    1.  &   1. & 1.  \\
+                    2.  &   1. & 1.  \\
+                    1.5 &   1. & 1.  \\
+   \rowcolor{green} 0.  &   1. & 0.5 \\
+                    1.  &   0. & 1.  \\
+                    1.  &  10. & 1.  \\
+                \hline
+            \end{tabular}}
+            \end{center}
+
+        \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]
+            {coupling_scan_auto_chosen_reco_R0_hash_max}
+
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            Linear Combination Equation
+            \vspace{10mm}
+
+            {\tiny \input{final_amplitude_recoR0.tex}}
+        \end{column}
+    \end{columns}
+}

@@ -1,0 +1,53 @@
+\documentclass{beamer}
+\usepackage{pdfpages}
+\input{header.tex}
+
+%Begin Presentation
+\begin{document}
+    \setbeamercolor{background canvas}{bg=}
+    \title{Exploring 3D Coupling Scan Limits}
+    \author{Chris Milke}
+    \date{29 October, 2020}
+
+    \frame{\titlepage}
+    \frame{\frametitle{Overview} \tableofcontents}
+
+    \input{math_lesson.tex}
+    \input{basis_states.tex}
+    \input{truth_reweighting.tex}
+    \input{reco_reweighting.tex}
+
+    \section{Conclusion}
+    \frame{
+        \frametitle{Conclusions}
+        \begin{itemize} {
+            \item NNT-based 3D reweighting is now built into limit-setting framework, just waiting for production to finish
+            \item 2D $\kvv,\kl$ scan is already functional, and 2D plots are nearly functional
+            \item 3D scanning is soon to come!
+        } \end{itemize}
+    }
+
+    \announcesection{Backup}
+    \fullscreenimage{}{coupling_scan_auto_chosenR0_hash_max}
+    \fullscreenimage{}{coupling_scan_auto_chosenR1_hash_max}
+    \fullscreenimage{}{coupling_scan_auto_chosenR2_hash_max}
+    \fullscreenimage{}{coupling_scan_auto_chosen_reco_R0_hash_max}
+    \fullscreenimage{Cheat Reweighting}{c2v_scan_scan_test003_samps_vbf_pd_16_xsec}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
