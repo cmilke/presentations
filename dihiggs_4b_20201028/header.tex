@@ -105,6 +105,27 @@
     }
 }
 
+\newcommand{\displaytwocaption}[6]{
+    \frame{
+        \frametitle{#1} 
+        #2
+        \begin{columns}
+            \begin{column}{0.5\textwidth}
+                \begin{figure}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#3}
+                    \caption{#4}
+                \end{figure}
+            \end{column}
+            \begin{column}{0.5\textwidth}
+                \begin{figure}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#5}
+                    \caption{#6}
+                \end{figure}
+            \end{column}
+        \end{columns}
+    }
+}
+
 
 \newcommand{\displaythree}[5]{
     \frame{
