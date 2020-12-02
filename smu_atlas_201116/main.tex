@@ -1,0 +1,61 @@
+\documentclass{beamer}
+\usepackage{pdfpages}
+\input{header.tex}
+
+%Begin Presentation
+\begin{document}
+    \setbeamercolor{background canvas}{bg=}
+    \title{$\kvv$, $\kv$, $\kl$ Linear Combination Scan}
+    \author{Chris Milke}
+    \date{17 November, 2020}
+
+    \frame{\titlepage}
+    \frame{\frametitle{Overview} \tableofcontents}
+
+    \input{math_lesson.tex}
+    \input{basis_states.tex}
+    \input{reco_reweighting.tex}
+    \input{applying_limits.tex}
+
+    \section{Conclusion}
+    \displaythree{Conclusions}{
+        \begin{itemize} {
+            \item NNT-based 3D reweighting is now fully functional
+            \item Various statistical details still need to be worked out
+            \item If there's interest, I can make my 3D-Scanning toolkit available for other groups
+        } \end{itemize}
+    }
+    {2D_scan_scan_test_beta5_samps_vbf_pd_161718_c1v_multislice_exclusion}
+    {2D_scan_scan_test_beta5_samps_vbf_pd_161718_kl_multislice_exclusion}
+    {2D_scan_scan_test_beta5_samps_vbf_pd_161718_c2v_multislice_exclusion}
+
+    \announcesection{Backup}
+    \fullscreenimage{Looking at Many Bases at Once}{coupling_scan_rnd_base}
+    \fullscreenimage{Normalize each distribution to its own integral}{coupling_scan_rnd_hori}
+    \fullscreenimage{Log Helps, but 'best' states are still unclear}{coupling_scan_rnd_hori_log}
+    \input{truth_reweighting.tex}
+    \fullscreenimage{}{coupling_scan_auto_chosenR0_hash_max}
+    \fullscreenimage{}{coupling_scan_auto_chosenR1_hash_max}
+    \fullscreenimage{}{coupling_scan_auto_chosenR2_hash_max}
+    \fullscreenimage{}{coupling_scan_auto_chosen_reco_R0_hash_max}
+    \foreach \val in {0.9, 0.93, 0.96, 1.0, 1.03, 1.06, 1.1}{ \fullscreenimage{}{2D_scan_scan_test_beta5_samps_vbf_pd_161718_c1v\val_exclusion} }
+    \foreach \val in {-16.0, -12.0, -9.0, -7.0, -5.0, -3.0, -1.0, 0.0, 1.0, 3.0, 5.0, 7.0, 9.0, 12.0, 16.0}{ \fullscreenimage{}{2D_scan_scan_test_beta5_samps_vbf_pd_161718_kl\val_exclusion} }
+    \foreach \val in {-2.0, -1.0, 0.0, 0.5, 1.0, 1.5,  2.0, 3.0, 4.0}{ \fullscreenimage{}{2D_scan_scan_test_beta5_samps_vbf_pd_161718_c2v\val_exclusion} }
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
