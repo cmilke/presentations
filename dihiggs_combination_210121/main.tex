@@ -1,0 +1,33 @@
+\documentclass{beamer}
+\usepackage{pdfpages}
+\input{header.tex}
+
+%Begin Presentation
+\begin{document}
+    \setbeamercolor{background canvas}{bg=}
+    \title{VBF Signals Combinations and Re-Weightings}
+    \author{Chris Milke}
+    \date{21 January, 2021}
+
+    \frame{\titlepage}
+    %\frame{\frametitle{Overview} \tableofcontents}
+
+    %\input{intro.tex} TODO: explain difference between linear combination and reweighting
+    \input{how_to_reweight.tex}
+    %\input{reweigting_no_work.tex} TODO
+    %\input{why_no_work.tex} TODO
+
+    \section{Conclusion}
+    \frame{
+        \frametitle{Conclusions}
+        \begin{itemize} {
+            {\large \item Linear combinations are able to effectively reweight distributions at truth level}
+            {\large \item There are still significant problems with using truth distributions to reweight reconstructed events though}
+            {\large \item Investigation still ongoing, with further details expected by the next meeting}
+            {\large \item These issues are unfortunately delaying completion of the VBF reweighting tool}
+        } \end{itemize}
+    }
+
+    %\announcesection{Backup}
+
+\end{document}

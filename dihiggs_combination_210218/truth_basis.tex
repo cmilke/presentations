@@ -1,0 +1,51 @@
+\frame{
+    \frametitle{Validity of Linear Combinations at Truth-Level}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \begin{center} 
+            {\tiny Basis Set}
+
+            \resizebox{0.2\textheight}{!}{\begin{tabular}{ |l|l|l| }
+                \hline
+                \textbf {$\kappa_{2V}$} & \textbf {$\kappa_\lambda$} & \textbf {$\kappa_V$} \\
+                \hline
+                1.  &  1. &  1.  \\
+                1.5 &  1. &  1.  \\
+                2.  &  1. &  1.  \\
+                1.  &  0. &  1.  \\
+                1.  & 10. &  1.  \\
+                1.  &  1. &  1.5 \\
+                \hline
+            \end{tabular}} \end{center}
+
+            \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]
+                {coupling_scan_auto_chosenR1_hash_max}
+
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \resizebox{0.8\textwidth}{!}{ \begin{minipage}{1.0\textwidth}
+            Linear Combination Equation
+
+            \vspace{10mm}
+
+            {\tiny \input{final_amplitude_truth_basis.tex}}
+            \end{minipage}}
+        \end{column}
+    \end{columns}
+}
+
+\displaythree{Truth Combination Plots}
+{Note that variation (1,1,1) is among the basis states and only present as a sanity check.}
+{truth_comb_cvv1p0cl1p0cv1p0}
+{truth_comb_cvv1p0cl20p0cv1p0}
+{truth_comb_cvv1p0cl1p0cv0p5}
+ 
+\displaythree{More Truth Combination Plots}{}
+{truth_comb_cvv0p0cl0p0cv1p0}
+{truth_comb_cvv0p0cl1p0cv1p0}
+{truth_comb_cvv0p5cl1p0cv1p0}
+ 
+\displaythree{Yet More Truth Combination Plots}{}
+{truth_comb_cvv1p0cl2p0cv1p0}
+{truth_comb_cvv1p0cl5p0cv1p0}
+{truth_comb_cvv3p0cl1p0cv1p0}

@@ -1,0 +1,43 @@
+\documentclass{beamer}
+\usepackage{pdfpages}
+\input{header.tex}
+
+%Begin Presentation
+\begin{document}
+    \setbeamercolor{background canvas}{bg=}
+    \title{VBF Signals Combinations and Re-Weightings}
+    \author{Chris Milke}
+    \date{18 February, 2021}
+
+    \frame{\titlepage}
+
+    %\frame{\frametitle{Overview} \tableofcontents}
+    % last time
+    \announcesection{Last Time, Truth Reweighting}
+    \importpdfwpages{last_time}{1}{4}
+
+    % 2D reweighting
+    \input{2D_reweighting.tex}
+
+    % back to combinations, truth first, then reco
+    \input{reco_combinations.tex}
+
+    \section{Conclusion}
+    \frame{
+        \frametitle{Conclusions}
+        \begin{itemize} {
+            \item VBF Reweighting has proven much more challenging than anticipated
+            \item Reweighting with mHH alone does not seem to be possible
+            \item 2D Reweighting has shown to be just as non-viable, for all variables tested
+            \item While Reweighting may be possible through a more clever approach or the appropriate variables, I will be shifting my focus to the direct combination method
+            \item Immediate steps will be applying direct combination to the newly produced samples
+            \item Further research will involve optimizing the accuracy of direct combination as much possible
+            \item If requested, a general tool to utilize the direct combination approach can be developed for other groups to use
+        } \end{itemize}
+    }
+
+    \announcesection{Backup}
+    \input{truth_basis.tex}
+
+
+\end{document}

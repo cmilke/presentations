@@ -1,0 +1,46 @@
+\documentclass{beamer}
+\usepackage{pdfpages}
+\input{header.tex}
+
+%Begin Presentation
+\begin{document}
+    \setbeamercolor{background canvas}{bg=}
+    \title{Thesis Committee Meeting I}
+    \author{Chris Milke}
+    \date{26 February, 2021}
+
+    \frame{\titlepage}
+    \frame{\frametitle{Overview} \tableofcontents}
+
+    % Intro
+    \input{intro.tex}
+
+    % Selection
+    \input{selection.tex}
+
+    % Combination Process
+    \input{combination.tex}
+
+    % Validity of Combination and 1/2/3D Limits
+    \input{reco_combinations.tex}
+
+    \fullscreenimage{Work at SLAC Under DOE SCGSR Grant}{doe_fun}
+
+    \section{Conclusion}
+    \frame{
+        \frametitle{Conclusions}
+        \begin{itemize}
+            \item New signal samples have been produced, new combinations need to be determined
+            \item Many oppurtunities for better optimization of linear combination approach
+            \item Current work will involve identifying ideal (minimal error) basis sets
+            \item Will likely develop a tool for use by other di-Higgs VBF groups
+            \item Research into NLO effects and theoretical validity of approach will need to be investigated as well
+            \item Future work may involve applying framework to HL-LHC simulations to attain projected limits with HGTD in place
+        \end{itemize}
+    }
+
+    \announcesection{Backup}
+    \input{2D_explanation.tex}
+
+
+\end{document}
