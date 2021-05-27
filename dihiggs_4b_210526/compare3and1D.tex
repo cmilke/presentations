@@ -1,0 +1,57 @@
+\displayfour{3D Combination VS 1D Combination}
+{reco_mHH_1-2D_compare_cvv0p0cl1p0cv1p0}
+{reco_mHH_1-2D_compare_cvv1p0cl0p0cv1p0}
+{reco_mHH_1-2D_compare_cvv2p0cl1p0cv1p0}
+{reco_mHH_1-2D_compare_cvv3p0cl1p0cv1p0}
+
+
+\frame{
+    \frametitle{3D Equation VS 1D Equations}
+    \begin{columns}
+        \begin{column}{0.7\textwidth}
+            \resizebox{0.8\textwidth}{!}{ \begin{minipage}{1.0\textwidth}
+            { \footnotesize 
+                The optimal 6-Term basis uses all the samples present in the two individual 1D combinations.
+
+                When combining samples along an axis, all the coefficients associated with that coupling drop to zero.
+
+                \vspace{2mm}
+                e.g. for the $\sigma{\left(\frac{1}{2},1,1 \right)}$ coefficient for $\kvv=\kv=1$:
+                \vspace{3mm}
+
+                $\left(2 \kappa_{2V}^{2} - 2 \kappa_{2V} \kappa_{V}^{2} - 3 \kappa_{2V} \kappa_{V} \kappa_{\lambda} + 3 \kappa_{V}^{3} \kappa_{\lambda}\right)$
+
+                $ = \left(2 \cdot 1^{2} - 2 \cdot 1 \cdot 1^{2} - 3 \cdot 1 \cdot 1 \cdot \kappa_{\lambda} + 3 \cdot 1^{3} \cdot \kappa_{\lambda}\right) $
+
+                $ = \left(2 - 2 - 3 \kappa_{\lambda} + 3 \kappa_{\lambda}\right) = 0$
+            \vspace{3mm}
+
+            Thus, along the $\kl$ and $\kvv$ axes, the optimal 6-term equation is mathematically identical to the optimal 1D equations.
+            }
+            \vspace{7mm}
+
+            Rank 1 6-Term Equation
+            \vspace{5mm}
+
+            {\tiny \input{final_amplitude_optimal_3DR0.tex}}
+            \end{minipage}}
+        \end{column} \begin{column}{0.4\textwidth}
+            \resizebox{0.8\textwidth}{!}{ \begin{minipage}{1.0\textwidth}
+            Rank 2 $\kvv$ 1-D Equation
+
+            \vspace{5mm}
+
+            {\tiny \input{final_amplitude_optimalR1_k2v.tex}}
+            \end{minipage}}
+            \vspace{10mm}
+
+            \resizebox{0.8\textwidth}{!}{ \begin{minipage}{1.0\textwidth}
+            Rank 1 $\kl$ 1-D Equation
+
+            \vspace{5mm}
+
+            {\tiny \input{final_amplitude_optimalR0_kl.tex}}
+            \end{minipage}}
+        \end{column}
+    \end{columns}
+}

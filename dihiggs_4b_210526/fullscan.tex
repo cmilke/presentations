@@ -1,0 +1,104 @@
+\announcesection{$\kvv, \kl, \kv$ 3D Full Scan}
+
+\frame{
+    \frametitle{6-Term Bases}
+
+    Over 600 Valid Combinations, 250 of which contain the SM sample.
+    \vspace{5mm}
+
+    Top 10 Bases. Samples displayed as $(\kvv, \kl, \kv)$
+    \vspace{3mm}
+
+    \resizebox{0.8\textwidth}{!}{ \begin{minipage}{1.0\textwidth}
+    \begin{tabular}{ |l|l|l|l|l|l|c| }
+        \hline
+            \textbf {Sample 1} & \textbf {Sample 2} & \textbf {Sample 3} &
+            \textbf {Sample 4} & \textbf {Sample 5} & \textbf {Sample 6} &
+            \textbf {Nweight Int}\\
+            \hline
+            (1, 1, 1)& (0.5, 1, 1)& (1.5, 1, 1)& (1,  2, 1)& (1, 10, 1  )& (0, 0, 1) &  340 \\
+            (1, 1, 1)& (0.5, 1, 1)& (2  , 1, 1)& (1,  2, 1)& (1, 10, 1  )& (0, 0, 1) &  351 \\
+            (1, 1, 1)& (0.5, 1, 1)& (1.5, 1, 1)& (1,  0, 1)& (1, 10, 1  )& (0, 0, 1) &  354 \\
+            (1, 1, 1)& (0.5, 1, 1)& (3  , 1, 1)& (1,  2, 1)& (1, 10, 1  )& (0, 0, 1) &  374 \\
+            (1, 1, 1)& (0.5, 1, 1)& (2  , 1, 1)& (1,  0, 1)& (1, 10, 1  )& (0, 0, 1) &  380 \\
+            (1, 1, 1)& (0.5, 1, 1)& (3  , 1, 1)& (1,  0, 1)& (1, 10, 1  )& (0, 0, 1) &  389 \\
+            (1, 1, 1)& (0.5, 1, 1)& (1.5, 1, 1)& (1,  0, 1)& (1,  2, 1  )& (0, 0, 1) &  424 \\
+            (1, 1, 1)& (0.5, 1, 1)& (3  , 1, 1)& (1,  0, 1)& (1,  2, 1  )& (0, 0, 1) &  427 \\
+            (1, 1, 1)& (0.5, 1, 1)& (2  , 1, 1)& (1,  0, 1)& (1,  2, 1  )& (0, 0, 1) &  431 \\
+            (1, 1, 1)& (0  , 1, 1)& (1  , 2, 1)& (1, 10, 1)& (1,  1, 1.5)& (0, 0, 1) &  441 \\
+            (1, 1, 1)& (0  , 1, 1)& (1  , 0, 1)& (1, 10, 1)& (1,  1, 1.5)& (0, 0, 1) &  446 \\
+            \hline
+    \end{tabular}
+    \end{minipage}}
+}
+
+\frame{ \frametitle{6-Term Top Two Bases}
+    Rank 1\\
+    \vspace{3mm}
+    \resizebox{0.8\textwidth}{!}{ \begin{minipage}{1.0\textwidth}
+    {\tiny \input{final_amplitude_optimal_3DR0.tex}}
+    \end{minipage}}
+
+    \vspace{7mm}
+
+    Rank 2\\
+    \vspace{3mm}
+    \resizebox{0.8\textwidth}{!}{ \begin{minipage}{1.0\textwidth}
+    {\tiny \input{final_amplitude_optimal_3DR1.tex}}
+    \end{minipage}}
+}
+
+\displaythree{6-Term Negative Weight Heatmap}
+{ \tiny
+    New production (below) performs signficantly \textit{worse} than old production (right).
+    \vspace{3mm}
+
+    I think this is to do with the absence of the $\kvv,\kl,\kv = [0, 1, 0.5]$ sample, but this is unclear.
+}
+{old_negative_weights_toprank000}
+{negative_weights_toprank0}
+{negative_weights_toprank1}
+
+\displayfour{6-Term Validation Plots}
+{reco_mHH_compare_auto3D01_cvv0p0cl0p0cv1p0}
+{reco_mHH_compare_auto3D01_cvv0p0cl1p0cv1p0}
+{reco_mHH_compare_auto3D01_cvv0p5cl1p0cv1p0}
+{reco_mHH_compare_auto3D01_cvv1p0cl0p0cv1p0}
+
+\displayfour{6-Term More Validation Plots}
+{reco_mHH_compare_auto3D01_cvv1p0cl10p0cv1p0}
+{reco_mHH_compare_auto3D01_cvv1p0cl1p0cv0p5}
+{reco_mHH_compare_auto3D01_cvv1p0cl1p0cv1p0}
+{reco_mHH_compare_auto3D01_cvv1p0cl1p0cv1p5}
+
+\displayfour{6-Term Even More Validation Plots}
+{reco_mHH_compare_auto3D01_cvv1p0cl2p0cv1p0}
+{reco_mHH_compare_auto3D01_cvv1p5cl1p0cv1p0}
+{reco_mHH_compare_auto3D01_cvv2p0cl1p0cv1p0}
+{reco_mHH_compare_auto3D01_cvv3p0cl1p0cv1p0}
+
+
+
+\displayfour{6-Term Preview Plots (1/4)}
+{reco_mHH_compare_preview_auto3D01_cvv-1p5cl-3p0cv1p0}
+{reco_mHH_compare_preview_auto3D01_cvv-1p5cl-9p0cv1p0}
+{reco_mHH_compare_preview_auto3D01_cvv-1p5cl14p0cv1p0}
+{reco_mHH_compare_preview_auto3D01_cvv-1p5cl5p0cv1p0}
+
+\displayfour{6-Term Preview Plots (2/4)}
+{reco_mHH_compare_preview_auto3D01_cvv0p5cl-3p0cv1p0}
+{reco_mHH_compare_preview_auto3D01_cvv0p5cl-9p0cv1p0}
+{reco_mHH_compare_preview_auto3D01_cvv0p5cl14p0cv1p0}
+{reco_mHH_compare_preview_auto3D01_cvv0p5cl5p0cv1p0}
+
+\displayfour{6-Term Preview Plots (3/4)}
+{reco_mHH_compare_preview_auto3D01_cvv2p0cl-3p0cv1p0}
+{reco_mHH_compare_preview_auto3D01_cvv2p0cl-9p0cv1p0}
+{reco_mHH_compare_preview_auto3D01_cvv2p0cl14p0cv1p0}
+{reco_mHH_compare_preview_auto3D01_cvv2p0cl5p0cv1p0}
+
+\displayfour{6-Term Preview Plots (4/4)}
+{reco_mHH_compare_preview_auto3D01_cvv3p5cl-3p0cv1p0}
+{reco_mHH_compare_preview_auto3D01_cvv3p5cl-9p0cv1p0}
+{reco_mHH_compare_preview_auto3D01_cvv3p5cl14p0cv1p0}
+{reco_mHH_compare_preview_auto3D01_cvv3p5cl5p0cv1p0}

@@ -1,0 +1,49 @@
+\section{NNT Linear Combinations}
+
+\frame{
+    \frametitle{Linear Combination Using Full-Reco, Post-Selection Samples}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \begin{center} 
+            {\tiny NNT Basis Set}
+
+            \resizebox{0.2\textheight}{!}{ \begin{tabular}{ |l|l|l| }
+                \hline
+                \textbf {$\kappa_{2V}$} & \textbf {$\kappa_\lambda$} & \textbf {$\kappa_V$} \\
+                \hline
+                    1.  &   1. & 1.  \\
+                    2.  &   1. & 1.  \\
+                    1.5 &   1. & 1.  \\
+                    0.  &   1. & 0.5 \\
+                    1.  &   0. & 1.  \\
+                    1.  &  10. & 1.  \\
+                \hline
+            \end{tabular}}
+            \end{center}
+
+        \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]
+            {coupling_scan_auto_chosen_reco_R0_hash_max}
+
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \resizebox{0.8\textwidth}{!}{ \begin{minipage}{1.0\textwidth}
+            Linear Combination Equation
+
+            \vspace{10mm}
+
+            {\tiny \input{final_amplitude_current_3D_reco.tex}}
+            \end{minipage}}
+        \end{column}
+    \end{columns}
+}
+
+\displaythree{Validity of NNT Reweighting}
+{ \small 
+    Direct combination results are not optimal, but unlike truth reweighting they are usable.
+
+    \vspace{2mm}
+    Furthermore, there are a number of ideas to improve upon them that I will investigate in the coming weeks.
+}
+{reco_mHH_cvv1p0cl2p0cv1p0}
+{reco_mHH_cvv0p0cl1p0cv1p0}
+{reco_mHH_cvv4p0cl1p0cv1p0}

@@ -1,0 +1,48 @@
+\documentclass{beamer}
+\usepackage{pdfpages}
+\input{header.tex}
+
+%Begin Presentation
+\begin{document}
+    \setbeamercolor{background canvas}{bg=}
+    \title{Updates on VBF HH Coupling Scans}
+    \author{Chris Milke}
+    \date{1 April, 2021}
+
+    \frame{\titlepage}
+
+    %\frame{\frametitle{Overview} \tableofcontents}
+
+
+    % Show basis and old limits as intro
+    \input{intro.tex}
+
+    % Show new limits
+    % error doesn't matter
+    % use kl=2 to explain issue of systematic error
+    \input{error_concerns.tex}
+
+    % discuss lack of limits using bgd systematics
+    % lead into negative weights
+    % make plot of far diagonal distro?
+    \input{negative_weights.tex}
+
+    \section{Conclusion}
+    \displayonelarge{Conclusion}{
+        \tiny
+        \begin{itemize} {
+            \item Signal stat errors seem to have very little affect on limits (though fewer negative weights may change this)
+            \item New VBF signal samples will soon be available, allowing many different basis possibilities
+            \item Optimization strategy will revolve around minimizing number of negative-weight bins
+            \item Further need for optimization to be determined following minimum-negative-weight basis
+        } \end{itemize}
+    }{negative_weights}
+
+    \announcesection{Backup}
+    \fullscreenimage{2D Limits with Signal Stat Error and 1/2 Sigma Bounds}{exclusion_difference0}
+    \fullscreenimage{}{preview_reco_mHH_cvv0p0cl-9p0cv1p0}
+    \fullscreenimage{}{preview_reco_mHH_cvv0p5cl13p0cv1p0}
+    \fullscreenimage{}{preview_reco_mHH_cvv1p5cl-9p0cv1p0}
+    \fullscreenimage{}{preview_reco_mHH_cvv2p0cl10p0cv1p0}
+
+\end{document}
