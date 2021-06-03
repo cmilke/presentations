@@ -1,0 +1,102 @@
+\section{Solidarity}
+\displayonelarge{Which Points to Test?}{
+    There are a vast number of points to potentially simulate, and I'm unsure which points should be preferred.
+    \vspace{5mm}
+
+    Need a way to narrow down the parameter space.
+}{negative_weights_toprank0}
+
+\frame{
+    \frametitle{Closer Look at How Combination is Done}
+    {\footnotesize
+        The long polynomial functions are just coefficients $c_i(\kvv,\kl,\kv)$ to the x-secs $|A_i|^2 = \sigma_i$
+        The linearly combined signal distribution $\tilde{\sigma}(\kvv,\kl,\kv)$ can be viewed more simply as:
+
+    }
+    \vspace{5mm}
+
+    $ \tilde{\sigma}(\kvv,\kl,\kv) = $
+    \vspace{3mm}
+    \begin{columns}
+        \begin{column}{0.55\textwidth}
+            \resizebox{0.8\textwidth}{!}{ \begin{minipage}{1.0\textwidth}
+            {\tiny \input{final_amplitude_current_3D_reco.tex}}
+            \end{minipage}}
+        \end{column}
+        \begin{column}{0.05\textwidth}
+            \rightarrow
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            { \small
+                $c_1(\kvv,\kl,\kv) \times \sigma(1,1,1   ) +$\\
+                $c_2(\kvv,\kl,\kv) \times \sigma(2,1,1   ) +$\\
+                $c_3(\kvv,\kl,\kv) \times \sigma(1.5,1,1 ) +$\\
+                $c_4(\kvv,\kl,\kv) \times \sigma(0,1,0.5 ) +$\\
+                $c_5(\kvv,\kl,\kv) \times \sigma(1,0,1   ) +$\\
+                $c_6(\kvv,\kl,\kv) \times \sigma(1,10,1  )  $\\
+            \par }
+        \end{column}
+    \end{columns}
+}
+
+
+\frame{
+    \frametitle{Closer Look at How Combination is Done}
+
+    $ \tilde{\sigma}(\kvv,\kl,\kv) = $
+
+    { \small
+        \hspace{20pt} $c_1(\kvv,\kl,\kv) \times \sigma_1 +$\\
+        \hspace{20pt} $c_2(\kvv,\kl,\kv) \times \sigma_2 +$\\
+        \hspace{20pt} $c_3(\kvv,\kl,\kv) \times \sigma_3 +$\\
+        \hspace{20pt} $c_4(\kvv,\kl,\kv) \times \sigma_4 +$\\
+        \hspace{20pt} $c_5(\kvv,\kl,\kv) \times \sigma_5 +$\\
+        \hspace{20pt} $c_6(\kvv,\kl,\kv) \times \sigma_5  $\\
+    \par }
+    \vspace{5mm}
+
+    { \footnotesize
+        Neither the coefficients nor the xsecs can be looked at in isolation; they must be viewed \textit{together} as a combined product.
+        \vspace{3mm}
+
+        If the \textit{magnitude} of some $c_i\sigma_i$ products are disproportionately large for some $\kappa$ value,
+        then the smaller $c_i\sigma_i$ (and their associated sample) barely contribute to the combined signal.
+        \vspace{3mm}
+
+        The combination depends on \textit{all} six samples.
+        All six samples should be contributing at all points (no slackers!).
+    \par }
+}
+
+
+\displaytwo{The Metric of Solidarity}{
+    Define measure of ``closeness" of $c_i\sigma_i$ terms:
+    \vspace{3mm}
+
+    \textit{Solidarity}, $S \equiv \frac{ \sum\limits_{i=1}^6 c_i\sigma_i }{ \textrm{Stdev}(|c_i\sigma_i|) } $
+    \vspace{3mm}
+
+     {\tiny
+        i.e. take the standard deviation of the \textit{absolute values} of the $c_i\sigma_i$ products,
+
+        normalize this by their sum (the modeled x-sec at that point),
+
+        and then take the \textit{reciprocal} of this normalized standard deviation ($S$ increases as standard deviation gets smaller).
+        \par
+    }
+}{negative_weights_toprank0}{solidarity_main}
+
+\displayonelarge{Correlation Between Negative Weights and Solidarity}{
+    Take the surface integral of the Solidarity map for every basis to produce a ``solidarity integral", and compare to Nweight Integral.
+    \vspace{5mm}
+
+    Higher Solidarity values (derived from pure theory) show remarkable correlation to post-selection performance.
+}{Nweight_integral_VS_theory_solidarity_integral}
+
+\displaytwocaption{Old Samples VS New}{
+    Performance of current samples could have been predicted based on solidarity alone.
+
+    (Max of 300 VS the original 400)
+}
+{old_Nweight_integral_VS_theory_solidarity_integral}{Old Samples}
+{Nweight_integral_VS_theory_solidarity_integral}{New Samples}

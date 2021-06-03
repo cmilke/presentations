@@ -1,0 +1,61 @@
+\documentclass{beamer}
+\usepackage{pdfpages}
+\input{header.tex}
+
+%Begin Presentation
+\begin{document}
+    \setbeamercolor{background canvas}{bg=}
+    \title{Picking a New Sample for Production}
+    \author{Chris Milke}
+    \date{3 June, 2021}
+
+    \frame{\titlepage}
+    \frame{\frametitle{Overview} \tableofcontents}
+
+    \section{Introduction}
+    % Show the old math intro again
+    \input{math_lesson.tex}
+    \input{fullscan.tex}
+
+    % Using Truth
+    % Show orig Truth nWeight map
+    % Show orig scatter
+    % Show stat-capped Truth nWeight map
+    % Show capped scatter
+    \input{truthvalidation.tex}
+
+    % Solidarity
+    % solidarity explanation from HH comb (skip reco-solidarity; maybe backup?)
+    % show solidarity 2D histogram
+    % cv=1 Show performance heatmap
+    % show nWeight map and all three performance maps
+    \input{solidarity.tex}
+    \input{solidarity_applied.tex}
+    
+    % Final validation
+    % show truth nWeight and validation plots for top picks
+    \input{final_validation.tex}
+
+
+    %Conclusion 
+    \section{Conclusion}
+    \displaythree{Conclusion}{
+        Highest performing samples:
+        \vspace{3mm}
+
+        \begin{itemize}
+            \item $(\kvv=3, \kl=-6, \kv=1)$
+            \item $(\kvv=1, \kl=-5, \kv=0.5)$
+            \item $(\kvv=3, \kl=-9, \kv=1)$
+        \end{itemize}
+        \vspace{3mm}
+
+        All appear to perform very well.
+    }
+    {errormap_dump/negative_weights_iterA04_truth_quadrank3}
+    {errormap_dump/negative_weights_iterA00_truth_quadrank0}
+    {errormap_dump/negative_weights_iterA02_truth_quadrank0}
+
+    %\announcesection{Backup}
+
+\end{document}
