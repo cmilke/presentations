@@ -1,0 +1,42 @@
+\documentclass{beamer}
+\usepackage{pdfpages}
+\input{header.tex}
+
+%Begin Presentation
+\begin{document}
+    \setbeamercolor{background canvas}{bg=}
+    \title{Suggesting a New Sample for Production}
+    \author{Chris Milke}
+    \date{11 June, 2021}
+
+    \frame{\titlepage}
+    %\frame{\frametitle{Overview} \tableofcontents}
+
+    \input{intro.tex}
+    \input{fullscan.tex}
+    \input{performance_validation.tex}
+
+    %Conclusion 
+    \section{Conclusion}
+    \displaytwocaption{Conclusion}{
+        Both samples appear to perform very well.
+
+        Left sample is closer to SM, but modifies $\kv$
+
+        Right sample leaves $\kv$ alone, but is very far from SM,
+            beyond where any limits will be set
+    }
+    {errormap_dump/negative_weights_iterA00_truth_quadrank0}
+    { Using Sample $(\kvv=1, \kl=-5, \kv=0.5)$ }
+    {errormap_dump/negative_weights_iterA02_truth_quadrank1}
+    { Using Sample $(\kvv=3, \kl=-9, \kv=1)$ }
+
+    \announcesection{Backup}
+    \input{acceptance.tex}
+    \input{truthvalidation.tex}
+    \input{solidarity.tex}
+    \input{solidarity_applied.tex}
+    \input{effstat.tex}
+    \input{more_validation.tex}
+
+\end{document}

@@ -1,0 +1,27 @@
+\announcesection{Using Truth Samples For Prediction}
+
+\displayfour{Post-Selection Performance (Top) VS Truth-Level (Bottom)}
+{negative_weights_toprank0}
+{negative_weights_toprank1}
+{negative_weightsuncappedtruthRtop0}
+{negative_weightsuncappedtruthRtop1}
+
+\displayonelarge{Post-Selection/Truth-Level Correlation}{
+    At first glance, truth performance appears only loosely correlated to post-selection performance.
+    \vspace{4mm}
+
+    But, performance can be made more similar by capping the statistics of the truth samples
+}{Nweight_integral_VS_Nweight_uncapped_truth_integral}
+
+
+\displayfour{Post-Selection Performance (Top) VS ``Capped" Truth-Level (Bottom)}
+{negative_weights_toprank0}
+{negative_weights_toprank1}
+{negative_weightstruthRtop0}
+{negative_weightstruthRtop1}
+
+
+\displayonelarge{Post-Selection/Capped-Truth-Level Correlation}{
+    Artificially limiting truth samples to 10\% of their events provides a much stronger correlation between truth and post-selection performance
+}{Nweight_integral_VS_Nweight_truth_integral}
+

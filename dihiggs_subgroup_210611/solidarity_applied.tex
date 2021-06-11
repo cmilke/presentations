@@ -1,0 +1,71 @@
+\frame{
+    \frametitle{Variation Scan Range}
+
+    Wide range of values to check, brute-force approach:
+    \vspace{3mm}
+
+    \begin{itemize} {
+        \item $\kvv =$ numpy.arange(-1, 4.5, 0.5)
+        \item $\kl =$ numpy.arange(-9, 11, 1)
+        \item $\kv =$ [ 0.5, 1, 1.5 ]
+        \item 660 different variations
+        \item Require all combinations to include SM and $\kl=2$ point to reduce combinatorics
+        \item Each variation then has $\approx$ 227 valid possible combinations
+        \item Total of $\approx$ 148,820 different combinations
+    } \end{itemize}
+    \vspace{3mm}
+
+    Add each new variation to available samples one at a time,
+    recalculate the solidarity integral for all possible valid combinations with the new sample in place
+}
+
+\displaytwocaption{Solidarity Histograms}{
+    Each variation tested produces $\approx$ 227 combinations,
+    and each combination has its own solidarity integral.
+}
+{projective_solidarity_all}{Overview of all 660 variations (sorted by Sum-Total of all integrals)}
+{projective_solidarity_dump}{Closer look at top 10 variations}
+
+\displaytwo{Performance Predictions}{
+    Sum together the solidarity integrals of all possible combinations to produce a heatmap of potential improvement.
+    \vspace{3mm}
+
+    Improvement largely seems to come from placing a sample in the middle of the poor-performing regions
+}
+{negative_weights_toprank0}
+{solidarity_performance_kv1}
+
+\displaythree{Performance Predictions with Different $\kv$}{
+    Variations with non-SM $\kv$ values can also potentially help
+}
+{solidarity_performance_kv0.5}
+{solidarity_performance_kv1}
+{solidarity_performance_kv1.5}
+
+
+
+%\displayfour{Post-Selection Performance (Top) VS Truth-Level (Bottom)}
+%{negative_weights_toprank0}
+%{negative_weights_toprank1}
+%{negative_weightsuncappedtruthRtop0}
+%{negative_weightsuncappedtruthRtop1}
+%
+%\displayonelarge{Post-Selection/Truth-Level Correlation}{
+%    At first glance, truth performance appears only loosely correlated to post-selection performance.
+%    \vspace{4mm}
+%
+%    But, performance can be made more similar by capping the statistics of the truth samples
+%}{Nweight_integral_VS_Nweight_uncapped_truth_integral}
+%
+%
+%\displayfour{Post-Selection Performance (Top) VS ``Capped" Truth-Level (Bottom)}
+%{negative_weights_toprank0}
+%{negative_weights_toprank1}
+%{negative_weightstruthRtop0}
+%{negative_weightstruthRtop1}
+%
+%
+%\displayonelarge{Post-Selection/Capped-Truth-Level Correlation}{
+%    Artificially limiting truth samples to 10\% of their events provides a much stronger correlation between truth and post-selection performance
+%}{Nweight_integral_VS_Nweight_truth_integral}
+%
