@@ -1,0 +1,102 @@
+\section{New MC Samples}
+
+\frame{
+    \frametitle{New MC Samples!}
+    \begin{center} 
+        {\small
+            12 New MC Samples,\\
+            619 Possible Combinations of 6,\\
+            250 Include SM Sample
+        }
+        \vspace{5mm}
+
+        \resizebox{0.8\textheight}{!}{
+        \begin{columns} \begin{column}{0.3\textwidth}
+            \begin{tabular}{ |l|l|l| }
+                \hline
+                \textbf {$\kappa_{2V}$} & \textbf {$\kappa_\lambda$} & \textbf {$\kappa_V$} \\
+                \hline
+                0    & 0   & 1   \\
+                0    & 1   & 1   \\
+                0.5  & 1   & 1   \\
+                1    & 0   & 1   \\
+                \hline
+            \end{tabular}
+        \end{column} \begin{column}{0.3\textwidth}
+            \begin{tabular}{ |l|l|l| }
+                \hline
+                \textbf {$\kappa_{2V}$} & \textbf {$\kappa_\lambda$} & \textbf {$\kappa_V$} \\
+                \hline
+                1    & 1   & 0.5 \\
+                1    & 1   & 1   \\
+                1    & 1   & 1.5 \\
+                1    & 10  & 1   \\
+                \hline
+            \end{tabular}
+        \end{column} \begin{column}{0.3\textwidth}
+            \begin{tabular}{ |l|l|l| }
+                \hline
+                \textbf {$\kappa_{2V}$} & \textbf {$\kappa_\lambda$} & \textbf {$\kappa_V$} \\
+                \hline
+                1    & 2   & 1   \\
+                1.5  & 1   & 1   \\
+                2    & 1   & 1   \\
+                3    & 1   & 1   \\
+                \hline
+            \end{tabular}
+        \end{column} \end{columns}
+        }
+    \end{center}
+    \vspace{7mm}
+
+    \begin{center} 
+    Top 10 New Bases
+
+    \resizebox{0.6\textwidth}{!}{
+    \begin{tabular}{ |l|l|l|l|l|l|c| }
+        \hline
+            \textbf {Sample 1} & \textbf {Sample 2} & \textbf {Sample 3} &
+            \textbf {Sample 4} & \textbf {Sample 5} & \textbf {Sample 6} &
+            \textbf {Nweight Int}\\
+            \hline
+            (1, 1, 1) & (0.5, 1, 1) & (3, 1, 1) & (1, 2, 1 ) & (1, 10, 1) & (0, 0, 1) &  323 \\
+            (1, 1, 1) & (0.5, 1, 1) & (3, 1, 1) & (1, 0, 1 ) & (1, 10, 1) & (0, 0, 1) &  343 \\
+            (1, 1, 1) & (0.5, 1, 1) & (1.5, 1, 1) & (1, 2, 1 ) & (1, 10, 1) & (0, 0, 1) &  362 \\
+            (1, 1, 1) & (0.5, 1, 1) & (2, 1, 1) & (1, 2, 1 ) & (1, 10, 1) & (0, 0, 1) &  365 \\
+            (1, 1, 1) & (0.5, 1, 1) & (1.5, 1, 1) & (1, 0, 1 ) & (1, 10, 1) & (0, 0, 1) &  387 \\
+            (1, 1, 1) & (0, 1, 1) & (1, 2, 1) & (1, 10, 1) & (1, 1, 0.5)  & (0, 0, 1) &  390 \\
+            (1, 1, 1) & (0.5, 1, 1) & (2, 1, 1) & (1, 0, 1 ) & (1, 10, 1) & (0, 0, 1) &  394 \\
+            (1, 1, 1) & (0.5, 1, 1) & (1, 2, 1) & (1, 10, 1) & (1, 1, 0.5)  & (0, 0, 1) &  397 \\
+            (1, 1, 1) & (0.5, 1, 1) & (1, 0, 1) & (1, 10, 1) & (1, 1, 0.5)  & (0, 0, 1) &  398 \\
+            (1, 1, 1) & (0, 1, 1) & (3, 1, 1) & (1, 2, 1 ) & (1, 10, 1) & (0, 0, 1) &  400 \\
+            \hline
+    \end{tabular} }
+    \end{center}
+}
+
+\frame{ \frametitle{6-Term Top Two Bases}
+    Rank 1\\
+    \vspace{3mm}
+    \resizebox{0.8\textwidth}{!}{ \begin{minipage}{1.0\textwidth}
+    {\tiny \input{final_amplitude_optimal_3DR0.tex}}
+    \end{minipage}}
+
+    \vspace{7mm}
+
+    Rank 2\\
+    \vspace{3mm}
+    \resizebox{0.8\textwidth}{!}{ \begin{minipage}{1.0\textwidth}
+    {\tiny \input{final_amplitude_optimal_3DR1.tex}}
+    \end{minipage}}
+}
+
+\displaythree{6-Term Negative Weight Heatmap}
+{ \tiny
+    New production (below) performs signficantly \textit{worse} than old production (right).
+    \vspace{3mm}
+
+    I think this is to do with the absence of the $\kvv,\kl,\kv = [0, 1, 0.5]$ sample, but this is unclear.
+}
+{old_negative_weights_toprank000}
+{negative_weights_toprank0}
+{negative_weights_toprank1}

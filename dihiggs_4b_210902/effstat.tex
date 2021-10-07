@@ -1,0 +1,29 @@
+\announcesection{Effective Statistics}
+\displayone{Effective Statistics}{
+    Effective Statistics also acts as a similar measure of ``closeness''.
+    \vspace{3mm}
+
+    \textit{Effective Stats},
+    $\epsilon \equiv \frac{ (\sum\limits_{i=1}^6 c_i\sigma_i)^2 }{ \sum\limits_{i=1}^6 (c_i\sigma_i)^2 } $
+    \vspace{3mm}
+
+    Unlike solidarity, effective stats \textit{heavily}
+    penalizes negative coefficients and large cancellations between samples.
+
+}
+{effstat_performance_kv1}
+
+\displaytwocaption{Effective Statistics VS Solidarity}{
+    Effective Stats favors the upper-right region over all else.
+    However, truth simulations of samples in this region produce mediocre performance gains,
+        in line with the predictions of solidarity.
+}
+{solidarity_performance_kv1} {Solidarity}
+{effstat_performance_kv1} {Effective Statistics}
+
+\displaythree{Performance Predictions with Different $\kv$}{
+    Produces similar, though not identical, results as solidarity
+}
+{effstat_performance_kv0.5}
+{effstat_performance_kv1}
+{effstat_performance_kv1.5}

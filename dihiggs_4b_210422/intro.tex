@@ -1,0 +1,41 @@
+\frame{
+    \frametitle{Coupling Interpolation Through Direct Sample Combination}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \begin{center} 
+            {\tiny Post-Reco Sample Basis Set}
+
+            \resizebox{0.2\textheight}{!}{ \begin{tabular}{ |l|l|l| }
+                \hline
+                \textbf {$\kappa_{2V}$} & \textbf {$\kappa_\lambda$} & \textbf {$\kappa_V$} \\
+                \hline
+                    1.  &   1. & 1.  \\
+                    2.  &   1. & 1.  \\
+                    1.5 &   1. & 1.  \\
+                    0.  &   1. & 0.5 \\
+                    1.  &   0. & 1.  \\
+                    1.  &  10. & 1.  \\
+                \hline
+            \end{tabular}}
+            \end{center}
+
+        \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]
+            {2D_scan_2D_scan_test00_samps_vbf_pd_161718_c1v1.0_exclusion}
+
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            Core math and method is sound (I think),
+            but implementation issues have been identified that drastically alter final limits.
+
+            \vspace{10mm}
+            \resizebox{0.8\textwidth}{!}{ \begin{minipage}{1.0\textwidth}
+            Linear Combination Equation
+
+            \vspace{10mm}
+
+            {\tiny \input{final_amplitude_current_3D_reco.tex}}
+            \end{minipage}}
+        \end{column}
+    \end{columns}
+}
+

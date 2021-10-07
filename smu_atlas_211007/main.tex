@@ -1,0 +1,34 @@
+\documentclass{beamer}
+\usepackage{pdfpages}
+\input{header.tex}
+
+%Begin Presentation
+\begin{document}
+    \setbeamercolor{background canvas}{bg=}
+    \title{SMU ATLAS Status Update}
+    \author{Chris Milke}
+    \date{7 October, 2021}
+
+    \frame{\titlepage}
+    \frame{\frametitle{Overview} \tableofcontents}
+
+    % Intro
+    \input{intro.tex}
+    \input{combination.tex}
+    \input{reco_combinations_old.tex}
+    \input{nWeight_intro.tex}
+    \input{last_time.tex}
+
+    \section{Conclusion}
+    \frame{
+        \frametitle{Conclusion}
+        \begin{itemize}
+            \item New MC sample point allows for far more stable sample combinations
+            \item New Basis produces signal distributions that appear very reasonable
+            \item Limits with the new basis are looser in $\kl$,
+                which is unfortunate, but probably more accurate
+            \item New work is focussing on Background Estimation techniques;
+                more on this next time!
+        \end{itemize}
+    }
+\end{document}

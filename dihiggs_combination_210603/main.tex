@@ -1,0 +1,67 @@
+\documentclass{beamer}
+\usepackage{pdfpages}
+\input{header.tex}
+
+%Begin Presentation
+\begin{document}
+    \setbeamercolor{background canvas}{bg=}
+    \title{1/2/3D VBF Combination Recommendations with the New MC Production}
+    \author{Chris Milke}
+    \date{3 June, 2021}
+
+    \frame{\titlepage}
+    \frame{\frametitle{Overview} \tableofcontents}
+
+    \section{Introduction}
+    % Show the old math intro again
+    \input{math_lesson.tex}
+
+    % Show a quick look at the new sample combinatorics and the negative weight heatmap as reminder of how I pick things
+    \input{ranking.tex}
+
+    % 1D klambda
+    %   Show top three basis as bare dump
+    %   Show mhh map of top two
+    %   Show single validation of top two
+    %   Show preview plots of top two
+    \input{klambda.tex}
+
+    % 1D k2v
+    %   Show top three basis as bare dump
+    %   Show mhh map of top two
+    %   Show all validation plots of top two
+    %   Show preview plots of top two
+    \input{k2v.tex}
+
+    % 1D k2v multibasis
+    %   Show plot of bases, equations, and range
+    %   Show mhh map of this and 1D
+    %   Show preview plots
+    \input{multibasis.tex}
+
+    % 3D
+    %   Show full equation and Nweight integrals for top two
+    %   Show Nweight heat maps of top two
+    %   Show all validation plots of top two
+    %   Show preview plots of top two
+    %   Show 
+    \input{fullscan.tex}
+    \input{compare3and1D.tex}
+
+
+
+    %Conclusion 
+    \section{Conclusion}
+    \frame{
+        \frametitle{Conclusion}
+        \begin{itemize} {
+            \item New Samples are in, with many bases to choose from
+            \item 1D $\kvv$ and $\kl$ bases look good
+            \item Multi-basis combination doesn't seem to improve things, maybe just use single basis
+            \item 2D basis is worse than before unfortunately, may need to get creative
+        } \end{itemize}
+    }
+
+    %\announcesection{Backup}
+
+\end{document}

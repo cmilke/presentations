@@ -1,0 +1,34 @@
+\displaythree{Validation With Only MC16d}
+{
+    Until now, all my various validation plots were made using only MC16d samples, to simplify implementation.
+}
+{reco_mHH_cvv0p0cl1p0cv1p0}
+{preview_reco_mHH_cvv0p0cl-9p0cv1p0}
+{negative_weights_old}
+
+
+\displaythreeseq{Effect of Other Years on Negative Weights}{
+    What does adding different years do to the negative weights?
+}{negative_weights_mc16d_old.png}{
+    Adding in MC16a reduces negative weights, as expected of more stats
+}{negative_weights_mc16ad_old.png}{
+    The [0,1,0.5] sample is missing MC16e, and so trying to combine a, d, and e of the 6 samples ruins the linear combination.
+}{negative_weights_mc16ade_old.png}
+
+\displaytwocaption{Original 1-D $\kvv$ Limits}
+{
+    Originally used MC16e in order to be able to compare official 3-term $\kvv$ scan to my 6-term combination.
+    
+    Other than a lack of fit points close to 1, the two match very well.
+}
+{c2v_scan_official}
+{Official $\kvv$ 3-Term Scan}
+{c2v_scan_new_kl1.0}
+{6-Term Combination}
+
+\displaytwocaption{Limits without MC16e}
+{Attempting to use MC16e in limits caused severe mismodelling of the signal hypothesis}
+{2D_scan_2D_scan_test00_samps_vbf_pd_161718_c1v1.0_exclusion}
+{Using MC16 a/d/e}
+{2D_scan_2D_scan_test01_noMC16e_samps_vbf_pd_1617_c1v1.0_exclusion}
+{Using MC16a and MC16d only}

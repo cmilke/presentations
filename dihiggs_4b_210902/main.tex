@@ -1,0 +1,43 @@
+\documentclass{beamer}
+\usepackage{pdfpages}
+\input{header.tex}
+
+%Begin Presentation
+\begin{document}
+    \setbeamercolor{background canvas}{bg=}
+    \title{VBF 3D Limits Update}
+    \author{Chris Milke}
+    \date{2 September, 2021}
+
+    \frame{\titlepage}
+    \frame{\frametitle{Overview} \tableofcontents}
+
+    % Show the old math intro again
+    \input{last_time.tex}
+    \input{new_sample.tex}
+    \input{validation.tex}
+    \input{new_limits.tex}
+
+
+    %Conclusion 
+    \section{Conclusion}
+    \displayonelarge{Conclusion}{
+        \begin{itemize}
+            \item New MC sample point allows for far more stable sample combinations
+            \item New Basis produces signal distributions that appear very reasonable
+            \item Limits with the new basis are looser in $\kl$,
+                which is unfortunate, but probably more accurate
+        \end{itemize}
+    }{new_limits/2D_scan_full_3D_scan_NEO2021_samps_vbf_pd_161718_k1v_multislice_exclusion}
+
+
+    \announcesection{Backup}
+    \fullscreenimage{$\kvv$ Basic Scan Plot}{k2v_scan_full_3D_scan_2021_samps_vbf_pd_161718_kl_1.0_xsec}
+    \input{math_lesson.tex}
+    \fullscreenimage{$\kv$ Slice nWeight Map}{multislice_negative_weightsneo}
+    \input{extra_previews.tex}
+    \input{solidarity.tex}
+    \input{solidarity_applied.tex}
+    \input{effstat.tex}
+
+\end{document}

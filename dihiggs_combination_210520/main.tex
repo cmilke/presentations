@@ -1,0 +1,69 @@
+\documentclass{beamer}
+\usepackage{pdfpages}
+\input{header.tex}
+
+%Begin Presentation
+\begin{document}
+    \setbeamercolor{background canvas}{bg=}
+    \title{Studies into the Performance of Different Linear Combinations}
+    \author{Chris Milke}
+    \date{20 May, 2021}
+
+    \frame{\titlepage}
+
+    %\frame{\frametitle{Overview} \tableofcontents}
+
+    % Show old limits, explain that many things have needed updating for awhile, and I'm doing that now
+    \input{intro.tex}
+
+    % Show Nweight integral with integral title
+    % Show Top, mid, and current nweights
+    % Show result of switching basis on limits
+    \input{limit_update.tex}
+
+    % Discound orthogonality and acceptance
+    \input{discounted_causes.tex}
+
+    % 1) show product of coefficients and sample, elaborate on why it's bad for these to be too different
+    % 2) show formula for Solidarity, alongside a heatmap for some basis
+    % 3) show correlation scatter plot between sol and nWeight
+    % 4) show correlation scatter plot between theoretical sol and nWeight
+    % 5) show brute force dump of projected "best samples"
+    \input{solidarity.tex}
+
+
+    %Conclusion; Mention that systematics *still* don't work for some reasons...
+    \frame{
+        \frametitle{Conclusion}
+        \begin{itemize} {
+            \item Choice of basis can have drasitic impacts on signal modelling and final limits
+            \item New (nWeight) basis optimization metric reveals poor performance of old basis
+            \item Unsure of how or even if to look further into orthogonality
+            \item Acceptance X Efficiency,
+                at least in the current 4b samples,
+                seems to have no impact on overall performance of basis
+            \item ``Solidarity" metric however appears to be very effective at determining basis performance
+            \item New VBF samples have finished processing. Expect more extensive studies with new samples soon.
+        } \end{itemize}
+    }
+
+    \announcesection{Backup}
+    \fullscreenimage{}{preview_reco_mHH_cvv0cl1cv1}
+    \fullscreenimage{}{preview_reco_mHH_cvv0cl-9cv1}
+    \fullscreenimage{}{preview_reco_mHH_cvv0p5cl13cv1}
+    \fullscreenimage{}{preview_reco_mHH_cvv0p5cl1cv1}
+    \fullscreenimage{}{preview_reco_mHH_cvv1cl10cv1}
+    \fullscreenimage{}{preview_reco_mHH_cvv1cl1cv1}
+    \fullscreenimage{}{preview_reco_mHH_cvv1cl2cv1}
+    \fullscreenimage{}{preview_reco_mHH_cvv1p5cl-9cv1}
+    \fullscreenimage{}{preview_reco_mHH_cvv2cl10cv1}
+    \fullscreenimage{}{preview_reco_mHH_cvv2cl1cv1}
+    \fullscreenimage{}{preview_reco_mHH_cvv4cl1cv1}
+    \fullscreenimage{}{Nweight_integral_VS_theory_effective_stats_integral}
+    \fullscreenimage{}{Nweight_integral_VS_reco_effective_stats_integral}
+    \fullscreenimage{}{Nweight_integral_VS_accXeff_geometric}
+    \fullscreenimage{}{Nweight_integral_VS_accXeff_harmonic}
+    \fullscreenimage{}{Nweight_integral_VS_accXeff_sigma}
+    \fullscreenimage{}{Nweight_integral_VS_accXeff_sum}
+
+\end{document}

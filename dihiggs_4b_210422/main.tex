@@ -1,0 +1,55 @@
+\documentclass{beamer}
+\usepackage{pdfpages}
+\input{header.tex}
+
+%Begin Presentation
+\begin{document}
+    \setbeamercolor{background canvas}{bg=}
+    \title{Issues in 6-Sample Direct Combination Implementation and Their Effects on Limits }
+    \author{Chris Milke}
+    \date{19 April, 2021}
+
+    \frame{\titlepage}
+
+    %\frame{\frametitle{Overview} \tableofcontents}
+
+    % Show old limits, explain that many things have needed updating for awhile, and I'm doing that now
+    \input{intro.tex}
+
+    % Collection of validation plots, based on mc16d only
+    % Sequence of slides showing old basis as it changes with addition of mc16a and then e
+    % Show effect mc16e had on limits
+    \input{mc16e.tex}
+
+    % Show Nweight integral with integral title
+    % Show Top, mid, and current nweights
+    % Show result of switching basis on limits
+    \input{new_basis.tex}
+
+    % Show progression of limits (old -> noMC16e -> new basis)
+    \displaythreecaption{Limit Change Overall}{
+        Overall affect of changes has completely altered the shape of the 2D limits.
+    }
+    {2D_scan_2D_scan_test00_samps_vbf_pd_161718_c1v1.0_exclusion}
+    {Old basis with MC16e}
+    {2D_scan_2D_scan_test01_noMC16e_samps_vbf_pd_1617_c1v1.0_exclusion}
+    {Old basis, NO MC16e}
+    {2D_scan_2D_scan_test02_newBasis_samps_vbf_pd_1617_c1v1.0_exclusion}
+    {New basis, NO MC16e}
+
+
+    %Conclusion; Mention that systematics *still* don't work for some reasons...
+    \frame{
+        \frametitle{Conclusion}
+        \begin{itemize} {
+            \item Missing MC16e sample had a much larger impact than anticipated
+            \item New basis optimization metric reveals poor performance of old basis
+            \item New limit shape after correcting for these is very different
+            \item Limits \textit{still} do not include bgd systematics (working on this now)
+            \item Will continue checking to see if any other issues of this nature exist
+        } \end{itemize}
+    }
+
+    %\announcesection{Backup}
+
+\end{document}

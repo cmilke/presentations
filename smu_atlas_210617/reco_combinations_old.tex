@@ -1,0 +1,49 @@
+\section{Applying Linear Combination}
+
+\frame{
+    \frametitle{Linear Combination Using Post Reconstruction/Selection Samples}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \begin{center} 
+            {\tiny Signal Sample Basis Set}
+
+            \resizebox{0.2\textheight}{!}{ \begin{tabular}{ |l|l|l| }
+                \hline
+                \textbf {$\kappa_{2V}$} & \textbf {$\kappa_\lambda$} & \textbf {$\kappa_V$} \\
+                \hline
+                    1.  &   1. & 1.  \\
+                    2.  &   1. & 1.  \\
+                    1.5 &   1. & 1.  \\
+                    0.  &   1. & 0.5 \\
+                    1.  &   0. & 1.  \\
+                    1.  &  10. & 1.  \\
+                \hline
+            \end{tabular}}
+            \end{center}
+
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \resizebox{0.8\textwidth}{!}{ \begin{minipage}{1.0\textwidth}
+            Linear Combination Equation
+
+            \vspace{10mm}
+
+            {\tiny \input{final_amplitude_current_3D_reco.tex}}
+            \end{minipage}}
+        \end{column}
+    \end{columns}
+}
+
+\displaythree{Validity of Sample Combinations}
+{ \small 
+    Combining the six basis samples allows for modelling of distributions for any coupling values.
+}
+{reco_mHH_cvv1p0cl2p0cv1p0_ancient}
+{reco_mHH_cvv0p0cl1p0cv1p0_ancient}
+{reco_mHH_cvv4p0cl1p0cv1p0_ancient}
+
+\displayonelarge{Full 2D Exclusion Plot ($\kv=1$)}{
+    Using the distribution of the diHiggs invariant mass, $m_{HH}$,
+    we can set expected limits on the HH cross-section as a function
+    of the couplings $\kvv$ and $\kl$.
+}{2D_scan_2D_scan_test01_noMC16e_samps_vbf_pd_1617_c1v1.0_exclusion}

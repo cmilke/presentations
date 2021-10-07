@@ -1,0 +1,71 @@
+\documentclass{beamer}
+\usepackage{pdfpages}
+\input{header.tex}
+
+%Begin Presentation
+\begin{document}
+    \setbeamercolor{background canvas}{bg=}
+    \title{VBF Taskforce Report}
+    \author{Chris Milke}
+    \date{22 September, 2020}
+
+    \frame{\titlepage}
+    \frame{\frametitle{Overview} \tableofcontents}
+
+
+    \section{VBF General Announcements}
+    \importpdf{VBFTaskforcePlans}{1}{
+        \href{https://indico.cern.ch/event/959615/\#b-392053-roundtable-vbf-hh-sig}{\color{blue} Last VBF Taskforce}
+
+        \href{https://indico.cern.ch/event/948593/contributions/3985803/attachments/2093885/3518908/VBF_CONF_suggestion.pdf}{\color{blue} Proposal}
+
+        \href{https://indico.cern.ch/event/945071/contributions/3972081/attachments/2085602/3503725/VBFhh4b_BkgSystLimits_6Aug20.pdf}{\color{blue} Rachel's talk}
+    }
+    \announcesection{$bb\gamma\gamma$}
+    \importpdf{HHyybb_VBF_status_09_10_20.pdf}{1}{
+        \href{https://indico.cern.ch/event/946975/contributions/3980769/attachments/2089312/3510474/kunlinRan_bbyy_20200819.pdf}{\color{blue}here}
+
+        \href{https://indico.cern.ch/event/953724/contributions/4027929/attachments/2108327/3545983/chenzhou_20200923.pdf}{\color{blue}Chen}
+
+        \href{https://indico.cern.ch/event/953724/contributions/4029465/attachments/2108299/3545913/kunlinRan_bbyy_20200923.pdf}{\color{blue}Kunlin}
+    }
+    \importpdf{HHyybb_VBF_status_09_10_20.pdf}{2}{}
+    \importpdf{HHyybb_VBF_status_09_10_20.pdf}{3}{}
+
+
+    \announcesection{$bb\tau\tau$}
+    \foreach \pageN in {1,2,3}{\importpdf{VBFbbtautauUpdate}{\pageN}{}}
+    \importpdf{VBFbbtautauUpdate}{4}
+        {\href{https://indico.cern.ch/event/944522/contributions/3973729/attachments/2086464/3505205/VBF_Update_100820.pdf}
+        {\color{blue}Marisilvia Donadelli, Adam Parker}}
+    \importpdf{VBFbbtautauUpdate}{5}{}
+    \importpdf{VBFbbtautauUpdate}{6}{
+        \href{https://indico.cern.ch/event/959615/contributions/4039474/attachments/2115689/3559747/VBF_HH_bbtt(hadhad).pdf}{\color{blue}Dorothee Dapper}
+    }
+    \importpdf{VBFbbtautauUpdate}{7}{}
+
+    \announcesection{$bbbb$}
+    \importpdf{marta}{1}{
+        \href{https://indico.cern.ch/event/963307/contributions/4052011/attachments/2119361/3566440/HH4b_workshop_background_estimation_81020_mczurylo.pdf}{\color{blue}Original Talk}
+    }
+    \importpdf{VBFPres_051020}{18}{
+        \href{https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2019-049/}{\color{blue}link}
+    }
+    \input{scan.tex}
+
+    % Conclusion
+    \frame{
+        \frametitle{Conclusion} 
+        \begin{itemize}
+            \item Multiple improvements to event selection and background estimation (all channels)
+            \item \cvv scans from $bb\tau\tau$
+            \item \cl and \cvv,\cv,\cl scans from 4b
+            \item Ongoing discussion about excluding $\kappa_{2V}=0$ in note for Moriond 
+
+        \end{itemize}
+    }
+
+   
+    \announcesection{Backup $bb\tau\tau$}
+    \includepdf[pages=9-, pagecommand={}]{VBFbbtautauUpdate.pdf}
+\end{document}

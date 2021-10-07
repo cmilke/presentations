@@ -1,0 +1,106 @@
+\documentclass{beamer}
+\usepackage{pdfpages}
+\input{header.tex}
+
+%Begin Presentation
+\begin{document}
+    \setbeamercolor{background canvas}{bg=}
+    \title{VBF Background Estimation Bootstrap Errors}
+    \author{Chris Milke}
+    \date{30 September, 2021}
+
+    \frame{\titlepage}
+    %\frame{\frametitle{Overview} \tableofcontents}
+
+    % Show initial problem with bootstrap error being too tight
+    \displayonelarge{VBF Bootstrap Error}{
+        Bootstrap error is nearly zero in 300-500 GeV mhh region.
+        The error does \textit{not} cross the axis, but comes very close to it.
+        This is not a good estimate of the true bootstrap uncertainty.
+    }{bstrap_all_years_overlay}
+
+    \displayonelarge{Normilization too small?}{
+        The actual bootstrap \textit{shape} is not unreasonable.
+        Issue seems to be that norm IQR is smaller than in ggF.
+    }{bootstrap_combination_20-20-20_bst100_newVars0713}
+
+    \frame{
+        \frametitle{Norm IQRs by Year}
+        \begin{table}[] \centering
+        \begin{tabular}{|l|l|l|l|l|}
+        \hline
+                     & \textbf{2016} & \textbf{2017} & \textbf{2018} & \textbf{All} \\
+        \hline
+        \textbf{ggF} & 0.074 & 0.067 & 0.061 & N/A   \\
+        \hline
+        \textbf{VBF} & 0.111 & 0.070 & 0.052 & 0.045 \\
+        \hline
+        \end{tabular} \end{table}
+    }
+
+    \frame{
+        \frametitle{Bootstrap Error Formula}
+
+        {\tiny \begin{equation} \begin{split}
+        \tilde w &\equiv \textrm{Nominal Weights} \\
+        \tilde \alpha &\equiv \textrm{Nominal normalization} \\
+        \textrm{IQR}_{w,i} &\equiv \textrm{IQR(25-75) of bootstrap weights for event i} \\
+        \textrm{IQR}_{\alpha} &\equiv \textrm{IQR(25-75) of bootstrap normalizations} \\
+        H_j &\equiv \textrm{Nominal Histogram Shape} \\
+        H'_j &\equiv \textrm{``Varied'' Histogram Shape} \\
+        \end{split} \end{equation}}
+
+        {\tiny \begin{equation} \begin{split}
+        \sigma_j &\equiv \textrm{Bootstrap Error} \\
+        \sigma_j &= | H'_j - H_j | \\
+        &= \left| \sum_{i \in j}
+        \left[
+            \frac{\tilde \alpha \sum \tilde w_i}{\sum 
+            \left( 
+                \tilde w_i + \frac{1}{2}\textrm{IQR}_{w}
+            \right)}
+            \left( 
+                \tilde w_i + \frac{1}{2}\textrm{IQR}{w}
+            \right)
+            + \frac{1}{2}\textrm{IQR}_{\alpha}
+            \tilde \alpha \tilde w_i
+        \right]
+        -\tilde \alpha \sum_{i \in j} \tilde w_i \right|
+        \end{split} \end{equation}}
+    }
+        
+
+    \fullscreenimage{What if we try ... not dividing the Norm IQR by 2?}{equation}
+    \displaytwocaption{Not Dividing by 2 Kinda Works?}{
+        Though incredibly arbitrary, this does look better
+    }
+    {spider-combined-25-75-Xhh45-m-hh-control-all-4b}{Standard}
+    {spider-combined-25-75-Xhh45-m-hh-control-all-4b_nohalf}{No $\div 2$}
+
+    \displaytwocaption{With High $\Delta \eta$ VBF Binning}{
+        Improvement also present in alternate $m_{HH}$ binning scheme
+
+        {\footnotesize
+            [400, 445, 485, 530, 580, 630, 685, 750, 815, 890, 970, 1055, 1150, 1255, 1370]
+        }
+    }
+    {bootstrap_combination_20-20-20_bst100_newVars0713_newbins}{Standard}
+    {bootstrap_combination_20-20-20_bst100_newVars0713_newbins_nohalf}{No $\div 2$}
+
+
+
+
+    %Conclusion 
+    \section{Conclusion}
+    \displayonelarge{Conclusion}{
+        \begin{itemize}
+            \item Bootstrap Error Formula is less effective for VBF
+            \item Difference seems to come from smaller norm IQR
+            \item Artificially scaling up the norm IQR by factor of 2 appears to work
+        \end{itemize}
+    }{bootstrap_combination_20-20-20_bst100_newVars0713_newbins_nohalf}
+
+
+    %\announcesection{Backup}
+
+\end{document}

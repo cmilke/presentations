@@ -1,0 +1,57 @@
+\announcesection{Why are Some Combinations Better than Others?}
+\frame{
+    \frametitle{``Orthogonality"}
+
+    \begin{itemize}
+        \item While this is often discussed, it's unclear (to me) what this actually means.
+        \item I'm not sure if these samples genuinely span a linear space,
+        \item I've never seen a discussion of what their \textit{bilinear form} (scalar product) actually is.
+        \item Without the bilinear form, testing orthogonality is moot.
+        \item I've discussed this with VBF theorist Christoph Englert;
+        \begin{itemize}
+            \item He largely dissuaded the use of orthogonality here
+            \item Described the term as misused in this context (linearly independent is more appropriate)
+            \item Deemed the idea as irrelevant to the topic of finding a good combination of samples
+        \end{itemize}
+        \item If continued research on this topic is desired, I'll need to discuss with experts further
+    \end{itemize}
+}
+
+\fullscreenimage{Acceptance X Efficiency}{accXeff_explain}
+
+\frame{
+    \frametitle{Acceptance X Efficiency of Samples}
+
+    \begin{center} 
+    \begin{tabular}{ |l|l|l|c| }
+        \hline
+        $\kappa_{2V}$ & $\kappa_\lambda$ & $\kappa_V$ & Acc X Eff \\
+                      &                  &            & (X $10^{-5}$) \\
+        \hline
+            4.0 &  1.0   & 1.0   & 6.80 \\
+            0.0 &  1.0   & 0.5   & 6.78 \\
+            2.0 &  1.0   & 1.0   & 6.18 \\
+            0.0 &  1.0   & 1.0   & 5.75 \\
+            1.5 &  1.0   & 1.0   & 5.54 \\
+            0.5 &  1.0   & 1.0   & 4.52 \\
+            1.0 &  0.0   & 1.0   & 1.59 \\
+            1.0 &  10.0  & 1.0   & 1.45 \\
+            1.0 &  1.0   & 1.0   & 1.41 \\
+            1.0 &  2.0   & 1.0   & 0.97 \\
+        \hline
+    \end{tabular}
+    \end{center}
+}
+
+\displayonelarge{Basis Performance VS Consitutuent Sample Acceptances}{
+    { \tiny
+    Each row is a basis (ordered from best performing to worst) \vspace{3mm} \\
+    Each column is a sample in that basis (ordered highest to lowest) \vspace{3mm} \\
+    No obvious pattern (that I can see) between acceptances and basis performance
+    \par }
+}{Nweight_acceptance_dump}
+
+\displayonelarge{Acceptance X Efficiency and Basis Performance}{
+    AccXeff seems to have no significant effect on the choice of one basis over another, at least with current samples (may just indicate that AccXeff doesn't vary much across the current 4b samples).
+}
+{Nweight_integral_VS_accXeff_sum}

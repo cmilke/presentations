@@ -1,0 +1,34 @@
+\documentclass{beamer}
+\usepackage{pdfpages}
+\input{header.tex}
+
+%Begin Presentation
+\begin{document}
+    \setbeamercolor{background canvas}{bg=}
+    \title{SMU ATLAS Status Update\\VBF HH MC Combination Studies}
+    \author{Chris Milke}
+    \date{17 June, 2021}
+
+    \frame{\titlepage}
+    \frame{\frametitle{Overview} \tableofcontents}
+
+    % Intro
+    \input{intro.tex}
+    \input{combination.tex}
+    \input{reco_combinations_old.tex}
+    \input{nWeight_intro.tex}
+    \input{new_samples.tex}
+
+    \section{Conclusion}
+    \displaytwocaption{Conclusion}{ \tiny
+        Proposed solution is to produce one new MC sample which can hopefully stabilize the combinations.
+        I have provided the following two options as recommendations,
+            with the below plots made at \textit{truth-level} to show usefulness of the samples. 
+
+        Both of these samples look like they would drastically improve performance of coupling scans.
+    }
+    {negative_weights_iterA00_truth_quadrank0}
+    { Using Sample $(\kvv=1, \kl=-5, \kv=0.5)$ }
+    {negative_weights_iterA02_truth_quadrank1}
+    { Using Sample $(\kvv=3, \kl=-9, \kv=1)$ }
+\end{document}
