@@ -1,0 +1,14 @@
+\resizebox{0.8\textwidth}{!}{
+\begin{tikzpicture} \begin{feynman}
+    \vertex (k2l) {$\kappa_{2\lambda}$};
+    \vertex [above right=of k2l] (h3) {$h_3$};
+    \vertex [below right=of k2l] (h4) {$h_4$};
+    \vertex [above left=of k2l] (h1) {$h_1$};
+    \vertex [below left=of k2l] (h2) {$h_2$};
+
+    \diagram* {
+        (h1) -- [scalar] (k2l) -- [scalar] (h2),
+        (h3) -- [scalar] (k2l) -- [scalar] (h4),
+    };
+\end{feynman} \end{tikzpicture}
+}

@@ -1,0 +1,13 @@
+\resizebox{0.9\textwidth}{!}{
+\begin{tikzpicture} \begin{feynman}
+    \vertex (h0) {$h_0$};
+    \vertex [right=of h0] (kl) {$\kl$};
+    \vertex [above right=of kl] (h1) {$h_1$};
+    \vertex [below right=of kl] (h2) {$h_2$};
+
+    \diagram* {
+        (h0) -- [scalar] (kl),
+        (h1) -- [scalar] (kl) -- [scalar] (h2),
+    };
+\end{feynman} \end{tikzpicture}
+}

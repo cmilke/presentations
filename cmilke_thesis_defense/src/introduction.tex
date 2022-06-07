@@ -1,0 +1,206 @@
+\announcesection{Introduction}
+
+% Theory 1: SM
+\displayonelarge{The Standard Model of Particle Physics}{
+    {\small
+    Description of all (known) matter.
+    \vspace{5mm}
+
+    Rests on the principle that ``forces'' can be described
+    as interactions mediated by \textit{massless} gauge boson particles.
+    \vspace{5mm}
+
+    Confoundingly, the W and Z bosons \textit{do} have mass,
+        requiring either a modification to 
+        (or complete overhaul of) the theory.}
+}{theory/Standard_Model_of_Elementary_Particles}
+
+% Theory 2: Higgs Field
+\displayone{The Higgs Mechanism}{
+    The Higgs mechanism posits the existence of a ``Higgs Field''
+        which induces mass in any particles it interacts with it.
+    \vspace{5mm}
+
+    This field was predicted to manifest in the form of a scalar particle,
+        the Higgs boson,
+        and was detected in 2012 by the CMS and ATLAS experiments.
+    \vspace{5mm}
+}{theory/higgspotential}
+
+% VVh, VVHH, HHH, HHHH (backup)
+\frame{
+    \frametitle{\hhproc Electroweak-Higgs Interactions}
+
+    Many properties of the Higgs are still poorly understood,
+        but could be probed via di-Higgs production.
+
+
+    \begin{figure}
+    \centering
+    \begin{subfigure}{0.32\textwidth} 
+        \input{diagrams/feyn_VVh.tex} 
+        \caption{$VVh$}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \input{diagrams/feyn_VVhh.tex} 
+        \caption{$VVhh$}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \input{diagrams/feyn_hhh.tex} 
+        \caption{$hhh$}
+    \end{subfigure}
+    \end{figure}
+
+    The Standard Model predicts how frequently these interactions should occur.
+    By providing the conditions necessary for these interactions,
+        one can measure how often they actually occur vs their theoretically predicted rate
+        (the interactions' ``$kappa$-value'').
+}
+
+%% Theory 3: Higgs Lagrangian and its (electroweak) couplings
+%\frame{
+%    \frametitle{}
+%    {\footnotesize
+%    \begin{equation} \begin{split} \label{eq:higgskappas}
+%        \Lag_h &= \frac{1}{2} \left(\partial^2 - m_h^2 \right) h^2
+%            + \kv g_{HVV} V^2 h + \kvv \frac{g_{HHVV}}{2} V^2 h^2
+%            + \kl \frac{g_{HHH}}{3!} h^3 + \kappa_{2\lambda} \frac{g_{HHHH}}{4!} h^4
+%         \nonumber
+%    \end{split} \end{equation}
+%    }
+%}
+
+% Theory 3: di-Higgs and VBF->HH->bbbb
+\frame{
+    \frametitle{Vector Boson Fusion, di-Higgs Production, and the All-Hadronic Final State}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \input{diagrams/vbf_bbbb.tex} 
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \input{tables/theory/higgsbranching.tex}
+        \end{column}
+    \end{columns}
+}
+
+
+\frame{
+    \frametitle{\hhproc Production}
+
+    \begin{figure}
+    \centering
+    \begin{subfigure}{0.32\textwidth} 
+        \input{diagrams/vbf_hh_kv.tex} 
+        \caption{$M_t$}
+        \label{fig:tree_level_vbfhh:kv}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \input{diagrams/vbf_hh_kl.tex} 
+        \caption{$M_s$}
+        \label{fig:tree_level_vbfhh:kl}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \input{diagrams/vbf_hh_k2v.tex} 
+        \caption{$M_x$}
+        \label{fig:tree_level_vbfhh:k2v}
+    \end{subfigure}
+    \end{figure}
+
+    \begin{equation} \begin{split}
+        \sigma &\propto |  \kv^2 M_t + \kv \kl M_s + \kvv M_x |^2 \\
+        \sigma &\propto \kv^2 \kl^2 a_1 + \kv^4 a_2 + \kvv^2 a_3 + \kv^3 \kl a_4 + \kv \kl \kvv a_5 + \kv^2 \kvv a_6
+    \end{split} \end{equation}
+}
+
+% LHC 1: xsec/lumi
+\frame{
+    \frametitle{Cross-section and Integrated Luminosity}
+
+    {
+    \begin{equation} \begin{split}
+        \textrm{Expected Events} &= (\textrm{Probability}) \times (\textrm{Number of repeated trials}) \\
+        &\downarrow \\
+        \textrm{Expected Events} &= \sigma \times L_{\textrm{integrated}}
+        \nonumber
+    \end{split} \end{equation}
+    }
+    \vspace{5mm}
+
+    \begin{center}
+    \begin{tabular}{ rll }
+    $\sigma$ & $\rightarrow$ & Units of cross-sectional area (femto-barns, $fb = 10^{-43}$);\\
+        &&Purely a function of theory\\
+    \\
+    $L_{\textrm{integrated}}$ & $\rightarrow$ & Units of inverse area ($\ifb$);\\
+        && Purely a function of experimental setup 
+    \end{tabular}
+    \end{center}
+
+
+}
+
+%\displayone{Cross-section and Luminosity}{
+%    {\scriptsize
+%    \begin{equation} \begin{split}
+%        %\frac{\mathcal{P}_{\textrm{hit}}}{\textrm{throw}} &= \frac{\textrm{Area}_{\textrm{object}}}{\textrm{Area}_{\textrm{total}}} \\
+%        %\textrm{expected hits} &= \frac{\mathcal{P}_{\textrm{hit}}}{{\textrm{throw}}} \times N_{\textrm{throws}}
+%        %N_{\textrm{throws}} &= \frac{N_{\textrm{throws}}}{\Delta t} \times \Delta t \\
+%        %\textrm{expected hits} &= \frac{\mathcal{P}_{\textrm{hit}}}{{\textrm{throw}}} \times N_{\textrm{throws}}
+%        \frac{\mathcal{P}_{\textrm{hit}}}{\textrm{throw}} &= \frac{\xsec}{\textrm{Area}_{\textrm{total}}} \\
+%        \frac{\textrm{expected hits}}{\Delta t} &= \frac{\mathcal{P}_{\textrm{hit}}}{{\textrm{throw}}} \times \frac{\textrm{throws}}{\textrm{\Delta t}} \\
+%        \textrm{expected hits} &= \frac{\textrm{expected hits}}{\Delta t} \times {\Delta t}
+%        \nonumber
+%    \end{split} \end{equation}
+%    \vspace{3mm}
+%
+%    \begin{equation} \begin{split}
+%        \dXsec &\propto | M | ^2 \\
+%        \xsec &= \int \dXsec d\Omega \\
+%        L_{\textrm{instantaneous}} &= \frac{1}{\textrm{Area}_{\textrm{total}}} \times \frac{N_{\textrm{throws}}}{\Delta t} \\
+%        L_{\textrm{integrated}} &= \int L_{\textrm{instantaneous}} dt \\
+%        \textrm{expected events} &= \xsec \times L_{\textrm{integrated}}
+%        \nonumber
+%    \end{split} \end{equation}
+%    }
+%}{introduction/xsec_ball}
+
+%\frame{
+%    \frametitle{Cross-section and Luminosity}
+%    \begin{columns}
+%        \begin{column}{0.4\textwidth}
+%        \end{column}
+%        \begin{column}{0.6\textwidth}
+%
+%        \end{column}
+%    \end{columns}
+%}
+
+% LHC 1: overview
+\displaytwoV{The Large Hadron Collider}{
+    \vspace{10mm}
+    \begin{itemize}
+        \item Constructed 1995-2007
+        \item On border of Switzerland and France
+        \item 50-175 meters underground
+        \item 26.7 km radius 
+        \item 13 TeV center-of-mass collision energy
+        \item 139 \ifb of data delivered to Point 1 (126 after trigger inefficiency)
+    \end{itemize}
+}{introduction/lhc}{introduction/lhc_pipe}
+
+
+% ATLAS 1: overview
+\displayonelarge{The ATLAS Experiment}{
+    {\small
+    Massive particle detector array,
+        forming a $360^\circ$ 3D ``camera'' around the particle interaction region
+    \vspace{8mm}
+
+    Different subsytems have different roles:
+    \begin{itemize}
+        \item Tracker = momentum of charged particles
+        \item Calorimeter = energy
+        \item Muon System = N/A
+    \end{itemize}
+    }
+}{atlas/atlas_xsec}

@@ -1,0 +1,13 @@
+\resizebox{0.9\textwidth}{!}{
+\begin{tikzpicture} \begin{feynman}
+    \vertex (kv) {$\kv$};
+    \vertex [right=of kv] (h) {$h$};
+    \vertex [above left=of kv] (vb1) {$V_1$};
+    \vertex [below left=of kv] (vb2) {$V_2$};
+
+    \diagram* {
+        (vb1) -- [boson] (kv) -- [boson] (vb2),
+        (kv) -- [scalar] (h),
+    };
+\end{feynman} \end{tikzpicture}
+}

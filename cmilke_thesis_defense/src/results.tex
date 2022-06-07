@@ -1,0 +1,159 @@
+\announcesection{Results}
+
+\displaytwo{Basic Poisson Statistics}{
+    A brief toy example:
+
+    {\footnotesize
+    \begin{equation}
+        \textrm{p-value}(N=52) \equiv P(0|60) + P(1|60) + ... + P(51|60) ... P(52|60) = \sum\limits_{n=0}^N P(n|60)
+    \end{equation}
+    }
+}
+{results/toy_poisson}
+{results/toy_Cpoisson}
+
+\frame{
+    \frametitle{Poisson Statistics with Real Data}
+    With signal and background, Poisson expectation is $\mu S + B$
+    \vspace{4mm}
+
+    P-value of signal represented as:
+    $P_S = \frac{P_{S+B}}{1 - P_B}$
+    \vspace{4mm}
+
+    \begin{table}[tbh]
+       \begin{center}
+           \begin{tabular}{|l|l|}
+           \hline
+               Type  &	Event Yield \\
+               \hline
+               Signal Hypothesis (SM) & 0.36 \\
+               Signal Hypothesis (\kvv=3) & 52.7 \\
+               Background Estimate  & 493.6 \\
+               Observed Data & 495 \\
+           \hline
+           \end{tabular}
+       \end{center}
+    \end{table}
+}
+
+
+\displayfour{Event-Yield Poisson Distributions}
+{results/total_yield_poisson_1p00_1p00_1p00}
+{results/total_yield_Cpoisson_1p00_1p00_1p00}
+{results/total_yield_poisson_3p00_1p00_1p00}
+{results/total_yield_Cpoisson_3p00_1p00_1p00}
+
+
+
+\displayfour{One-Dimensional Limits for  $\mu S + B$}
+{results/mu_pvalue_1p00_1p00_1p00}
+{results/mu_pvalue_3p00_1p00_1p00}
+{results/mu_limits_fast_k2v}
+{results/mu_limits_fast_kl}
+
+
+\displaythree{2D Coupling Limits}{}
+{results/limit_slice_kv_1p0}
+{results/limit_slice_kl_1}
+{results/limit_slice_k2v_1p0}
+
+\fullscreenimage{Full 3D Coupling Limits}{results/full_3D_point_cloud}
+
+\displaythree{\mhh Significance}{
+    Binning events by \mhh permits greater ``significance'':
+    \vspace{3mm}
+
+    $Z_s=\frac{S}{\sqrt{S+B}}$
+}
+{results/data_dump_m_hh_1p00_1p00_1p00}
+{results/data_dump_m_hh_3p00_1p00_1p00}
+{results/data_dump_m_hh_1p00_10p00_1p00}
+
+\displaythree{$\deta_{hh}$ Significance}{
+    A similar effect can be achieved with $\deta_{hh}$
+}
+{results/data_dump_dEta_hh_1p00_1p00_1p00}
+{results/data_dump_dEta_hh_3p00_1p00_1p00}
+{results/data_dump_dEta_hh_1p00_10p00_1p00}
+
+
+\displaythree{Nuissance Parameters, $\deta_{hh} < 1.5$}{}
+{results/error_comparison_kl1p0_kvv1p0_kv1p0cat0}
+{results/error_comparison_kl1p0_kvv3p0_kv1p0cat0}
+{results/error_comparison_kl10p0_kvv1p0_kv1p0cat0}
+
+\displaythree{Nuissance Parameters, $\deta_{hh} > 1.5$}{}
+{results/error_comparison_kl1p0_kvv1p0_kv1p0cat1}
+{results/error_comparison_kl1p0_kvv3p0_kv1p0cat1}
+{results/error_comparison_kl10p0_kvv1p0_kv1p0cat1}
+
+
+\frame{
+    \frametitle{Log Likelihood Profile Fit}
+
+    Two categories ($j=[1,2]$), for $\deta_{hh} < 1.5$ and $\deta_{hh} > 1.5$
+    \vspace{3mm}
+
+    Four nuissance parameters ($a=[1,4] $) for each of the four background shape uncertainties
+    \vspace{3mm}
+
+    {\footnotesize
+        \begin{equation} \begin{split}
+            P_{\textrm{poiss}}(n_i | \nu_i) =  \frac{ (\mu S_i + \Theta B_i)^{n_i} e^{\mu S_i + \Theta B_i} }{n_i!}
+        \end{split} \end{equation}
+    }
+
+    {\footnotesize
+        \begin{equation} \begin{split}
+                 P_{\textrm{gauss}}(n_i | \nu_i, \sigma_i^a) = \frac{1}{\sigma_i^a \sqrt{2\pi}} e^{
+                    -\frac{1}{2}\left(\frac{n_i- (\mu S_i + \Theta B_i)}{\sigma_i^a}\right)^2
+                }
+        \end{split} \end{equation}
+    }
+
+    \begin{equation}
+        L(n,\mu,\Theta) = \prod \limits_{j=1}^{2}
+             \prod \limits_{i=1}^{N} P_{\textrm{poiss}}(n_{ij} | \nu_{ij}) 
+             \prod \limits_{a=1}^{4} P_{\textrm{gauss}}(n_{ij} | \nu_{ij}, \sigma_{i}^a) 
+    \end{equation}
+}
+
+
+
+
+
+\frame{
+    \frametitle{Test Statistic $\qtil$}
+
+    \begin{equation}
+        \prod \limits_{a=1}^{4} \frac{\partial}{\partial \theta^a} L(n,\mu,\Theta) |_{\Theta=\hat{\hat\Theta}} = 0
+    \end{equation}
+    \vspace{3mm}
+
+    \begin{equation}
+        \prod \limits_{a=1}^{4} \frac{\partial}{\partial \theta^a} \frac{\partial}{\partial \mu} L(n,\mu,\Theta) |_{\Theta=\hat \Theta} |_{\mu=\hat \mu} = 0
+        \,.
+    \end{equation}
+    \vspace{3mm}
+
+    \begin{equation}
+        \qtil = \begin{cases}
+            -2 \ln{\frac{L(\mu, \hat {\hat \Theta})}{L(0, \hat \Theta(\mu=0))}} & \hat \mu < 0,\\
+            -2 \ln{\frac{L(\mu, \hat {\hat \Theta})}{L(\hat \mu, \hat \Theta)}} & 0 \leq \hat \mu \leq \mu,\\
+            0 & \mu < \hat \mu 
+        \end{cases}
+        \,.
+    \end{equation}
+}
+
+\displayfour{$\kvv$ and $\kl$ 1D Limits}
+{results/k2v_scan_thesis_3D_samps_vbf_pd_vbf_inc161718_kl_1p0_mu}
+{results/kl_scan_thesis_3D_samps_vbf_pd_vbf_inc161718_k2v_1p0_mu}
+{results/k2v_scan_thesis_3D_samps_vbf_pd_vbf_inc161718_kl_1p0_xs}
+{results/kl_scan_thesis_3D_samps_vbf_pd_vbf_inc161718_k2v_1p0_xs}
+
+
+\displaytwo{$\kvv/\kl$ and $\kvv/\kv$ 2D Limits}{}
+{results/2D_scan_thesis_omega0_kvv_kl_samps_vbf_pd_vbf_inc161718_k1v1p00_exclusion}
+{results/2D_scan_thesis_omega0_kvv_kv_samps_vbf_pd_vbf_inc161718_kl1p00_exclusion}
