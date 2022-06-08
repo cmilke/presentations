@@ -1,0 +1,56 @@
+\announcesection{Data Processing}
+
+% Tracks
+\displayone{Tracking}{
+
+}{reconstruction/trackseeding}
+
+% Jets
+\displayone{Jets}{
+
+}{reconstruction/ATLAS_Detector_Schematic_black_particles}
+
+% Flavor Tagging
+\displayone{Flavor Tagging}{
+
+}{reconstruction/dl1_performance_ljet}
+
+% Selection
+\frame{
+    \frametitle{Event Selection}
+    \begin{columns} \begin{column}{0.5\textwidth}
+        \begin{itemize}
+            \item At least six jets total
+            \begin{itemize}
+                \item Central Jets: $|\eta| < 2.5$, $p_T > 40$ GeV
+                \item Forward Jets: $2.5 < |\eta| \leq 4.5$, $p_T > 30$ GeV
+            \end{itemize}
+            \item Two \textit{anti}-b-tagged jets
+            \begin{itemize}
+                \item $ |\Delta \eta_{jj}| > 3.0 $,
+                \item $M_{jj} > 1000$ GeV, and
+                \item $p_{T,jj} < 65 $ GeV
+            \end{itemize}
+            \item At least 4 central, b-tagged jets
+            \begin{itemize}
+                \item $p_T > 40$ GeV
+                \item paired up as reconstructed HH
+                \item $ |\Delta \eta_{HH}| < 1.5 $
+            \end{itemize}
+            \item Using b-jet trigger DL1r 77\% working point,
+                light jet acceptance of 0.59\%
+        \end{itemize}
+    \end{column} \begin{column}{0.5\textwidth}
+        \begin{figure}
+            \includegraphics[width=\linewidth,height=0.9\textheight,keepaspectratio]{selection/event_display}
+            \caption{\tiny Rings indicate jets;
+                Yellow ring => b-tagged;
+                Blue ring w/ white cross => VBF initial-scatter jets;
+                ``+'' in center of rings => $p_T$;
+                vertical lines denote "forward" vs "central" region.}
+        \end{figure}
+    \end{column} \end{columns}
+}
+
+% Background Events
+% Background Events 2
