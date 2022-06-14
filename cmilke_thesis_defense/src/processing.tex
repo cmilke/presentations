@@ -1,18 +1,27 @@
 \announcesection{Data Processing}
 
 % Tracks
-\displayone{Tracking}{
-
-}{reconstruction/trackseeding}
+\displayonelarge{Tracking}{
+    {\footnotesize
+        2T solenoid magnet bends charged particles traversing trackers.
+        Helical trajectory is used to calculated particle momentum/mass/charge.
+    }
+}{processing/IDbriefing_figure1}
 
 % Jets
-\displayone{Jets}{
+\displayonelarge{Jets}{
+    {\footnotesize
+        Determines energy of particles by seeing how many plates of metal they can go through.
+        E-Cal for electrons/photons,
+            H-Cal for hadronic particles.
 
+    }
 }{reconstruction/ATLAS_Detector_Schematic_black_particles}
 
 % Flavor Tagging
 \displayone{Flavor Tagging}{
-
+    Uses a recurrent Deep Learning neural net (DL1r) to distinguish b-jets from light-jets.
+    Primarily takes advantage of secondary vertexing and impact parameter jet properties
 }{reconstruction/dl1_performance_ljet}
 
 % Selection
@@ -53,4 +62,16 @@
 }
 
 % Background Events
-% Background Events 2
+\displayonelarge{Background Reweighting}{
+    Posit that 2b-tagged events are kinematically similar to 4b-tagged background.
+    Use NN ensemble to adjust kinematic differences, trained on ``control'' region of data.
+}{selection/massplane_sig_all_4b_vbf_Xwt_1p5_k2V_0}
+
+\displaytwo{Reweighting Performance}{}
+{background/crypto-mean-stdBS-m-hh-Control-Region-1-no-rw-all-4binclusive}
+{background/crypto-mean-stdBS-m-hh-Control-Region-1-NN-all-4binclusive}
+
+%{background/crypto-mean-stdBS-X-wt-tag-Control-Region-1-no-rw-all-4binclusive}
+%{background/crypto-mean-stdBS-X-wt-tag-Control-Region-1-NN-all-4binclusive}
+%{background/crypto-mean-stdBS-dEta-hh-Control-Region-1-no-rw-all-4binclusive}
+%{background/crypto-mean-stdBS-dEta-hh-Control-Region-1-NN-all-4binclusive}

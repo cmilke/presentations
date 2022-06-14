@@ -1,0 +1,224 @@
+\displaytwo{Signal MC}{
+    Different values for the $\kappa$'s leads to very different kinematic distributions and event yeilds.
+}{signal/truth_lhe_HH_m}
+%{signal/truth_lhe_jj_M}
+{signal/truth_lhe_HH_dEta}
+
+\frame{
+    \frametitle{3D Coupling Dependence}
+    {\small
+        We need large coverage of the 3-coupling parameter space, but signal samples are computationally expensive to produce.
+        We can use the underlying math of field theory to create a shortcut:
+    }
+
+    \begin{figure}
+    \centering
+    \begin{subfigure}{0.32\textwidth} 
+        \input{diagrams/vbf_hh_kv.tex} 
+        \caption{$M_t$}
+        \label{fig:tree_level_vbfhh:kv}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \input{diagrams/vbf_hh_kl.tex} 
+        \caption{$M_s$}
+        \label{fig:tree_level_vbfhh:kl}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \input{diagrams/vbf_hh_k2v.tex} 
+        \caption{$M_x$}
+        \label{fig:tree_level_vbfhh:k2v}
+    \end{subfigure}
+    \end{figure}
+
+    \begin{equation} \begin{split}
+        \sigma &\propto |  \kv^2 M_t + \kv \kl M_s + \kvv M_x |^2 \\
+        \sigma &\propto \kv^2 \kl^2 a_1 + \kv^4 a_2 + \kvv^2 a_3 + \kv^3 \kl a_4 + \kv \kl \kvv a_5 + \kv^2 \kvv a_6
+    \end{split} \end{equation}
+}
+
+% 6 variables, six equations, make a mess
+\frame{
+    \frametitle{6 Unknowns: Solve With 6 Equations}
+
+    \vspace{5mm}
+
+    \foreach \index in {1,2,3,4,5,6}{
+        { \small $ \sigma_\index = \fkv{\index}^2 \fkl{\index}^2 a_1 + \fkv{\index}^4 a_2 + \fkvv{\index}^2 a_3 + \fkv{\index}^3 \fkl{\index} a_4 + \fkv{\index} \fkl{\index} \fkvv{\index} a_5 + \fkv{\index}^2 \fkvv{\index} a_6 $ }
+
+        \vspace{5mm}
+    }
+}
+
+% convert to matrix, show nice matrix solution
+\frame{
+    \frametitle{Linear Algebra Makes this Simple}
+
+    \begin{columns}[T]
+        \begin{column}{0.18\textwidth}
+            $ \vec{\sigma} = \begin{pmatrix} \sigma_1 \\ \sigma_2 \\ \sigma_3 \\ \sigma_4 \\ \sigma_5 \\ \sigma_6 \end{pmatrix} $
+        \end{column}
+        \begin{column}{0.15\textwidth}
+            $ \vec{a} = \begin{pmatrix} a_1 \\ a_2 \\ a_3 \\ a_4 \\ a_5 \\ a_6 \end{pmatrix} $
+        \end{column}
+        \begin{column}{0.25\textwidth}
+            $ \vec{f} = \begin{pmatrix} \kv^2 \kl^2 \\ \kv^4 \\ \kvv^2 \\ \kv^3 \kl \\ \kv \kl \kvv \\ \kv^2 \kvv \end{pmatrix} $
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            $ F = \begin{pmatrix}
+                \vec{f}(\fkvv{1}, \fkl{1}, \fkv{1}) \\
+                \vec{f}(\fkvv{2}, \fkl{2}, \fkv{2}) \\
+                \vec{f}(\fkvv{3}, \fkl{3}, \fkv{3}) \\
+                \vec{f}(\fkvv{4}, \fkl{4}, \fkv{4}) \\
+                \vec{f}(\fkvv{5}, \fkl{5}, \fkv{5}) \\
+                \vec{f}(\fkvv{6}, \fkl{6}, \fkv{6}) \\
+            \end{pmatrix} $
+        \end{column}
+    \end{columns}
+
+    \vspace{10mm}
+
+    $ \vec{\sigma} = F \bullet \vec{a} \; \Longrightarrow \; \vec{a} = F^{-1} \bullet \vec{\sigma} $
+
+    \vspace{10mm}
+
+    $ \boxed{ \sigma(\kvv,\kl,\kv) = \vec{f}(\kvv,\kl,\kv) \bullet F^{-1} \bullet \vec{\sigma} } $
+}
+
+
+\frame{
+    \frametitle{Linear Combination Using Post Reconstruction/Selection Samples}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \begin{center} 
+            {\tiny Signal Sample Basis Set}
+
+            \resizebox{0.2\textheight}{!}{ \begin{tabular}{ |l|l|l| }
+                \hline
+                \textbf {$\kappa_{2V}$} & \textbf {$\kappa_\lambda$} & \textbf {$\kappa_V$} \\
+                \hline
+                    1.  &   1. & 1.  \\
+                    2.  &   1. & 1.  \\
+                    1.5 &   1. & 1.  \\
+                    0.  &   1. & 0.5 \\
+                    1.  &   0. & 1.  \\
+                    1.  &  10. & 1.  \\
+                \hline
+            \end{tabular}}
+            \end{center}
+
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \resizebox{0.8\textwidth}{!}{ \begin{minipage}{1.0\textwidth}
+            Linear Combination Equation
+
+            \vspace{10mm}
+
+            {\tiny \input{src/old_amplitude.tex}}
+            \end{minipage}}
+        \end{column}
+    \end{columns}
+}
+
+\displaythree{Validity of Sample Combinations}
+{ \small 
+    Combining the six basis samples allows for modelling of distributions for any coupling values.
+}
+{ancient_signal/reco_mHH_cvv1p0cl2p0cv1p0_ancient}
+{ancient_signal/reco_mHH_cvv0p0cl1p0cv1p0_ancient}
+{ancient_signal/reco_mHH_cvv4p0cl1p0cv1p0_ancient}
+
+
+\displaytwo{Negative Weights}{
+    Negative weights can appear in the $m_{HH}$ combination. These are unphysical and should be avoided.
+
+    In further regions of the $\kappa$ coupling space, these negative weights can be become dangerously common.
+}{ancient_signal/reco_mHH_cvv1p0cl2p0cv1p0_ancient}
+{ancient_signal/preview_reco_mHH_cvv0p0cl-9p0cv1p0_old}
+
+\displayonelarge{Assessing Basis Performance via Negative Weight Integral}{
+    Take the surface integral of the number of negative bins at each point at in the $\kappa$ parameter space (mutliplying by the $\kvv \times \kl$ ``area") as a general metric of performance.
+}{ancient_signal/negative_weights_rank027}
+
+\displaythree{Negative-Weight Map of Different Bases}{
+    Other bases show considerable improvement in the number of negative bins
+}
+{ancient_signal/negative_weights_rank027}
+{ancient_signal/negative_weights_rank015}
+{ancient_signal/negative_weights_rank000}
+
+
+\frame{
+    \frametitle{Chosen 6-Sample Combination}
+    \begin{columns}
+        \begin{column}{0.19\textwidth}
+            \begin{center} 
+            {\tiny Signal Sample Basis Set}
+
+            \resizebox{0.2\textheight}{!}{ \begin{tabular}{ |l|l|l| }
+                \hline
+                \textbf {$\kappa_{2V}$} & \textbf {$\kappa_\lambda$} & \textbf {$\kappa_V$} \\
+                \hline
+                    1   &   1 & 1   \\
+                    1.5 &   1 & 1   \\
+                    1   &   2 & 1   \\
+                    1   &  10 & 1   \\
+                    1   &   1 & 0.5 \\
+                    0   &  -5 & 0.5 \\
+                \hline
+            \end{tabular}}
+            \end{center}
+
+        \end{column}
+        \begin{column}{0.8\textwidth}
+            \resizebox{0.9\textwidth}{!}{ \begin{minipage}{1.0\textwidth}
+            Linear Combination Equation
+
+            \vspace{10mm}
+            {\tiny \begin{equation}
+            \begin{split}
+                \sigma'(\kvv, \kl, \kv) = \hspace{50mm}& \\
+                \left(\frac{68 \kappa_{2V}^{2}}{135} - 4 \kappa_{2V} \kappa_{V}^{2} + \frac{20 \kappa_{2V} \kappa_{V} \kappa_{\lambda}}{27} + \frac{772 \kappa_{V}^{4}}{135} - \frac{56 \kappa_{V}^{3} \kappa_{\lambda}}{27} + \frac{\kappa_{V}^{2} \kappa_{\lambda}^{2}}{9}\right)
+                    \times & \sigma{\left(1,1,1 \right)} \\
+                + \left(- \frac{4 \kappa_{2V}^{2}}{5} + 4 \kappa_{2V} \kappa_{V}^{2} - \frac{16 \kappa_{V}^{4}}{5}\right)
+                    \times & \sigma{\left(\frac{3}{2},1,1 \right)} \\
+                + \left(\frac{11 \kappa_{2V}^{2}}{60} + \frac{\kappa_{2V} \kappa_{V}^{2}}{3} - \frac{19 \kappa_{2V} \kappa_{V} \kappa_{\lambda}}{24} - \frac{53 \kappa_{V}^{4}}{30} + \frac{13 \kappa_{V}^{3} \kappa_{\lambda}}{6} - \frac{\kappa_{V}^{2} \kappa_{\lambda}^{2}}{8}\right)
+                    \times & \sigma{\left(1,2,1 \right)} \\
+                + \left(- \frac{11 \kappa_{2V}^{2}}{540} + \frac{11 \kappa_{2V} \kappa_{V} \kappa_{\lambda}}{216} + \frac{13 \kappa_{V}^{4}}{270} - \frac{5 \kappa_{V}^{3} \kappa_{\lambda}}{54} + \frac{\kappa_{V}^{2} \kappa_{\lambda}^{2}}{72}\right)
+                    \times & \sigma{\left(1,10,1 \right)}  \\
+                + \left(\frac{88 \kappa_{2V}^{2}}{45} - \frac{16 \kappa_{2V} \kappa_{V}^{2}}{3} + \frac{4 \kappa_{2V} \kappa_{V} \kappa_{\lambda}}{9} + \frac{152 \kappa_{V}^{4}}{45} - \frac{4 \kappa_{V}^{3} \kappa_{\lambda}}{9}\right)
+                    \times & \sigma{\left(1,1,\frac{1}{2} \right)} \\
+                + \left(\frac{8 \kappa_{2V}^{2}}{45} - \frac{4 \kappa_{2V} \kappa_{V} \kappa_{\lambda}}{9} - \frac{8 \kappa_{V}^{4}}{45} + \frac{4 \kappa_{V}^{3} \kappa_{\lambda}}{9}\right)
+                    \times & \sigma{\left(1,-5,\frac{1}{2} \right)}
+                \nonumber
+            \end{split} \end{equation}}
+
+            \end{minipage}}
+        \end{column}
+    \end{columns}
+}
+
+\displayonelarge{Combination Performance}{
+    Chosen basis shows very few regions of negative bins
+}{signal/negative_weights_base}
+
+\displaytwo{Validation of Combination Technique}{
+
+}
+{signal/reco_mHH_cvv1p00cl1p00cv1p50}
+{signal/reco_mHH_cvv1p00cl0p00cv1p00}
+
+\displaythree{Further Validation}{}
+{signal/reco_mHH_cvv1p00cl0p00cv1p00}
+{signal/reco_mHH_cvv0p00cl1p00cv1p00}
+{signal/reco_mHH_cvv3p00cl1p00cv1p00}
+
+\displaytwo{Checking Off-Axis Regions}{
+
+}
+{signal/preview_reco_mHH_new_cvv2p50cl-10p00cv1p00}
+{signal/preview_reco_mHH_new_cvv2p00cl-10p00cv1p00}
+
+\displaythree{Further Off-Axis Checks}{}
+{signal/preview_reco_mHH_new_cvv0p00cl13p00cv1p00}
+{signal/preview_reco_mHH_new_cvv-2p00cl1p00cv1p00}
+{signal/preview_reco_mHH_new_cvv1p00cl-9p00cv1p00}
