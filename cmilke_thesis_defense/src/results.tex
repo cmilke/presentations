@@ -1,49 +1,56 @@
 \announcesection{Results}
 
-\displaytwo{Basic Poisson Statistics}{
-    A brief toy example:
-
-    {\footnotesize
-    \begin{equation}
-        \textrm{p-value}(N=52) \equiv P(0|60) + P(1|60) + ... + P(51|60) ... P(52|60) = \sum\limits_{n=0}^N P(n|60)
-    \end{equation}
-    }
-}
-{results/toy_poisson}
-{results/toy_Cpoisson}
-
 \frame{
-    \frametitle{Poisson Statistics with Real Data}
+    \frametitle{Basic Poisson Statistics with Event Yields}
+    {\scriptsize
     With signal and background, Poisson expectation is $\mu S + B$
-    \vspace{4mm}
-
-    P-value of signal represented as:
-    $P_S = \frac{P_{S+B}}{1 - P_B}$
-    \vspace{4mm}
+    \vspace{2mm}
 
     \begin{table}[tbh]
        \begin{center}
-           \begin{tabular}{|l|l|}
+           \begin{tabular}{|l|l|l|}
            \hline
-               Type  &	Event Yield \\
+               Type  &	Event Yield & p-value \\
                \hline
-               Signal Hypothesis (SM) & 0.36 \\
-               Signal Hypothesis (\kvv=3) & 52.7 \\
-               Background Estimate  & 493.6 \\
-               Observed Data & 495 \\
+               Background Estimate        & 493.6 & \\
+               Signal Hypothesis (SM)     & 0.36  & \\
+               Signal Hypothesis (\kvv=3) & 52.7  & \\
+               Observed Data              &    & \\
            \hline
            \end{tabular}
        \end{center}
     \end{table}
+    }
+    \vspace{0.8\textheight}
 }
 
+\displaytwo{Basic Poisson Statistics with Event Yields}{
+    {\scriptsize
+    With signal and background, Poisson expectation is $\mu S + B$
+    \vspace{2mm}
 
-\displayfour{Event-Yield Poisson Distributions}
+    \begin{table}[tbh]
+       \begin{center}
+           \begin{tabular}{|l|l|l|}
+           \hline
+               Type  &	Event Yield & p-value \\
+               \hline
+               Background Estimate        & 493.6 & 0.55 \\
+               Signal Hypothesis (SM)     & 0.36  & 1.2 \\
+               Signal Hypothesis (\kvv=3) & 52.7  & 0.03 \\
+               Observed Data              & 495   & N/A  \\
+           \hline
+           \end{tabular}
+       \end{center}
+    \end{table}
+    \vspace{2mm}
+
+    P-value of signal calculated as:
+    $P_S = \frac{P_{S+B}}{1 - P_B}$
+    }
+}
 {results/total_yield_poisson_1p00_1p00_1p00}
-{results/total_yield_Cpoisson_1p00_1p00_1p00}
 {results/total_yield_poisson_3p00_1p00_1p00}
-{results/total_yield_Cpoisson_3p00_1p00_1p00}
-
 
 
 \displayfour{One-Dimensional Limits for  $\mu S + B$}
@@ -78,16 +85,6 @@
 {results/data_dump_dEta_hh_1p00_10p00_1p00}
 
 
-\displaythree{Nuissance Parameters, $\deta_{hh} < 1.5$}{}
-{results/error_comparison_kl1p0_kvv1p0_kv1p0cat0}
-{results/error_comparison_kl1p0_kvv3p0_kv1p0cat0}
-{results/error_comparison_kl10p0_kvv1p0_kv1p0cat0}
-
-\displaythree{Nuissance Parameters, $\deta_{hh} > 1.5$}{}
-{results/error_comparison_kl1p0_kvv1p0_kv1p0cat1}
-{results/error_comparison_kl1p0_kvv3p0_kv1p0cat1}
-{results/error_comparison_kl10p0_kvv1p0_kv1p0cat1}
-
 
 \frame{
     \frametitle{Log Likelihood Profile Fit}
@@ -101,6 +98,7 @@
     {\footnotesize
         \begin{equation} \begin{split}
             P_{\textrm{poiss}}(n_i | \nu_i) =  \frac{ (\mu S_i + \Theta B_i)^{n_i} e^{\mu S_i + \Theta B_i} }{n_i!}
+            \nonumber
         \end{split} \end{equation}
     }
 
@@ -109,6 +107,7 @@
                  P_{\textrm{gauss}}(n_i | \nu_i, \sigma_i^a) = \frac{1}{\sigma_i^a \sqrt{2\pi}} e^{
                     -\frac{1}{2}\left(\frac{n_i- (\mu S_i + \Theta B_i)}{\sigma_i^a}\right)^2
                 }
+            \nonumber
         \end{split} \end{equation}
     }
 
@@ -116,36 +115,12 @@
         L(n,\mu,\Theta) = \prod \limits_{j=1}^{2}
              \prod \limits_{i=1}^{N} P_{\textrm{poiss}}(n_{ij} | \nu_{ij}) 
              \prod \limits_{a=1}^{4} P_{\textrm{gauss}}(n_{ij} | \nu_{ij}, \sigma_{i}^a) 
+        \nonumber
     \end{equation}
 }
 
 
 
-
-
-\frame{
-    \frametitle{Test Statistic $\qtil$}
-
-    \begin{equation}
-        \prod \limits_{a=1}^{4} \frac{\partial}{\partial \theta^a} L(n,\mu,\Theta) |_{\Theta=\hat{\hat\Theta}} = 0
-    \end{equation}
-    \vspace{3mm}
-
-    \begin{equation}
-        \prod \limits_{a=1}^{4} \frac{\partial}{\partial \theta^a} \frac{\partial}{\partial \mu} L(n,\mu,\Theta) |_{\Theta=\hat \Theta} |_{\mu=\hat \mu} = 0
-        \,.
-    \end{equation}
-    \vspace{3mm}
-
-    \begin{equation}
-        \qtil = \begin{cases}
-            -2 \ln{\frac{L(\mu, \hat {\hat \Theta})}{L(0, \hat \Theta(\mu=0))}} & \hat \mu < 0,\\
-            -2 \ln{\frac{L(\mu, \hat {\hat \Theta})}{L(\hat \mu, \hat \Theta)}} & 0 \leq \hat \mu \leq \mu,\\
-            0 & \mu < \hat \mu 
-        \end{cases}
-        \,.
-    \end{equation}
-}
 
 \displayfour{$\kvv$ and $\kl$ 1D Limits}
 {results/k2v_scan_thesis_3D_samps_vbf_pd_vbf_inc161718_kl_1p0_mu}

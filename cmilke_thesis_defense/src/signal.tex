@@ -1,39 +1,71 @@
+\announcesection{Signal Modelling}
+
 \displaytwo{Signal MC}{
-    Different values for the $\kappa$'s leads to very different kinematic distributions and event yeilds.
+    Different values for the $\kappa$'s (\kvv, \kl, \kv) leads to very different kinematic distributions and event yeilds.
+    \vspace{5mm}
+
+    We need large coverage of the 3-coupling parameter space, but signal samples are computationally expensive to produce.
 }{signal/truth_lhe_HH_m}
 %{signal/truth_lhe_jj_M}
 {signal/truth_lhe_HH_dEta}
 
+
+\newcommand{\lcm}[2]{
+    #1_{#2}(
+        m_{HH},
+        m_{jj},
+        ...
+    )
+}
+\newcommand{\lcma}[1]{\lcm{a}{#1}}
+\newcommand{\lcmb}[1]{\lcm{b}{#1}}
+
 \frame{
     \frametitle{3D Coupling Dependence}
-    {\small
-        We need large coverage of the 3-coupling parameter space, but signal samples are computationally expensive to produce.
-        We can use the underlying math of field theory to create a shortcut:
+    {\footnotesize
+        Some kind of shortcut is needed,
+            but relationship between matrix element expansion and event yields
+            is highly non-trivial due to distortion via acceptance/efficiency.
+
+        \begin{equation} \begin{split}
+            \sigma \propto \kv^2 \kl^2 a_1 + \kv^4 a_2 + \kvv^2 a_3 + \kv^3 \kl a_4 + \kv \kl \kvv a_5 + \kv^2 \kvv a_6
+            \nonumber
+        \end{split} \end{equation}
     }
+    \begin{center}
+    \resizebox{3mm}{!}{$\downarrow$}
+    \end{center}
+    {\footnotesize \begin{equation} \begin{alignedat}{3}
+        & \frac{d^n \sigma}{d m_{HH} d m_{jj} d ...} = && &&\\
+        \kv^2 \kl^2 &\times \lcma{1}
+            + \qquad\:\: \kv^4 &&\times \lcma{2}
+            + \quad\:\: \kvv^2 &&\times \lcma{3} \\
+        + \kv^3 \kl &\times \lcma{4}
+            + \kv \kl \kvv &&\times \lcma{5}
+            + \kv^2 \kvv &&\times \lcma{5}
+            \nonumber
+    \end{alignedat} \end{equation} }
+    \vspace{3mm}
 
-    \begin{figure}
-    \centering
-    \begin{subfigure}{0.32\textwidth} 
-        \input{diagrams/vbf_hh_kv.tex} 
-        \caption{$M_t$}
-        \label{fig:tree_level_vbfhh:kv}
-    \end{subfigure}
-    \begin{subfigure}{0.32\textwidth}
-        \input{diagrams/vbf_hh_kl.tex} 
-        \caption{$M_s$}
-        \label{fig:tree_level_vbfhh:kl}
-    \end{subfigure}
-    \begin{subfigure}{0.32\textwidth}
-        \input{diagrams/vbf_hh_k2v.tex} 
-        \caption{$M_x$}
-        \label{fig:tree_level_vbfhh:k2v}
-    \end{subfigure}
-    \end{figure}
+    \begin{center}
+    \resizebox{4mm}{!}{$\downarrow$}
+    \begin{minipage}[b]{40mm}{\tiny
+        hadronization, material interaction,\\
+        reconstruction, selection
+    }\end{minipage}
+    \end{center}
 
-    \begin{equation} \begin{split}
-        \sigma &\propto |  \kv^2 M_t + \kv \kl M_s + \kvv M_x |^2 \\
-        \sigma &\propto \kv^2 \kl^2 a_1 + \kv^4 a_2 + \kvv^2 a_3 + \kv^3 \kl a_4 + \kv \kl \kvv a_5 + \kv^2 \kvv a_6
-    \end{split} \end{equation}
+
+    {\footnotesize \begin{equation} \begin{alignedat}{3}
+        & \lcm{N}{\textrm{events}} = && && \\ 
+        \kv^2 \kl^2 &\times \lcmb{1}
+            + \qquad\:\: \kv^4 &&\times \lcmb{2}
+            + \quad\:\: \kvv^2 &&\times \lcmb{3} \\
+        + \kv^3 \kl &\times \lcmb{4}
+            + \kv \kl \kvv &&\times \lcmb{5}
+            + \kv^2 \kvv &&\times \lcmb{5}
+            \nonumber
+    \end{alignedat} \end{equation} }
 }
 
 % 6 variables, six equations, make a mess
@@ -43,7 +75,13 @@
     \vspace{5mm}
 
     \foreach \index in {1,2,3,4,5,6}{
-        { \small $ \sigma_\index = \fkv{\index}^2 \fkl{\index}^2 a_1 + \fkv{\index}^4 a_2 + \fkvv{\index}^2 a_3 + \fkv{\index}^3 \fkl{\index} a_4 + \fkv{\index} \fkl{\index} \fkvv{\index} a_5 + \fkv{\index}^2 \fkvv{\index} a_6 $ }
+        { \small $ N_\index
+            = \fkv{\index}^2 \fkl{\index}^2 b_1
+            + \fkv{\index}^4 b_2
+            + \fkvv{\index}^2 b_3
+            + \fkv{\index}^3 \fkl{\index} b_4
+            + \fkv{\index} \fkl{\index} \fkvv{\index} b_5
+            + \fkv{\index}^2 \fkvv{\index} b_6 $ }
 
         \vspace{5mm}
     }
@@ -55,10 +93,10 @@
 
     \begin{columns}[T]
         \begin{column}{0.18\textwidth}
-            $ \vec{\sigma} = \begin{pmatrix} \sigma_1 \\ \sigma_2 \\ \sigma_3 \\ \sigma_4 \\ \sigma_5 \\ \sigma_6 \end{pmatrix} $
+            $ \vec{N} = \begin{pmatrix} N_1 \\ N_2 \\ N_3 \\ N_4 \\ N_5 \\ N_6 \end{pmatrix} $
         \end{column}
         \begin{column}{0.15\textwidth}
-            $ \vec{a} = \begin{pmatrix} a_1 \\ a_2 \\ a_3 \\ a_4 \\ a_5 \\ a_6 \end{pmatrix} $
+            $ \vec{b} = \begin{pmatrix} b_1 \\ b_2 \\ b_3 \\ b_4 \\ b_5 \\ b_6 \end{pmatrix} $
         \end{column}
         \begin{column}{0.25\textwidth}
             $ \vec{f} = \begin{pmatrix} \kv^2 \kl^2 \\ \kv^4 \\ \kvv^2 \\ \kv^3 \kl \\ \kv \kl \kvv \\ \kv^2 \kvv \end{pmatrix} $
@@ -83,68 +121,6 @@
 
     $ \boxed{ \sigma(\kvv,\kl,\kv) = \vec{f}(\kvv,\kl,\kv) \bullet F^{-1} \bullet \vec{\sigma} } $
 }
-
-
-\frame{
-    \frametitle{Linear Combination Using Post Reconstruction/Selection Samples}
-    \begin{columns}
-        \begin{column}{0.4\textwidth}
-            \begin{center} 
-            {\tiny Signal Sample Basis Set}
-
-            \resizebox{0.2\textheight}{!}{ \begin{tabular}{ |l|l|l| }
-                \hline
-                \textbf {$\kappa_{2V}$} & \textbf {$\kappa_\lambda$} & \textbf {$\kappa_V$} \\
-                \hline
-                    1.  &   1. & 1.  \\
-                    2.  &   1. & 1.  \\
-                    1.5 &   1. & 1.  \\
-                    0.  &   1. & 0.5 \\
-                    1.  &   0. & 1.  \\
-                    1.  &  10. & 1.  \\
-                \hline
-            \end{tabular}}
-            \end{center}
-
-        \end{column}
-        \begin{column}{0.6\textwidth}
-            \resizebox{0.8\textwidth}{!}{ \begin{minipage}{1.0\textwidth}
-            Linear Combination Equation
-
-            \vspace{10mm}
-
-            {\tiny \input{src/old_amplitude.tex}}
-            \end{minipage}}
-        \end{column}
-    \end{columns}
-}
-
-\displaythree{Validity of Sample Combinations}
-{ \small 
-    Combining the six basis samples allows for modelling of distributions for any coupling values.
-}
-{ancient_signal/reco_mHH_cvv1p0cl2p0cv1p0_ancient}
-{ancient_signal/reco_mHH_cvv0p0cl1p0cv1p0_ancient}
-{ancient_signal/reco_mHH_cvv4p0cl1p0cv1p0_ancient}
-
-
-\displaytwo{Negative Weights}{
-    Negative weights can appear in the $m_{HH}$ combination. These are unphysical and should be avoided.
-
-    In further regions of the $\kappa$ coupling space, these negative weights can be become dangerously common.
-}{ancient_signal/reco_mHH_cvv1p0cl2p0cv1p0_ancient}
-{ancient_signal/preview_reco_mHH_cvv0p0cl-9p0cv1p0_old}
-
-\displayonelarge{Assessing Basis Performance via Negative Weight Integral}{
-    Take the surface integral of the number of negative bins at each point at in the $\kappa$ parameter space (mutliplying by the $\kvv \times \kl$ ``area") as a general metric of performance.
-}{ancient_signal/negative_weights_rank027}
-
-\displaythree{Negative-Weight Map of Different Bases}{
-    Other bases show considerable improvement in the number of negative bins
-}
-{ancient_signal/negative_weights_rank027}
-{ancient_signal/negative_weights_rank015}
-{ancient_signal/negative_weights_rank000}
 
 
 \frame{
@@ -197,28 +173,23 @@
     \end{columns}
 }
 
-\displayonelarge{Combination Performance}{
-    Chosen basis shows very few regions of negative bins
-}{signal/negative_weights_base}
-
-\displaytwo{Validation of Combination Technique}{
-
+\displaythree{Validation of Combination Technique}{
+    Strong agreement is found between combination signal and MC-generated signal
 }
 {signal/reco_mHH_cvv1p00cl1p00cv1p50}
 {signal/reco_mHH_cvv1p00cl0p00cv1p00}
-
-\displaythree{Further Validation}{}
-{signal/reco_mHH_cvv1p00cl0p00cv1p00}
-{signal/reco_mHH_cvv0p00cl1p00cv1p00}
 {signal/reco_mHH_cvv3p00cl1p00cv1p00}
 
-\displaytwo{Checking Off-Axis Regions}{
-
+\displaythree{Checking Off-Axis Regions}{
+    Though there are no MC samples to compare to here,
+        but visual inspection shows that the combination signal at points
+        far from the SM is at least well behaved
 }
 {signal/preview_reco_mHH_new_cvv2p50cl-10p00cv1p00}
 {signal/preview_reco_mHH_new_cvv2p00cl-10p00cv1p00}
-
-\displaythree{Further Off-Axis Checks}{}
 {signal/preview_reco_mHH_new_cvv0p00cl13p00cv1p00}
-{signal/preview_reco_mHH_new_cvv-2p00cl1p00cv1p00}
-{signal/preview_reco_mHH_new_cvv1p00cl-9p00cv1p00}
+
+{\displayonelarge{Combination Performance}{
+    Chosen basis shows very few regions of negative bins
+}{signal/negative_weights_base}
+
