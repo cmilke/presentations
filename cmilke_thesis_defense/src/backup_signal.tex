@@ -1,0 +1,68 @@
+% N-weight intro
+\frame{
+    \frametitle{Linear Combination Using Post Reconstruction/Selection Samples}
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \begin{center} 
+            {\tiny Signal Sample Basis Set}
+
+            \resizebox{0.2\textheight}{!}{ \begin{tabular}{ |l|l|l| }
+                \hline
+                \textbf {$\kappa_{2V}$} & \textbf {$\kappa_\lambda$} & \textbf {$\kappa_V$} \\
+                \hline
+                    1.  &   1. & 1.  \\
+                    2.  &   1. & 1.  \\
+                    1.5 &   1. & 1.  \\
+                    0.  &   1. & 0.5 \\
+                    1.  &   0. & 1.  \\
+                    1.  &  10. & 1.  \\
+                \hline
+            \end{tabular}}
+            \end{center}
+
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \resizebox{0.8\textwidth}{!}{ \begin{minipage}{1.0\textwidth}
+            Linear Combination Equation
+
+            \vspace{10mm}
+
+            {\tiny \input{src/old_amplitude.tex}}
+            \end{minipage}}
+        \end{column}
+    \end{columns}
+}
+
+\displaythree{Validity of Sample Combinations}
+{ \small 
+    Combining the six basis samples allows for modelling of distributions for any coupling values.
+}
+{ancient_signal/reco_mHH_cvv1p0cl2p0cv1p0_ancient}
+{ancient_signal/reco_mHH_cvv0p0cl1p0cv1p0_ancient}
+{ancient_signal/reco_mHH_cvv4p0cl1p0cv1p0_ancient}
+
+
+\displaytwo{Negative Weights}{
+    Negative weights can appear in the $m_{HH}$ combination. These are unphysical and should be avoided.
+
+    In further regions of the $\kappa$ coupling space, these negative weights can be become dangerously common.
+}{ancient_signal/reco_mHH_cvv1p0cl2p0cv1p0_ancient}
+{ancient_signal/preview_reco_mHH_cvv0p0cl-9p0cv1p0_old}
+
+\displayonelarge{Assessing Basis Performance via Negative Weight Integral}{
+    Take the surface integral of the number of negative bins at each point at in the $\kappa$ parameter space (mutliplying by the $\kvv \times \kl$ ``area") as a general metric of performance.
+}{ancient_signal/negative_weights_rank027}
+
+\displaythree{Negative-Weight Map of Different Bases}{
+    Other bases show considerable improvement in the number of negative bins
+}
+{ancient_signal/negative_weights_rank027}
+{ancient_signal/negative_weights_rank015}
+{ancient_signal/negative_weights_rank000}
+
+% More validation/checks
+\input{src/validation.tex}
+
+% Solidarity
+\input{src/solidarity.tex}
+\input{src/solidarity_applied.tex}

@@ -1,0 +1,43 @@
+\frame{
+    \frametitle{Variation Scan Range}
+
+    Wide range of values to check, brute-force approach:
+    \vspace{3mm}
+
+    \begin{itemize} {
+        \item $\kvv =$ numpy.arange(-1, 4.5, 0.5)
+        \item $\kl =$ numpy.arange(-9, 11, 1)
+        \item $\kv =$ [ 0.5, 1, 1.5 ]
+        \item 660 different variations
+        \item Require all combinations to include SM and $\kl=2$ point to reduce combinatorics
+        \item Each variation then has $\approx$ 227 valid possible combinations
+        \item Total of $\approx$ 148,820 different combinations
+    } \end{itemize}
+    \vspace{3mm}
+
+    Add each new variation to available samples one at a time,
+    recalculate the solidarity integral for all possible valid combinations with the new sample in place
+}
+
+\displaytwocaption{Solidarity Histograms}{
+    Each variation tested produces $\approx$ 227 combinations,
+    and each combination has its own solidarity integral.
+}
+{solidarity/projective_solidarity_all}{Overview of all 660 variations (sorted by Sum-Total of all integrals)}
+{solidarity/projective_solidarity_dump}{Closer look at top 10 variations}
+
+\displaytwo{Performance Predictions}{
+    Sum together the solidarity integrals of all possible combinations to produce a heatmap of potential improvement.
+    \vspace{3mm}
+
+    Improvement largely seems to come from placing a sample in the middle of the poor-performing regions
+}
+{solidarity/negative_weights_toprank0}
+{solidarity/solidarity_performance_kv1}
+
+\displaythree{Performance Predictions with Different $\kv$}{
+    Variations with non-SM $\kv$ values can also potentially help
+}
+{solidarity/solidarity_performance_kv0.5}
+{solidarity/solidarity_performance_kv1}
+{solidarity/solidarity_performance_kv1.5}

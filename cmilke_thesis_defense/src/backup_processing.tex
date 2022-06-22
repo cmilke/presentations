@@ -1,11 +1,91 @@
-% AccXEff plots
-% min-dR
 % trigger chains
-% DL1r input
+\frame{
+    \frametitle{Trigger Chains in Use}
+    \input{tables/selection/nr-triggers-table}
+}
+
+% min-dR
+\fullscreenimage{Higgs Pairing: Min-$\Delta R$}{selection/pairing}
+\displaytwo{Min-$\Delta R$ Accuracy}{}
+{selection/pairing_accuracy_k2v}
+{selection/pairing_accuracy_kl}
+
+% AccXEff plots
+\fullscreenimage{Acceptance $\times$ Efficiency $(\kv=1)$}
+{selection/VBF2D-vbf-MC-Signal-Region-all-4b-accXeff-kv1p0}
+\fullscreenimage{Acceptance $\times$ Efficiency $(\kl=1)$}
+{selection/VBF2D-vbf-MC-Signal-Region-all-4b-accXeff-kl1p0}
+\fullscreenimage{Acceptance $\times$ Efficiency $(\kvv=1)$}
+{selection/VBF2D-vbf-MC-Signal-Region-all-4b-accXeff-k2v1p0}
+
 \displaythree{Signal and 2b/4b Data Massplane}{}
 {selection/massplane_sig_all_4b_vbf_Xwt_1p5_k2V_0}
 {background/massplane_dat_all_2b_vbf_Xwt_1.5}
 {background/massplane_dat_all_2b_vbf_Xwt_1.5}
+
+% Bgd RW Optimization
+\displaytwo{Neural Network Optimization}{
+    Use NN ensemble to adjust kinematic differences, trained on ``control'' region of data.
+
+    NN optimized based on Pearson Correlation Coefficients
+}{background/correlation_control2b_detahh-LTE1p5_hist_m_hh}
+{background/correlation_control2b_detahh-LTE1p5_matrix}
+
+% Bgd RW NN Inputs
+\frame{
+    \frametitle{Background Reweighting NN Inputs}
+
+    \resizebox{\textwidth}{!}{ 
+    \begin{tabular}{ |l|l|l| }
+        \hline
+        \textbf {Variable} & \textbf {Internal Name} & \textbf {Description} \\
+        \hline
+        $M_{max \Delta j}$ & \code{m\_max\_dj}         & 
+            Take the di-jet mass of the six possible pairings\\
+            && of the four higgs’ candidate jets;\\
+            && this is the maximum di-jet mass of those pairings \\ 
+        \hline
+        $M_{min \Delta j}$ & \code{m\_min\_dj}         & 
+            As above, but the minimum \\
+        \hline
+        $E_{H1}$           & \code{E\_h1}              & 
+            Energy of the leading-$p_T$ reconstructed Higgs \\
+        \hline
+        $E_{H2}$           & \code{E\_h2}              & 
+            Energy of the sub-leading-$p_T$ reconstructed Higgs \\
+        \hline
+        Xwt-tag            & \code{X\_wt\_tag}         & 
+            $\log\left(X_{Wt}\right)$, where $X_{Wt}$ is the variable used for the top veto \\
+        \hline
+        $\eta_i$           & \code{eta\_i}             & 
+            Average $\eta$ of the four Higgs decay jets \\
+        \hline
+        Pairing Score 2    & \code{pairing\_score\_2 } & 
+            This changes depending on the Higgs pairing algorithm used. \\
+            &&The current algorithm used is minDR. \\
+            &&With four jets, there are three possible pairings of the jets. \\
+            &&The pairings are ranked by the $\Delta R$ of the leading-$p_T$ Higgs candidate. \\
+            &&Pairing Score 2 is the $\Delta R$ of the second-smallest of these pairings. \\
+        \hline
+    \end{tabular}
+    }
+}
+
 % Background reweight plots
-% Background inputs
-% Background optimization plots!!
+\displayfour{More Reweighting Plots}
+{background/crypto-mean-stdBS-njets-Control-Region-1-no-rw-all-4binclusive}
+{background/crypto-mean-stdBS-njets-Control-Region-1-NN-all-4binclusive}
+{background/crypto-mean-stdBS-X-wt-tag-Control-Region-1-no-rw-all-4binclusive}
+{background/crypto-mean-stdBS-X-wt-tag-Control-Region-1-NN-all-4binclusive}
+
+
+
+% Systematic discussion
+\displaytwo{Background Reweighting Systematics}{}
+{background/massplane_dat_all_2b_vbf_Xwt_1.5}
+{background/quadNP_viz}
+
+% Spider Plots
+\fullscreenimage{Neural Network Statistical Uncertainty}
+{background/spider-VBF-stdev-Xhh45-m-hh-control-all-4b}
+

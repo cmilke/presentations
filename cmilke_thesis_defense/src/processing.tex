@@ -74,9 +74,10 @@
     \vspace{5mm}
 
     \begin{center}
-    $ \textrm{Bgd}(4b, \textrm{Signal}) \approx \frac{ 
-         \textrm{Bgd}(4b, \textrm{Control}) }{
-         \textrm{Bgd}(2b, \textrm{Signal})} $
+    $ \textrm{Bgd}(4b, \textrm{Signal}) \approx 
+         \textrm{Bgd}(4b, \textrm{Control}) \times \frac{
+         \textrm{Bgd}(2b, \textrm{Signal}) }{
+         \textrm{Bgd}(2b, \textrm{Control})} $
      \end{center}
     
     %Posit that 2b-tagged events are kinematically similar to 4b-tagged background.
@@ -86,43 +87,30 @@
 
 \displayone{Background Reweighting}{
     {\footnotesize
-    Kinematic differences exist between 2b and 4b;
-         requires event-by-event reweighting
+        Kinematic differences exist between 2b and 4b;
+             requires event-by-event reweighting
+
+        \begin{center} 
+        Example event:
+        \vspace{3mm}
+
+        \resizebox{0.3\textheight}{!}{ \begin{tabular}{ |l|r| }
+            \hline
+                $p_{T,H1}$ & 80 GeV \\ \hline
+                $p_{T,H2}$ & 75 GeV \\ \hline
+                $m_{HH}$ & 500 GeV \\ \hline
+                $m_{jj}$ & 1200 GeV \\ \hline
+                $\deta_{HH}$ & 1.1 \\ \hline
+                \textbf{2b} rate & 8\% \\ \hline
+                \textbf{4b} rate & 5\% \\ \hline
+        \end{tabular}}
+        \vspace{5mm}
+
+            $\therefore$ reweight such an event by factor of 5/8
+        \end{center}
+        \vspace{3mm}
     }
-
-    \begin{center} 
-    Example event: 
-    \vspace{5mm}
-
-    \resizebox{0.3\textheight}{!}{ \begin{tabular}{ |l|r| }
-        \hline
-            $p_{T,H1}$ & 80 GeV \\ \hline
-            $p_{T,H2}$ & 75 GeV \\ \hline
-            $m_{HH}$ & 500 GeV \\ \hline
-            $m_{jj}$ & 1200 GeV \\ \hline
-            $\deta_{HH}$ & 1.1 \\ \hline
-            \textbf{2b} rate & 8\% \\ \hline
-            \textbf{4b} rate & 5\% \\ \hline
-    \end{tabular}}
-    \vspace{5mm}
-
-    $\therefore$ reweight such an event by factor of 5/8
-    \end{center}
-
 }{background/crypto-mean-stdBS-m-hh-Control-Region-1-no-rw-all-4binclusive}
-
-
-%\displaytwo{Background Reweighting}{
-%}
-%{background/crypto-mean-stdBS-m-hh-Control-Region-1-no-rw-all-4binclusive}
-%{background/reweight_process}
-
-\displaytwo{Neural Network Optimization}{
-    Use NN ensemble to adjust kinematic differences, trained on ``control'' region of data.
-
-    NN optimized based on Pearson Correlation Coefficients
-}{background/correlation_control2b_detahh-LTE1p5_hist_m_hh}
-{background/correlation_control2b_detahh-LTE1p5_matrix}
 
 \displayfour{Reweighting Performance}
 {background/crypto-mean-stdBS-m-hh-Control-Region-1-no-rw-all-4binclusive}

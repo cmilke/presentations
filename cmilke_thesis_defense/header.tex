@@ -8,13 +8,15 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{mathrsfs}
+\usepackage{multirow}
 \graphicspath{ {./figures/} }
 
 \beamertemplatenavigationsymbolsempty
 \setbeamertemplate{sidebar right}{}
 \setbeamertemplate{footline}{
     \hfill\usebeamertemplate***{navigation symbols}
-    \hspace{1cm}\insertframenumber{}/\inserttotalframenumber
+    \hspace{1cm}\insertframenumber{}/\ref{conclusion}
+    %\hspace{1cm}\insertframenumber{}/\inserttotalframenumber
 }
 \setbeamertemplate{caption}{\raggedright\insertcaption\par}
 \setbeamersize{text margin left=4mm,text margin right=4mm} 

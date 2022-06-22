@@ -1,0 +1,53 @@
+\displaytwo{Basic Poisson Statistics}{
+    A brief toy example:
+
+    {\footnotesize
+    \begin{equation}
+        \textrm{p-value}(N=52) \equiv P(0|60) + P(1|60) + ... + P(51|60) ... P(52|60) = \sum\limits_{n=0}^N P(n|60)
+        \nonumber
+    \end{equation}
+    }
+}
+{results/toy_poisson}
+{results/toy_Cpoisson}
+
+\displayfour{Event-Yield Poisson Distributions}
+{results/total_yield_poisson_1p00_1p00_1p00}
+{results/total_yield_Cpoisson_1p00_1p00_1p00}
+{results/total_yield_poisson_3p00_1p00_1p00}
+{results/total_yield_Cpoisson_3p00_1p00_1p00}
+
+\displaythree{Nuissance Parameters, $\deta_{hh} < 1.5$}{}
+{results/error_comparison_kl1p0_kvv1p0_kv1p0cat0}
+{results/error_comparison_kl1p0_kvv3p0_kv1p0cat0}
+{results/error_comparison_kl10p0_kvv1p0_kv1p0cat0}
+
+\displaythree{Nuissance Parameters, $\deta_{hh} > 1.5$}{}
+{results/error_comparison_kl1p0_kvv1p0_kv1p0cat1}
+{results/error_comparison_kl1p0_kvv3p0_kv1p0cat1}
+{results/error_comparison_kl10p0_kvv1p0_kv1p0cat1}
+
+
+\frame{
+    \frametitle{Test Statistic $\qtil$}
+
+    \begin{equation}
+        \prod \limits_{a=1}^{4} \frac{\partial}{\partial \theta^a} L(n,\mu,\Theta) |_{\Theta=\hat{\hat\Theta}} = 0
+    \end{equation}
+    \vspace{3mm}
+
+    \begin{equation}
+        \prod \limits_{a=1}^{4} \frac{\partial}{\partial \theta^a} \frac{\partial}{\partial \mu} L(n,\mu,\Theta) |_{\Theta=\hat \Theta} |_{\mu=\hat \mu} = 0
+        \,.
+    \end{equation}
+    \vspace{3mm}
+
+    \begin{equation}
+        \qtil = \begin{cases}
+            -2 \ln{\frac{L(\mu, \hat {\hat \Theta})}{L(0, \hat \Theta(\mu=0))}} & \hat \mu < 0,\\
+            -2 \ln{\frac{L(\mu, \hat {\hat \Theta})}{L(\hat \mu, \hat \Theta)}} & 0 \leq \hat \mu \leq \mu,\\
+            0 & \mu < \hat \mu 
+        \end{cases}
+        \,.
+    \end{equation}
+}
