@@ -1,15 +1,22 @@
 \announcesection{Data Processing}
 
 % Tracks
-\displayonelarge{Tracking}{
+\frame{
+    \frametitle{Tracking}
+    \begin{columns} \begin{column}{0.5\textwidth}
     {\footnotesize
         2T solenoid magnet bends charged particles traversing trackers.
         Helical trajectory is used to calculated particle momentum/mass/charge.
     }
-}{processing/IDbriefing_figure1}
+    \vspace{5mm}
 
-% Jets
-\displayonelarge{Jets}{
+    \includegraphics[width=\linewidth,height=0.9\textheight,keepaspectratio]{atlas/inner_detector_barrel_measurements}
+    \end{column} \begin{column}{0.5\textwidth}
+    \includegraphics[width=\linewidth,height=0.9\textheight,keepaspectratio]{processing/tracking_hits}
+    \end{column} \end{columns}
+}
+
+\displayonelarge{Calorimetry}{
     {\footnotesize
         Determines energy of particles by seeing how many plates of metal they can go through.
         E-Cal for electrons/photons,
@@ -18,11 +25,21 @@
     }
 }{reconstruction/ATLAS_Detector_Schematic_black_particles}
 
+\frame{
+    \frametitle{Jets}
+    Calorimeter clusters are grouped together and, if possible,
+        associated with tracks to produce a complete picture of a particle's travel through ATLAS,
+        forming an object called a ``jet.''
+    \includegraphics[width=\linewidth,height=0.9\textheight,keepaspectratio]{processing/jets}
+}
+
 % Flavor Tagging
 \displayone{Flavor Tagging}{
     Uses a recurrent Deep Learning neural net (DL1r) to distinguish b-jets from light-jets.
     Primarily takes advantage of secondary vertexing and impact parameter jet properties
 }{reconstruction/dl1_performance_ljet}
+% TODO: DL1r is not a different architecture, it's just DL1 with a different input (jetfitter->RNNip)
+% TODO: maybe some pics showing how some algs work?
 
 % Selection
 \frame{

@@ -9,18 +9,33 @@
     Using a Search for \hhbbbb \\via the Vector-Boson Fusion Production Mode \\
     at $\sqrt{s}=13~\mathrm{TeV}$ in 126 \ifb of Data \\Collected by the ATLAS Experiment
 }
+\subtitle{\vspace{3mm}Ph.D. Dissertation Defense}
 
-\author{Chris Milke}
+\author{Chris Milke\\{\small Stephen Sekula, Chris Pollard, Roberto Vega, Jingbo Ye}}
+\institute{Southern Methodist University}
 \date{6 July, 2022}
 
 \frame{\titlepage}
+\title{
+    Smashy Physics!\\Gaining a Better Understanding of the Smashing\\Using Smashy Math
+}
+\frame{\titlepage}
 \frame{\frametitle{Overview} \tableofcontents}
-\input{src/introduction.tex}
+%\input{src/introduction.tex}
 \input{src/processing.tex}
-\input{src/signal.tex}
-\input{src/results.tex}
+%\input{src/signal.tex}
+%\input{src/results.tex}
 
-\section{Conclusion}
+\announcesection{Outlook and Conclusion}
+\displaythree{Outlook}{
+    \begin{itemize}
+        \item Could do with better background estimate
+        \item Could benefit with more diverse set of MC samples
+        \item Future studies look promising, esp. in HL-LHC with 3000 \ifb of expected data
+    \end{itemize}
+}{background/crypto-mean-stdBS-m-hh-Control-Region-1-NN-all-4binclusive}
+{signal/negative_weights_base}
+{conclusion/limit_slice_HL-LHC_kv_1p0} %TODO you need a reference to the current limits. some sort of overlay? Just hack it together in libre draw
 \displaythree{Conclusion}{
     \label{conclusion}
     \begin{itemize}
@@ -32,15 +47,15 @@
     \end{itemize}
 }
 {results/full_3D_point_cloud}
-{results/kl_scan_thesis_3D_samps_vbf_pd_vbf_inc161718_k2v_1p0_xs}
+{results/k2v_scan_thesis_3D_samps_vbf_pd_vbf_inc161718_kl_1p0_xs}
 {results/2D_scan_thesis_omega0_kvv_kl_samps_vbf_pd_vbf_inc161718_k1v1p00_exclusion}
 
 
 \announcesection{Backup}
-\input{src/backup_introduction.tex}
-\input{src/backup_processing.tex}
-\input{src/backup_signal.tex}
-\input{src/backup_results.tex}
+%\input{src/backup_introduction.tex}
+%\input{src/backup_processing.tex}
+%\input{src/backup_signal.tex}
+%\input{src/backup_results.tex}
 
 
 \end{document}
