@@ -34,12 +34,14 @@
 }
 
 % Flavor Tagging
-\displayone{Flavor Tagging}{
-    Uses a recurrent Deep Learning neural net (DL1r) to distinguish b-jets from light-jets.
-    Primarily takes advantage of secondary vertexing and impact parameter jet properties
-}{reconstruction/dl1_performance_ljet}
+\displaytwo{Flavor Tagging}{
+    {\small Uses a recurrent Deep Learning neural net (DL1r) to distinguish b-jets from light-jets.
+    Primarily takes advantage of secondary vertexing and impact parameter jet properties.}
+}
+{reconstruction/ip3d_z0_sig_2017}
+{reconstruction/dl1_performance_ljet}
+%{reconstruction/ip3d_sign_positive}
 % TODO: DL1r is not a different architecture, it's just DL1 with a different input (jetfitter->RNNip)
-% TODO: maybe some pics showing how some algs work?
 
 % Selection
 \frame{

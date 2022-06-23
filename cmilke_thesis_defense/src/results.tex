@@ -52,41 +52,42 @@
 {results/total_yield_poisson_1p00_1p00_1p00}
 {results/total_yield_poisson_3p00_1p00_1p00}
 
+\displayonecenter{$\mu S + B$: $\mu$-Scanning}{{\footnotesize
+    Can asign a value of how (un)-reasonable a particular signal is,
+        by determining how much that signal would need to be scaled (by $\mu$)
+        in order to be excluded to 95\% confidence
+}}{results/mu_pvalue_1p00_1p00_1p00}
 
-%TODO: too many plots at once; split!!!!
-\displayfour{One-Dimensional Limits for  $\mu S + B$}
-{results/mu_pvalue_1p00_1p00_1p00}
-{results/mu_pvalue_3p00_1p00_1p00}
-{results/mu_limits_fast_k2v}
-{results/mu_limits_fast_kl}
+\displayonecenter{One-Dimensional Limits for \kvv}{{\footnotesize
+    Plotting the 95\% confidence $\mu$ as a function of \kvv shows the precise value
+    at which \kvv can be excluded.
+}}{results/mu_limits_fast_k2v}
 
+\displayonecenter{2D-Limits}{{\footnotesize
+    The exclusion points specifically can viewed as a function of both \kvv and \kl
+        (with \kv fixed to 1)
+}}{results/limit_slice_kv_1p0}
 
-%TODO: too many plots at once; split!!!!
-\displaythree{2D Coupling Limits}{}
-{results/limit_slice_kv_1p0}
+\displaythree{More 2D-Limits}{
+    The full 3D limits can be viewed in slices with different $\kappa$'s fixed
+}{results/limit_slice_kv_1p0}
 {results/limit_slice_kl_1}
 {results/limit_slice_k2v_1p0}
 
 \fullscreenimage{Full 3D Coupling Limits}{results/full_3D_point_cloud}
 
-%TODO: too many plots at once; split!!!!
-\displaythree{\mhh Significance}{
+\displayonelarge{\mhh Significance}{
     Binning events by \mhh permits greater ``significance'':
     \vspace{3mm}
 
     $Z_s=\frac{S}{\sqrt{S+B}}$
 }
-{results/data_dump_m_hh_1p00_1p00_1p00}
 {results/data_dump_m_hh_3p00_1p00_1p00}
-{results/data_dump_m_hh_1p00_10p00_1p00}
 
-%TODO: too many plots at once; split!!!!
-\displaythree{$\deta_{hh}$ Significance}{
+\displayonelarge{$\deta_{hh}$ Significance}{
     A similar effect can be achieved with $\deta_{hh}$
 }
-{results/data_dump_dEta_hh_1p00_1p00_1p00}
 {results/data_dump_dEta_hh_3p00_1p00_1p00}
-{results/data_dump_dEta_hh_1p00_10p00_1p00}
 
 
 
@@ -124,17 +125,28 @@
 }
 
 
+\displayonecenter{\kvv $\mu$-Scan and Expected Limits}{
+    Use null hypothesis to predict what limits should look like,
+    observe for large unexpected deviations that could indicate
+    errors or exotic physics.
+}{results/k2v_scan_thesis_3D_samps_vbf_pd_vbf_inc161718_kl_1p0_mu}
 
 
-%TODO: too many plots at once; split!!!!
-\displayfour{$\kvv$ and $\kl$ 1D Limits}
-{results/k2v_scan_thesis_3D_samps_vbf_pd_vbf_inc161718_kl_1p0_mu}
-{results/kl_scan_thesis_3D_samps_vbf_pd_vbf_inc161718_k2v_1p0_mu}
-{results/k2v_scan_thesis_3D_samps_vbf_pd_vbf_inc161718_kl_1p0_xs}
+\displayonecenter{\kvv Cross-Section Limits}{
+    Multiply $\mu$ by theoretical cross-section to place
+        upper bound on the \vbfproc cross-section
+        and assign limits to \kvv.
+}{results/k2v_scan_thesis_3D_samps_vbf_pd_vbf_inc161718_kl_1p0_xs}
+
+
+\displayonecenter{\kl Cross-Section Limits}{}
 {results/kl_scan_thesis_3D_samps_vbf_pd_vbf_inc161718_k2v_1p0_xs}
 
 
 % Emphasize "exclusion"
-\displaytwo{$\kvv/\kl$ and $\kvv/\kv$ 2D Limits}{}
-{results/2D_scan_thesis_omega0_kvv_kl_samps_vbf_pd_vbf_inc161718_k1v1p00_exclusion}
+\displaytwo{$\kvv/\kl$ and $\kvv/\kv$ 2D Limits}{
+    This analysis can exclude everything grey
+        (\textit{outsite} the black boudaries)
+        to 95\% confidence.
+}{results/2D_scan_thesis_omega0_kvv_kl_samps_vbf_pd_vbf_inc161718_k1v1p00_exclusion}
 {results/2D_scan_thesis_omega0_kvv_kv_samps_vbf_pd_vbf_inc161718_kl1p00_exclusion}
