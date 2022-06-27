@@ -83,12 +83,47 @@
 }
 
 % Background Events
+\frame{
+    \frametitle{Massplane and Background Modelling}
+    Multi-jet events (and some $\ttbar$ events) are a massive (95\%) background.
+
+    But unlike the signal, the multi-jet background cannot be simulated through MC
+    \begin{columns} \begin{column}{0.3\textwidth}
+        {\footnotesize 
+            MC Simulated signal massplane distribution
+        }
+    \end{column} \begin{column}{0.7\textwidth}
+        \includegraphics[width=\linewidth,height=0.9\textheight,keepaspectratio]
+        {selection/massplane_sig_all_4b_vbf_Xwt_1p5_k2V_0}
+    \end{column} \end{columns}
+}
+
+\displaytwocaption{Background in Control Regions}{
+    Background is known outside signal region,
+        because the data \textit{is} the background
+        (no signal there).
+}{selection/massplane_sig_all_4b_vbf_Xwt_1p5_k2V_0}
+{MC simulated signal}
+{background/massplane_dat_all_4b_vbf_Xwt_1.5}
+{4b data sans signal region}
+
+\displaytwocaption{Background in 2b Regions}{
+    Likewise, background is known \textit{everywhere} in 2b data.
+}
+{background/massplane_dat_all_4b_vbf_Xwt_1.5}
+{4b data sans signal region}
+{background/massplane_dat_all_2b_vbf_Xwt_1.5}
+{2b data}
+
+
 \displaytwo{Data-driven Background Estimate}{
     \footnotesize{
-        Multi-jet events (and some $\ttbar$ events) are a massive background.
+        Multi-jet events (and some $\ttbar$ events) are a massive (95\%)background.
 
-        Can use data in which only 2 jets are b-tagged
-            and massplane ``control regions'' to estimate background present in signal region.
+        But unlike the signal, the multi-jet background cannot be simulated through MC
+
+        %Can use data in which only 2 jets are b-tagged
+        %    and massplane ``control regions'' to estimate background present in signal region.
     }
     \vspace{5mm}
 

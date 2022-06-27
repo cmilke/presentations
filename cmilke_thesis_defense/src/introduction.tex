@@ -29,7 +29,7 @@
     %$\phi \to v+h; v\equiv \frac{\mu}{\sqrt{\lambda}}$.
     \vspace{5mm}
 
-    This field was predicted to manifest in the form of a scalar particle,
+    This field was predicted in 1964 to manifest in the form of a scalar particle,
         the Higgs boson,
         and was detected in 2012 by the CMS and ATLAS experiments.
     \vspace{5mm}
@@ -47,15 +47,15 @@
     \centering
     \begin{subfigure}{0.32\textwidth} 
         \input{diagrams/feyn_VVh.tex} 
-        \caption{$VVh$}
+        \caption{$VVh$\\$\kv=1.05\pm0.04$}
     \end{subfigure}
     \begin{subfigure}{0.32\textwidth}
-        \input{diagrams/feyn_VVhh.tex} 
-        \caption{$VVhh$}
+        \input{diagrams/feyn_VVhh.tex}
+        \caption{$VVhh$\\$-0.1 < \kvv < 2.2$}
     \end{subfigure}
     \begin{subfigure}{0.32\textwidth}
         \input{diagrams/feyn_hhh.tex} 
-        \caption{$hhh$}
+        \caption{$hhh$\\$-2.3 < \kl < 9.4$}
     \end{subfigure}
     \end{figure}
 
@@ -64,6 +64,7 @@
         one can measure how often they actually occur vs their theoretically predicted rate
         (the interactions' ``$kappa$-value'').
 }
+% −2.3 <κλ< 9.4 (−5.0 <κλ< 12.0) and −0.1 <κ2V< 2.2 (−0.4 <κ2V< 2.5)
 
 
 % Theory 3: di-Higgs and VBF->HH->bbbb
@@ -74,6 +75,7 @@
             \input{diagrams/vbf_bbbb.tex} 
         \end{column}
         \begin{column}{0.6\textwidth}
+            \input{tables/theory/higgsproduction.tex}
             \input{tables/theory/higgsbranching.tex}
         \end{column}
     \end{columns}
@@ -81,7 +83,7 @@
 
 
 \frame{
-    \frametitle{\hhproc Production}
+    \frametitle{\hhproc Production, LO in SM}
 
     \begin{figure}
     \centering
@@ -176,19 +178,27 @@
     \vspace{10mm}
     \begin{itemize}
         \item Constructed 1995-2007
-        \item On border of Switzerland and France
-        \item 50-175 meters underground
-        \item 26.7 km radius 
+        \begin{itemize}
+            \item On border of Switzerland and France
+            \item 50-175 meters underground
+            \item 26.7 km radius 
+        \end{itemize}
+        \item Run 2: 2015-2018
+        \begin{itemize}
         \item 13 TeV center-of-mass collision energy
-        \item 40 million bunch-crossings per second
-        \item 60 interactions per bunch-crossing
-        \item 2.4 billion interactions per second
-        \item Instantaneous luminosity of $2\times10^{-5} \textrm{fb}^{-1}$
-        \item 139 \ifb of data delivered to Point 1 (126 are used for my analysis)
+        %\item 40 million bunch-crossings per second
+        %\item 60 interactions per bunch-crossing
+            \item 2.4 billion interactions per second
+            \item $L_{\textrm{inst}} = 2\times10^{-5} \textrm{fb}^{-1}$
+            \item 139 \ifb of data delivered to P1
+            \item 126 \ifb used for this analysis
+        \end{itemize}
         \item VBF$\to$H$\to b\bar{b}$ cross-section = 2.5 pb
-        \item 1 VBF$\to$H$\to b\bar{b}$ every 20 seconds %1 higgs at all per second
-        \item \vbfhhproc cross-section = 1 fb
-        \item 1 \vbfhhproc every 14 \textit{hours}
+        \begin{itemize}
+            \item 1 VBF$\to$H$\to b\bar{b}$ every 20 seconds %1 higgs at all per second
+            \item \vbfhhproc \sigma = 1 fb
+            \item 1 \vbfhhproc every 14 \textit{hours}
+        \end{itemize}
     \end{itemize}
 }{introduction/lhc}{introduction/lhc_pipe}
 
@@ -204,7 +214,7 @@
     \begin{itemize}
         \item Tracker = momentum of charged particles
         \item Calorimeter = energy
-        \item Muon System = N/A
+        \item Muon System = muon tracking
     \end{itemize}
     }
 }{atlas/atlas_xsec}

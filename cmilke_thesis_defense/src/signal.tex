@@ -1,4 +1,31 @@
 \announcesection{Signal Modelling}
+\frame{
+    \frametitle{\hhproc Production, LO in SM}
+
+    \begin{figure}
+    \centering
+    \begin{subfigure}{0.32\textwidth} 
+        \input{diagrams/vbf_hh_kv.tex} 
+        \caption{$M_t$}
+        \label{fig:tree_level_vbfhh:kv}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \input{diagrams/vbf_hh_kl.tex} 
+        \caption{$M_s$}
+        \label{fig:tree_level_vbfhh:kl}
+    \end{subfigure}
+    \begin{subfigure}{0.32\textwidth}
+        \input{diagrams/vbf_hh_k2v.tex} 
+        \caption{$M_x$}
+        \label{fig:tree_level_vbfhh:k2v}
+    \end{subfigure}
+    \end{figure}
+
+    \begin{equation} \begin{split}
+        \sigma &\propto |  \kv^2 M_t + \kv \kl M_s + \kvv M_x |^2 \\
+        \sigma &\propto \kv^2 \kl^2 a_1 + \kv^4 a_2 + \kvv^2 a_3 + \kv^3 \kl a_4 + \kv \kl \kvv a_5 + \kv^2 \kvv a_6
+    \end{split} \end{equation}
+}
 
 \displaytwo{Signal MC}{
     Different values for the $\kappa$'s (\kvv, \kl, \kv) leads to very different kinematic distributions and event yeilds.
