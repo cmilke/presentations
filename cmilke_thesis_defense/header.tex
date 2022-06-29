@@ -325,6 +325,38 @@
     }
 }
 
+\newcommand{\displayfourCcaption}[7]{
+    \frame{
+        \frametitle{\small{#1}} 
+        \begin{columns}[T]
+            \begin{column}{0.4\textwidth}
+                #2\vspace{-2mm}
+                \begin{figure}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#4}
+                \end{figure}
+            \end{column}
+            \begin{column}{0.4\textwidth}
+                #3\vspace{-2mm}
+                \begin{figure}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#5}
+                \end{figure}
+            \end{column}
+        \end{columns}
+        \begin{columns}[T]
+            \begin{column}{0.4\textwidth}
+                \begin{figure}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#6}
+                \end{figure}
+            \end{column}
+            \begin{column}{0.4\textwidth}
+                \begin{figure}
+                    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{#7}
+                \end{figure}
+            \end{column}
+        \end{columns}
+    }
+}
+
 
 \newcommand{\pstrike}[2]{
     \only<-\the\numexpr#1-1>{#2}

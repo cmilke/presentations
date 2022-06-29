@@ -11,6 +11,7 @@
            \begin{tabular}{|l|l|l|}
            \hline
                Type  &	Event Yield & p-value \\
+                     &$200 < m_{HH} < 1400$ & \\
                \hline
                Background Estimate        & 493.6 & \\
                Signal Hypothesis (SM)     & 0.36  & \\
@@ -34,9 +35,10 @@
            \begin{tabular}{|l|l|l|}
            \hline
                Type  &	Event Yield & p-value \\
+                     &$200 < m_{HH} < 1400$ & \\
                \hline
-               Background Estimate        & 493.6 & 0.55 \\
-               Signal Hypothesis (SM)     & 0.36  & 1.2 \\
+               Background Estimate        & 493.6 & 0.54 \\
+               Signal Hypothesis (SM)     & 0.36  & 1.15 \\
                Signal Hypothesis (\kvv=3) & 52.7  & 0.03 \\
                Observed Data              & 495   & N/A  \\
            \hline
@@ -53,28 +55,52 @@
 {results/total_yield_poisson_3p00_1p00_1p00}
 
 \displayonecenter{$\mu S + B$: $\mu$-Scanning}{{\footnotesize
+    \framesubtitle{Total Event Yields and Statistical Errors \textbf{Only}}
     Can asign a value of how (un)-reasonable a particular signal is,
         by determining how much that signal would need to be scaled (by $\mu$)
         in order to be excluded to 95\% confidence
 }}{results/mu_pvalue_1p00_1p00_1p00}
 
-\displayonecenter{One-Dimensional Limits for \kvv}{{\footnotesize
+\displayonecenter{$\mu S + B$: $\mu$-Scanning Elswhere}{
+    \framesubtitle{Total Event Yields and Statistical Errors \textbf{Only}}
+    {\footnotesize
+    A 95\% confidence at a $\mu<1$ indicates the observed data cannot accomodate the hypothesized excess signal yield
+    }
+}{results/mu_pvalue_3p00_1p00_1p00}
+
+\displayonecenter{One-Dimensional Limits for \kvv}{
+    \framesubtitle{Total Event Yields and Statistical Errors \textbf{Only}}
+    {\footnotesize
     Plotting the 95\% confidence $\mu$ as a function of \kvv shows the precise value
     at which \kvv can be excluded.
-}}{results/mu_limits_fast_k2v}
+    }
+}{results/mu_limits_fast_k2v}
 
-\displayonecenter{2D-Limits}{{\footnotesize
+\displayonecenter{2D-Limits}{
+    \framesubtitle{Total Event Yields and Statistical Errors \textbf{Only}}
+    {\footnotesize
     The exclusion points specifically can viewed as a function of both \kvv and \kl
         (with \kv fixed to 1)
-}}{results/limit_slice_kv_1p0}
+    }
+}{results/limit_slice_kv_1p0}
 
 \displaythree{More 2D-Limits}{
+    \vspace{-4mm}
+    {\usebeamercolor[fg]{subtitle} \footnotesize Total Event Yields and Statistical Errors \textbf{Only}}
+    \vspace{3mm}
+
     The full 3D limits can be viewed in slices with different $\kappa$'s fixed
 }{results/limit_slice_kv_1p0}
 {results/limit_slice_kl_1}
 {results/limit_slice_k2v_1p0}
 
-\fullscreenimage{Full 3D Coupling Limits}{results/full_3D_point_cloud}
+\frame{
+    \frametitle{Full 3D Coupling Limits}
+    \framesubtitle{Total Event Yields and Statistical Errors \textbf{Only}}
+    \begin{figure}
+        \includegraphics[width=\linewidth,height=0.9\textheight,keepaspectratio]{results/full_3D_point_cloud}
+    \end{figure}
+}
 
 \displayonelarge{\mhh Significance}{
     Binning events by \mhh permits greater ``significance'':
@@ -129,24 +155,24 @@
     Use null hypothesis to predict what limits should look like,
     observe for large unexpected deviations that could indicate
     errors or exotic physics.
-}{results/k2v_scan_thesis_3D_samps_vbf_pd_vbf_inc161718_kl_1p0_mu}
+}{results/k2v_scan_thesis_final0_1D_k2v_samps_vbf_pd_vbf_inc161718_kl_1.0_mu}
 
 
 \displayonecenter{\kvv Cross-Section Limits}{
     Multiply $\mu$ by theoretical cross-section to place
         upper bound on the \vbfproc cross-section
         and assign limits to \kvv.
-}{results/k2v_scan_thesis_3D_samps_vbf_pd_vbf_inc161718_kl_1p0_xs}
+}{results/k2v_scan_thesis_final0_1D_k2v_samps_vbf_pd_vbf_inc161718_kl_1.0_xs}
 
 
 \displayonecenter{\kl Cross-Section Limits}{}
-{results/kl_scan_thesis_3D_samps_vbf_pd_vbf_inc161718_k2v_1p0_xs}
+{results/kl_scan_thesis_final0_1D_kl_samps_vbf_pd_vbf_inc161718_k2v_1.0_xs}
 
 
 % Emphasize "exclusion"
 \displaytwo{$\kvv/\kl$ and $\kvv/\kv$ 2D Limits}{
     This analysis can exclude everything grey
-        (\textit{outsite} the black boudaries)
+        (\textit{outside} the black boudaries)
         to 95\% confidence.
 }{results/2D_scan_thesis_omega0_kvv_kl_samps_vbf_pd_vbf_inc161718_k1v1p00_exclusion}
 {results/2D_scan_thesis_omega0_kvv_kv_samps_vbf_pd_vbf_inc161718_kl1p00_exclusion}

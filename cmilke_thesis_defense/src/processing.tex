@@ -27,27 +27,70 @@
 
 \frame{
     \frametitle{Jets}
+    { \footnotesize
     Calorimeter clusters are grouped together and, if possible,
         associated with tracks to produce a complete picture of a particle's travel through ATLAS,
         forming an object called a ``jet.''
-    \includegraphics[width=\linewidth,height=0.9\textheight,keepaspectratio]{processing/jets}
+    }
+    \vspace{5mm}
+
+    \begin{columns} \begin{column}{0.24\textwidth}
+    { \tiny
+        Using anti-$k_t$(R=0.4) ``sequential recombination'' algorithm:
+
+        \begin{equation} \begin{split}
+            d_{ij} &= \textrm{min}(k_{ti}^{-2},k_{tj}^{-2}) \frac{\Delta_{ij}^2}{R^2}; \\
+            d_{iB} &= k_{ti}^{-2};
+            \nonumber
+        \end{split} \end{equation}
+
+        \begin{equation} \begin{split}
+            &\textrm{if } d_{iB} \textrm{ is min:}\\
+            &\qquad i=\textrm{jet;}\\
+            &\qquad \textrm{remove jet;}\\
+            &\textrm{else:}\\
+            &\qquad \textrm{recombine min } i,j
+            \nonumber
+        \end{split} \end{equation}
+    }
+
+    \end{column} \begin{column}{0.75\textwidth}
+    \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{processing/jets}
+    \end{column} \end{columns}
 }
 
-% Flavor Tagging
-\displaytwo{Flavor Tagging}{
-    {\small Uses a recurrent Deep Learning neural net (DL1r) to distinguish b-jets from light-jets.
+\frame{
+    \frametitle{Flavor Tagging}
+    {\small Uses a Deep Learning neural net (DL1r@77\% working point) to distinguish b-jets from light-jets.
     Primarily takes advantage of secondary vertexing and impact parameter jet properties.}
+
+    \begin{columns} \begin{column}{0.4\textwidth}
+        \begin{figure}
+            \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{reconstruction/ip3d_d0_sig_2017}
+        \end{figure}
+    \end{column} \begin{column}{0.6\textwidth}
+    \begin{figure}
+        \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{processing/jet_vertexing}
+    \end{figure}
+    \end{column} \end{columns}
 }
-{reconstruction/ip3d_z0_sig_2017}
-{reconstruction/dl1_performance_ljet}
-%{reconstruction/ip3d_sign_positive}
-% TODO: DL1r is not a different architecture, it's just DL1 with a different input (jetfitter->RNNip)
+
 
 % Selection
 \frame{
     \frametitle{Event Selection}
     \begin{columns} \begin{column}{0.39\textwidth}
-        {\tiny
+        \begin{figure}
+            \includegraphics[width=\linewidth,height=0.3\textheight,keepaspectratio]{atlas/atlas_coords}
+            \captionsetup{justification=centering}
+            \caption*{ \tiny
+                $\eta \equiv -\ln[\tan(\frac{\theta}{2})]$\\
+                e.g. $\eta = .88 \to \theta=45^{\circ}$,\\$\eta = 4 \to \theta=2^{\circ}$
+            }
+        \end{figure}
+        \vspace{-3mm}
+
+        \resizebox{0.3\textheight}{!}{\vbox{
         \begin{itemize}
             \item At least six jets total
             \begin{itemize}
@@ -69,11 +112,11 @@
             \item Using b-jet trigger DL1r 77\% working point,
                 light jet acceptance of 0.59\%
         \end{itemize}
-        }
+        }}
     \end{column} \begin{column}{0.6\textwidth}
         \begin{figure}
-            \includegraphics[width=\linewidth,height=0.9\textheight,keepaspectratio]{selection/event_display}
-            \caption{\tiny Rings indicate jets;
+            \includegraphics[width=\linewidth,height=0.5\textheight,keepaspectratio]{selection/event_display}
+            \caption*{\tiny Rings indicate jets;
                 Yellow ring => b-tagged;
                 Blue ring w/ white cross => VBF initial-scatter jets;
                 ``+'' in center of rings => $p_T$;
@@ -85,12 +128,13 @@
 % Background Events
 \frame{
     \frametitle{Massplane and Background Modelling}
-    Multi-jet events (and some $\ttbar$ events) are a massive (95\%) background.
+    Multi-jet events (and some $\ttbar$) are a massive background.
+    \vspace{3mm}
 
-    But unlike the signal, the multi-jet background cannot be simulated through MC
+    Unlike the signal, the multi-jet background cannot be simulated through MC
     \begin{columns} \begin{column}{0.3\textwidth}
         {\footnotesize 
-            MC Simulated signal massplane distribution
+            MC simulated signal, massplane distribution
         }
     \end{column} \begin{column}{0.7\textwidth}
         \includegraphics[width=\linewidth,height=0.9\textheight,keepaspectratio]
@@ -115,29 +159,55 @@
 {background/massplane_dat_all_2b_vbf_Xwt_1.5}
 {2b data}
 
+\newcommand{\regt}[1]{
+    \textrm{\footnotesize #1}
+}
+\frame{
+    \frametitle{Data-driven Background Estimate}
+    Background hypothesized to be kinematically indifferent to number of b-jets.
+    \vspace{3mm}
 
-\displaytwo{Data-driven Background Estimate}{
-    \footnotesize{
-        Multi-jet events (and some $\ttbar$ events) are a massive (95\%)background.
+    Thus, combining the 2b data with the 4b control region
+        allows estimate of background in 4b signal region.
 
-        But unlike the signal, the multi-jet background cannot be simulated through MC
-
-        %Can use data in which only 2 jets are b-tagged
-        %    and massplane ``control regions'' to estimate background present in signal region.
-    }
+    \begin{figure}
+        \includegraphics[width=\linewidth,keepaspectratio]
+        {processing/bgd_rw_eq}
+    \end{figure}
     \vspace{5mm}
 
-    \begin{center}
-    $ \textrm{Bgd}(4b, \textrm{Signal}) \approx 
-         \textrm{Bgd}(4b, \textrm{Control}) \times \frac{
-         \textrm{Bgd}(2b, \textrm{Signal}) }{
-         \textrm{Bgd}(2b, \textrm{Control})} $
-     \end{center}
-    
-    %Posit that 2b-tagged events are kinematically similar to 4b-tagged background.
+    \begin{center} {\Huge
+        $ \frac{58,731\regt{2b sig} }{110,843\regt{2b control} }
+        \times
+        947 \regt{4b control}
+        =
+        502 \regt{4b sig} $
+    } \end{center}
+}
 
-}{selection/massplane_sig_all_4b_vbf_Xwt_1p5_k2V_0}
-{background/massplane_dat_all_2b_vbf_Xwt_1.5}
+
+%\displaytwo{Data-driven Background Estimate}{
+%    \footnotesize{
+%        Multi-jet events (and some $\ttbar$ events) are a massive background.
+%
+%        But unlike the signal, the multi-jet background cannot be simulated through MC
+%
+%        %Can use data in which only 2 jets are b-tagged
+%        %    and massplane ``control regions'' to estimate background present in signal region.
+%    }
+%    \vspace{5mm}
+%
+%    \begin{center}
+%    $ \textrm{Bgd}(4b, \textrm{Signal}) \approx 
+%         \textrm{Bgd}(4b, \textrm{Control}) \times \frac{
+%         \textrm{Bgd}(2b, \textrm{Signal}) }{
+%         \textrm{Bgd}(2b, \textrm{Control})} $
+%     \end{center}
+%    
+%    %Posit that 2b-tagged events are kinematically similar to 4b-tagged background.
+%
+%}{selection/massplane_sig_all_4b_vbf_Xwt_1p5_k2V_0}
+%{background/massplane_dat_all_2b_vbf_Xwt_1.5}
 
 \displayone{Background Reweighting}{
     {\footnotesize
@@ -164,13 +234,15 @@
         \end{center}
         \vspace{3mm}
     }
-}{background/crypto-mean-stdBS-m-hh-Control-Region-1-no-rw-all-4binclusive}
+}{background/NR-UNBLIND-FEB22-2-m-hh-Control-Region-1-no-rw-all-4binclusive}
 
-\displayfour{Reweighting Performance}
-{background/crypto-mean-stdBS-m-hh-Control-Region-1-no-rw-all-4binclusive}
-{background/crypto-mean-stdBS-m-hh-Control-Region-1-NN-all-4binclusive}
-{background/crypto-mean-stdBS-dEta-hh-Control-Region-1-no-rw-all-4binclusive}
-{background/crypto-mean-stdBS-dEta-hh-Control-Region-1-NN-all-4binclusive}
+\displayfourCcaption{Reweighting Performance}
+{{\tiny Before reweighting\vspace{2mm}}}
+{{\tiny After reweighting\\\vspace{-2mm}(Note: ``Stat. Error'' here is stat+sys)}}
+{background/NR-UNBLIND-FEB22-2-m-hh-Control-Region-1-no-rw-all-4binclusive}
+{background/NR-UNBLIND-FEB22-2-m-hh-Control-Region-1-NN-all-4binclusive}
+{background/NR-UNBLIND-FEB22-2-dEta-hh-Control-Region-1-no-rw-all-4binclusive}
+{background/NR-UNBLIND-FEB22-2-dEta-hh-Control-Region-1-NN-all-4binclusive}
 
 %{background/crypto-mean-stdBS-X-wt-tag-Control-Region-1-no-rw-all-4binclusive}
 %{background/crypto-mean-stdBS-X-wt-tag-Control-Region-1-NN-all-4binclusive}

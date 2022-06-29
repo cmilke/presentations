@@ -18,60 +18,81 @@
 
 % Theory 2: Higgs Field
 \displayone{The Higgs Mechanism}{
-    The Higgs mechanism posits the existence of a ``Higgs Field''
-        which induces mass in any particles it interacts with it.
-    \vspace{5mm}
+    { \footnotesize
+        The Higgs mechanism posits the existence of a ``Higgs Field''
+            which induces mass in any particles it interacts with it.
+        \vspace{5mm}
 
 
-    $U(\phi) = - \mu^2 \phi^2 + \lambda \phi^4$.
-    %\vspace{2mm}
+        $U(\phi) = - \mu^2 \phi^2 + \lambda \phi^4$.
+        %\vspace{2mm}
 
-    %$\phi \to v+h; v\equiv \frac{\mu}{\sqrt{\lambda}}$.
-    \vspace{5mm}
+        %$\phi \to v+h; v\equiv \frac{\mu}{\sqrt{\lambda}}$.
+        \vspace{5mm}
 
-    This field was predicted in 1964 to manifest in the form of a scalar particle,
-        the Higgs boson,
-        and was detected in 2012 by the CMS and ATLAS experiments.
-    \vspace{5mm}
+        This field was predicted in 1964 to manifest in the form of a scalar particle,
+            the Higgs boson, and was detected on July 4, 2012
+            (almost 10 years ago to the day!)
+            by the CMS and ATLAS experiments.
+        \vspace{5mm}
+
+        Some key properties of the Higgs are still poorly understood,
+            but could be measured through dedicated analysis...
+    }
 }{theory/higgspotential}
 
 % VVh, VVHH, HHH, HHHH (backup)
 \frame{
-    \frametitle{Electroweak-Higgs Interactions}
-
-    Some key properties of the Higgs are still poorly understood,
-        but could be probed via di-Higgs production.
-
-
+    \frametitle{Measuring Electroweak-Higgs Interactions}
     \begin{figure}
     \centering
     \begin{subfigure}{0.32\textwidth} 
         \input{diagrams/feyn_VVh.tex} 
-        \caption{$VVh$\\$\kv=1.05\pm0.04$}
+        \caption*{$VVh$\\ 
+            {\tiny ATLAS combined\\$\kv=1.05\pm0.04$}
+        }
     \end{subfigure}
     \begin{subfigure}{0.32\textwidth}
         \input{diagrams/feyn_VVhh.tex}
-        \caption{$VVhh$\\$-0.1 < \kvv < 2.2$}
+        \caption*{$VVhh$\\
+            {\tiny ATLAS Combined\\$-0.76 < \kvv < 2.90$\\$(-0.91 < \kvv < 3.11)$}
+        }
     \end{subfigure}
     \begin{subfigure}{0.32\textwidth}
         \input{diagrams/feyn_hhh.tex} 
-        \caption{$hhh$\\$-2.3 < \kl < 9.4$}
+        \caption*{$hhh$\\
+            {\tiny Prior VBF\to4b\\$-5.0 < \kl < 12.0$\\$(-5.8 < \kl < 12.0)$}
+        }
     \end{subfigure}
     \end{figure}
 
-    The Standard Model predicts how frequently these interactions should occur.
-    By providing the conditions necessary for these interactions,
-        one can measure how often they actually occur vs their theoretically predicted rate
-        (the interactions' ``$kappa$-value'').
+    { \footnotesize
+        SM predicts the ``strength'' particle interactions should have,\\
+            which is related to how often they occur.
+        \vspace{3mm}
+
+        ``$\kappa$-coefficients'' are a method of measuring deviation from the SM,\\
+            where e.g. $\kvv \equiv g_{HHVV}^{\textrm{true}} / g_{HHVV}^{\textrm{theory}} \quad;\quad
+                g_{HHVV}^{\textrm{theory}}\equiv 4\lambda\frac{m_V^2}{m_h^2}$
+        \vspace{3mm}
+
+        By providing the conditions necessary for these interactions,
+            one can measure how often they actually occur vs their theoretically predicted rate.
+    }
 }
-% −2.3 <κλ< 9.4 (−5.0 <κλ< 12.0) and −0.1 <κ2V< 2.2 (−0.4 <κ2V< 2.5)
 
 
 % Theory 3: di-Higgs and VBF->HH->bbbb
 \frame{
-    \frametitle{Vector Boson Fusion, di-Higgs Production, and the All-Hadronic Final State}
+    \frametitle{Conditions for Electroweak-Higgs Interaction}
+    \framesubtitle{Vector Boson Fusion, di-Higgs Production, and the All-Hadronic Final State}
     \begin{columns}
         \begin{column}{0.4\textwidth}
+            {\footnotesize
+                $V$ and $h$ are both unstable,
+                    need to choose production (VBF) and decay (4b)
+            }
+
             \input{diagrams/vbf_bbbb.tex} 
         \end{column}
         \begin{column}{0.6\textwidth}
@@ -83,7 +104,7 @@
 
 
 \frame{
-    \frametitle{\hhproc Production, LO in SM}
+    \frametitle{\hhproc Production, Leading Order in SM}
 
     \begin{figure}
     \centering
@@ -189,7 +210,7 @@
         %\item 40 million bunch-crossings per second
         %\item 60 interactions per bunch-crossing
             \item 2.4 billion interactions per second
-            \item $L_{\textrm{inst}} = 2\times10^{-5} \textrm{fb}^{-1}$
+            \item $L_{\textrm{inst}} = 2\times10^{-5} \textrm{fb}^{-1}\textrm{s}^{-1}$
             \item 139 \ifb of data delivered to P1
             \item 126 \ifb used for this analysis
         \end{itemize}
