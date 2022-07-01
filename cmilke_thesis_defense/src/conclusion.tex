@@ -9,19 +9,30 @@
 {signal/negative_weights_base}
 {conclusion/limit_slice_HL-LHC_kv_1p0_compare.png}
 
-% CMS: −2.3 <κλ< 9.4 (−5.0 <κλ< 12.0) and −0.1 <κ2V< 2.2 (−0.4 <κ2V< 2.5)
-\displaythree{Conclusion}{
-    \label{conclusion}
-    \begin{itemize}
-        \item {\tiny $-19.5 < \kl < 23.0, \kv=1$ }
-        \item {\tiny $-10.1 < \kl < 13.3, \kvv=\kv=1$  }
-        \item {\tiny $-0.8 < \kvv < 2.8, \kv=1$ }
-        \item {\tiny $0.09 < \kvv < 2.0, \kl=\kv=1$ }
-        %\item {\tiny * \kvv limits are likely slightly over-constrained from overestimate in background }
+\displaythree{Conclusion}{ \label{conclusion}
+    \begin{center} 
+        \vspace{-5mm} \footnotesize \kvv Limits
+
+        \resizebox{1.1\textwidth}{!}{ \begin{tabular}{ |l|l|l| }
+            \hline
+            Analysis & Observed & (Expected) \\
+            \hline
+            Prior VBF \to 4b & -0.76, 2.90 & -0.91, 3.11 \\
+            CMS 2022/02/22 & -0.1, 2.2 & -0.4, 2.5 \\
+            *\vbfhhproc & 0.09, 1.99 & -0.08, 2.16 \\
+            \hline
+        \end{tabular}}
+    \end{center}
+
+    \begin{itemize} \scriptsize
+        \item 1D \kl limits non-competitive, but competitive in combination with other modes
+        \item 1D \kvv limits tightest to date
+        \item 2/3D limits \textbf{first of their kind}
     \end{itemize}
+        
 }
 {results/full_3D_point_cloud}
-{results/k2v_scan_thesis_final0_1D_k2v_samps_vbf_pd_vbf_inc161718_kl_1.0_xs}
-{results/2D_scan_thesis_omega0_kvv_kl_samps_vbf_pd_vbf_inc161718_k1v1p00_exclusion}
+{results/k2v_scan_VBF_chan_allNP_samps_vbf_pd_vbf_inc161718_kl_1.0_xs}
+{results/2D_scan_VBF_chan_allNP_samps_vbf_pd_vbf_inc161718_k1v1.0_exclusion}
 
 

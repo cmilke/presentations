@@ -25,7 +25,6 @@
 \setbeamerfont{itemize/enumerate subbody}{size=\scriptsize}
 \setbeamerfont{itemize/enumerate subsubbody}{size=\scriptsize}
 
-
 %Custom Macros
 
 % WARNING: When using these commands, the image argument must
@@ -37,6 +36,14 @@
         \includegraphics[height=0.9\textheight,width=\textwidth,keepaspectratio]{#2}
         \end{figure}
     }
+}
+
+\newcommand{\tinyitemize}[1]{
+    \begin{itemize}
+    {\tiny
+        #1
+    }
+    \end{itemize}
 }
 
 
